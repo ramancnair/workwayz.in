@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Workwayz | The AI-Powered Project & Portfolio Operating System</title>
+  
+  <meta name="description" content="Workwayz bridges the gap between agile engineering delivery and executive portfolio governance. AI tech stack estimation, Fixed-Bid & T&M billing, RAID tracking, and QA governance. 100% self-hostable with Docker or NPM.">
+  <meta name="keywords" content="Workwayz, project portfolio management, PPM, agile, kanban, AI estimation, fixed-bid billing, time and material, self-hosted, Supabase, Firebase, Docker, NPM">
+  
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://workwayz.in/">
+  <meta property="og:title" content="Workwayz | The Modern Project & Portfolio Operating System">
+  <meta property="og:description" content="AI tech stack estimation, hybrid agile release trains, Fixed-Bid & T&M financial realization, and QA governance. Self-hostable via Docker and NPM.">
+  <meta property="og:image" content="https://workwayz.in/assets/logo-full-sheet.png">
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar">
+    <span class="badge-pill">Coming Soon</span>
+    <span>Workwayz is launching to <strong>Docker Hub</strong> and <strong>NPM Registry</strong>.</span>
+    <a href="#quickstart">Get early access & quickstart &rarr;</a>
+  </div>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="container">
+      <a href="#" class="brand-logo" title="Workwayz Home">
+        <img src="assets/logo-horizontal-white.png" alt="Workwayz Logo" height="38">
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#features" class="nav-link">Features</a></li>
+        <li><a href="#ai-estimator" class="nav-link">AI Estimator</a></li>
+        <li><a href="#financials" class="nav-link">Financials & Billing</a></li>
+        <li><a href="#comparison" class="nav-link">Why Workwayz</a></li>
+        <li><a href="#quickstart" class="nav-link">Installation</a></li>
+        <li><a href="docs.html" class="nav-link">User Manual</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="https://github.com/ramancnair/Workwayz" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" id="nav-github-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+          <span>GitHub</span>
+        </a>
+        <a href="#quickstart" class="btn btn-primary btn-sm">
+          <span>Deploy Workwayz</span>
+        </a>
+        <button class="mobile-toggle" id="mobile-toggle-btn" aria-label="Toggle navigation">
+          &#9776;
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-drawer" id="mobile-nav-drawer">
+    <a href="#features" class="nav-link">Features</a>
+    <a href="#ai-estimator" class="nav-link">AI Estimator</a>
+    <a href="#financials" class="nav-link">Financials & Billing</a>
+    <a href="#comparison" class="nav-link">Why Workwayz</a>
+    <a href="#quickstart" class="nav-link">Installation</a>
+    <a href="docs.html" class="nav-link">User Manual</a>
+    <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.75rem;">
+      <a href="https://github.com/ramancnair/Workwayz" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">View on GitHub</a>
+      <a href="#quickstart" class="btn btn-primary">Deploy Now</a>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-tagline-badge">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+        <span>Open, Intelligent & Self-Hostable PPM</span>
+      </div>
+
+      <h1 class="hero-title">
+        The Project Operating System Built for How <span class="gradient-text">Modern Engineering</span> Actually Works.
+      </h1>
+
+      <p class="hero-subtitle">
+        Workwayz bridges the gap between client financials and technical execution. From AI-driven architectural estimation to Fixed-Bid & T&amp;M billing, hybrid release trains, and QA governance. Deploy anywhere with Supabase or Firebase.
+      </p>
+
+      <div class="hero-cta-group">
+        <a href="#quickstart" class="btn btn-primary btn-lg">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          <span>Get Started Free</span>
+        </a>
+        <a href="https://github.com/ramancnair/Workwayz" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-lg" id="hero-github-btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+          <span>Star on GitHub</span>
+        </a>
+        <a href="docs.html" class="btn btn-outline btn-lg">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+          <span>Read Manual</span>
+        </a>
+      </div>
+
+      <!-- Quick Install Terminal Switcher -->
+      <div class="terminal-container" id="terminal-switcher">
+        <div class="terminal-header">
+          <div class="terminal-dots">
+            <span class="dot dot-red"></span>
+            <span class="dot dot-yellow"></span>
+            <span class="dot dot-green"></span>
+          </div>
+          <div class="terminal-tabs">
+            <button class="term-tab-btn active" data-mode="npx">NPX</button>
+            <button class="term-tab-btn" data-mode="docker">Docker</button>
+            <button class="term-tab-btn" data-mode="compose">Compose</button>
+            <button class="term-tab-btn" data-mode="git">Git</button>
+          </div>
+        </div>
+        <div class="terminal-body">
+          <div class="terminal-line">
+            <div>
+              <span class="prompt-symbol">$</span>
+              <span class="command-content" id="terminal-cmd-text">npx workwayz@latest</span>
+            </div>
+            <button class="copy-btn" id="term-copy-btn" title="Copy command">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              <span>Copy</span>
+            </button>
+          </div>
+          <div class="terminal-output" id="terminal-output-text">
+            <span class="success">&#10003; Checking Node.js environment...</span><br>
+            <span class="success">&#10003; Launching Workwayz Web Setup Wizard...</span><br>
+            <span class="prompt-symbol">&rarr;</span> Open <a href="http://localhost:3000" target="_blank" style="color:#6ee7b7">http://localhost:3000</a> to complete the 3-minute setup.
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Mockup Frame -->
+      <div class="hero-showcase">
+        <div class="browser-mockup">
+          <div class="browser-bar">
+            <div class="terminal-dots">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+            </div>
+            <div class="browser-url-pill">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+              <span>app.workwayz.in/projects/P2600001/pm-dashboard</span>
+            </div>
+          </div>
+          <div class="browser-viewport" data-lightbox-src="assets/ui/pm-dashboard.jpeg" data-lightbox-title="Workwayz - Executive Project Management Dashboard">
+            <img src="assets/ui/pm-dashboard.jpeg" alt="Workwayz PM Dashboard" loading="eager">
+            <div class="viewport-overlay-hint">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+              <span>Click to expand full resolution</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Trust & Architecture Badges -->
+  <section class="container">
+    <div class="trust-badges">
+      <div class="trust-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+        <span>100% Self-Hosted &amp; Cloud Agnostic</span>
+      </div>
+      <div class="trust-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+        <span>Supabase &amp; Firebase Backend</span>
+      </div>
+      <div class="trust-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="m4.93 4.93 4.24 4.24"></path><path d="m14.83 9.17 4.24-4.24"></path><path d="m14.83 14.83 4.24 4.24"></path><path d="m9.17 14.83-4.24 4.24"></path></svg>
+        <span>Pluggable AI (Local Ollama / Gemini / Claude)</span>
+      </div>
+      <div class="trust-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+        <span>Fixed-Bid &amp; T&amp;M Financial Engines</span>
+      </div>
+      <div class="trust-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+        <span>Granular 6-Tier Enterprise RBAC</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem / Solution Contrast -->
+  <section class="comparison-section container" id="comparison">
+    <div class="section-header">
+      <span class="section-label">The Engineering PPM Dilemma</span>
+      <h2 class="section-title">Why Modern Teams Are Drowning Between Fragmented Tools</h2>
+      <p class="section-desc">
+        Project managers live in spreadsheets and legacy PPM suites. Developers and leads live in Jira or Linear. Neither tool understands client contracts, architectural sub-tasks, or profit margins. Workwayz unites both.
+      </p>
+    </div>
+
+    <div class="contrast-grid">
+      <div class="contrast-card bad">
+        <div class="contrast-card-header">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+          <h3 class="contrast-card-title">Traditional Tools &amp; Issue Trackers</h3>
+        </div>
+        <ul class="contrast-list bad">
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+            <span><strong>Blind to Financials:</strong> Ticket trackers have zero concept of Fixed-Bid margins, T&amp;M billable days, LOP deductions, or realized cash.</span>
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+            <span><strong>The Estimation Void:</strong> Guessing effort without tech stack awareness leads to immediate cost overruns and margin leakage.</span>
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+            <span><strong>Architectural Blindspots:</strong> Stories are assigned to a single person without breaking down Frontend, Middleware, DB, and Auth impacts.</span>
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+            <span><strong>Expensive Cloud Tax:</strong> High per-seat pricing models that penalize you as your engineering and contractor team scales.</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="contrast-card good">
+        <div class="contrast-card-header">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="9 12 11 14 15 10"></polyline></svg>
+          <h3 class="contrast-card-title">The Workwayz Operating System</h3>
+        </div>
+        <ul class="contrast-list good">
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span><strong>Dual Financial Precision:</strong> Real-time profit calculations comparing resource cost rates vs client billing rates, milestones, and fixed costs.</span>
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span><strong>AI-Powered Tech Estimation:</strong> Suggests optimal architectural stacks, horizontal staffing models, and calculates global benchmark effort.</span>
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span><strong>Impacted Sub-Tasks Matrix:</strong> Deconstruct stories across backend, frontend, and database layers with bulk assignment & grooming readiness.</span>
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span><strong>100% Data Sovereignty:</strong> Run on your own cloud or private Docker container with zero per-seat licensing penalties.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature Showcase Interactive Tabs -->
+  <section class="feature-showcase-section container" id="features">
+    <div class="section-header">
+      <span class="section-label">End-to-End Capabilities</span>
+      <h2 class="section-title">Designed for Leaders, Engineered for Builders</h2>
+      <p class="section-desc">
+        Explore how Workwayz handles every phase of the project lifecycle from proposal pitch to production sign-off.
+      </p>
+    </div>
+
+    <!-- Navigation Tabs -->
+    <div class="feature-nav-tabs">
+      <button class="feature-tab-btn active" data-tab="tab-ai-estimator">🤖 AI Scoping &amp; Estimation</button>
+      <button class="feature-tab-btn" data-tab="tab-agile-engine">⚡ Architectural Agile &amp; Kanban</button>
+      <button class="feature-tab-btn" data-tab="tab-financials">💰 Financials &amp; Billing</button>
+      <button class="feature-tab-btn" data-tab="tab-qa-testing">🧪 QA &amp; Defect Leakage</button>
+      <button class="feature-tab-btn" data-tab="tab-raid-governance">🛡️ RAID &amp; BCP Vault</button>
+      <button class="feature-tab-btn" data-tab="tab-resources">👥 Resources &amp; Availability</button>
+    </div>
+
+    <!-- Tab 1: AI Estimator -->
+    <div class="feature-panel active" id="tab-ai-estimator">
+      <div class="feature-panel-grid">
+        <div class="feature-info">
+          <h3>AI-Powered Architecture &amp; Baseline Effort Scoping</h3>
+          <p>
+            Paste your project summary and let Workwayz's AI engine generate 3 tailored technology architecture stacks, recommend agile horizontal staffing models, and compute realistic baseline man-days before committing to quotes.
+          </p>
+          <ul class="feature-bullet-list">
+            <li class="feature-bullet-item">
+              <div class="bullet-icon">&#10003;</div>
+              <div class="bullet-content">
+                <h4>Automated Tech Stack Evaluation</h4>
+                <p>Generates full-stack options (e.g. Next.js, AWS Serverless, microservices) with mapped impacted subsystems.</p>
+              </div>
+            </li>
+            <li class="feature-bullet-item">
+              <div class="bullet-icon">&#10003;</div>
+              <div class="bullet-content">
+                <h4>Horizontal Strategy Weightings</h4>
+                <p>Intelligently balances role percentages for PM, QA, Solution Architecture, DevOps, and UI/UX design.</p>
+              </div>
+            </li>
+            <li class="feature-bullet-item">
+              <div class="bullet-icon">&#10003;</div>
+              <div class="bullet-content">
+                <h4>Multi-Model AI Flexibility</h4>
+                <p>Run locally with Ollama / LM Studio for 100% private data, or connect Google Gemini, Claude, and OpenAI.</p>
+              </div>
+            </li>
+          </ul>
+          <a href="docs.html#initial-estimation" class="btn btn-secondary btn-sm">Explore AI Estimation in Manual &rarr;</a>
+        </div>
+        <div class="feature-visual-frame" data-lightbox-src="assets/ui/ai-tech-stack-1.jpeg" data-lightbox-title="Workwayz - AI Tech Stack Suggestions & Architecture Breakdown">
+          <img src="assets/ui/ai-tech-stack-1.jpeg" alt="AI Tech Stack suggestions" loading="lazy">
+          <div class="zoom-badge">🔍 Click to zoom</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab 2: Agile Engine -->
+    <div class="feature-panel" id="tab-agile-engine">
+      <div class="feature-panel-grid">
+        <div class="feature-info">
+          <h3>Architectural Sub-Tasks, Grooming &amp; Dual Kanban</h3>
+          <p>
+            Agile teams shouldn't force monolithic stories onto a single developer. Workwayz allows tech leads to break requirements down into system sub-tasks with readiness gating and story-point-to-hours conversion.
+          </p>
+          <ul class="feature-bullet-list">
+            <li class="feature-bullet-item">
+              <div class="bullet-icon">&#10003;</div>
+              <div class="bullet-content">
+                <h4>Readiness-Checked Grooming Board</h4>
+                <p>Visual green badges guarantee every impacted system has estimated subtasks before a story enters the sprint.</p>
+              </div>
+            </li>
+            <li class="feature-bullet-item">
+              <div class="bullet-icon">&#10003;</div>
+              <div class="bullet-content">
+                <h4>Story Point &harr; Hours Bridge</h4>
+                <p>Deliver in agile sprints while satisfying client billing contracts with automated point-to-hour conversions.</p>
+              </div>
+            </li>
+            <li class="feature-bullet-item">
+              <div class="bullet-icon">&#10003;</div>
+              <div class="bullet-content">
+                <h4>Dual-Perspective Kanban Boards</h4>
+                <p>Toggle between high-level Story progression and granular Sub-Task execution with real-time assignee filters.</p>
+              </div>
+            </li>
+          </ul>
+          <a href="docs.html#development-flow" class="btn btn-secondary btn-sm">View Agile Backlog Guide &rarr;</a>
+        </div>
+        <div class="feature-visual-frame" data-lightbox-src="assets/ui/grooming-board-1.jpeg" data-lightbox-title="Workwayz - Grooming Board with Readiness Verification">
+          <img src="assets/ui/grooming-board-1.jpeg" alt="Workwayz Grooming Board" loading="lazy">
+          <div class="zoom-badge">🔍 Click to zoom</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab 3: Financials & Billing -->
+    <div class="feature-panel" id="tab-financials">
+      <div class="feature-panel-grid">
+        <div class="feature-info">
+          <h3>Real-Time Project Profitability &amp; Invoicing</h3>
+          <p>
+            Know your exact margins before, during, and after release. Track Fixed Bid (FB) milestones and monthly Time &amp; Material (T&amp;M) billing with automatic adjustments for Loss of Pay (LOP) and server costs.
+          </p>
+          <ul class="feature-bullet-list">
+            <li class="feature-bullet-item">
+              <div class="bullet-icon">&#10003;</div>
+              <div class="bullet-content">
+                <h4>Resource Cost vs. Billed Rate Margins</h4>
+                <p>Calculates internal resource cost versus client daily billing rate to show true gross profit in real time.</p>
+              </div>
+            </li>
+            <li class="feature-bullet-item">
+              <div class="bullet-icon">&#10003;</div>
+              <div class="bullet-content">
+                <h4>Fixed Costs &amp; Infrastructure Amortization</h4>
+                <p>Track server hosting, repository licenses, and one-time setup costs alongside billable labor.</p>
+              </div>
+            </li>
+            <li class="feature-bullet-item">
+              <div class="bullet-icon">&#10003;</div>
+              <div class="bullet-content">
+                <h4>Cash Realization &amp; Milestone Audits</h4>
+                <p>Monitors invoiced amounts versus actual cash collections with immutable milestone status audit histories.</p>
+              </div>
+            </li>
+          </ul>
+          <a href="docs.html#billing-flow" class="btn btn-secondary btn-sm">Read Financial Documentation &rarr;</a>
+        </div>
+        <div class="feature-visual-frame" data-lightbox-src="assets/ui/billing-finance.jpeg" data-lightbox-title="Workwayz - Financial Billing & Profit Realization">
+          <img src="assets/ui/billing-finance.jpeg" alt="Workwayz Billing Overview" loading="lazy">
+          <div class="zoom-badge">🔍 Click to zoom</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab 4: QA Testing -->
+    <div class="feature-panel" id="tab-qa-testing">
+      <div class="feature-panel-grid">
+        <div class="feature-info">
+          <h3>Full-Spectrum QA Governance &amp; Defect Leakage Tracking</h3>
+          <p>
+            Catch bugs before they escape to production. Workwayz tracks SIT, UAT, and Production defect leakages, provides dedicated defect triage boards, and ensures 100% story test coverage.
+          </p>
+          <ul class="feature-bullet-list">
+            <li class="feature-bullet-item">
+              <div class="bullet-icon">&#10003;</div>
+              <div class="bullet-content">
+                <h4>Defect Containment &amp; Leakage Analytics</h4>
+                <p>Measure QA efficiency by phase to understand whether bugs are discovered early or leaking downstream.</p>
+              </div>
+            </li>
+            <li class="feature-bullet-item">
+              <div class="bullet-icon">&#10003;</div>
+              <div class="bullet-content">
+                <h4>Daily Test Velocity &amp; Bug Burn Charts</h4>
+                <p>Track daily executed test cases against newly logged defects for accurate release readiness forecasting.</p>
+              </div>
+            </li>
+            <li class="feature-bullet-item">
+              <div class="bullet-icon">&#10003;</div>
+              <div class="bullet-content">
+                <h4>Integrated Defect Triage Board</h4>
+                <p>Kanban-style triage pipeline (In Triage, Defect Backlog, In Progress, Retest, Closed) mapped directly to stories.</p>
+              </div>
+            </li>
+          </ul>
+          <a href="docs.html#testing-flow" class="btn btn-secondary btn-sm">Explore QA Module &rarr;</a>
+        </div>
+        <div class="feature-visual-frame" data-lightbox-src="assets/ui/testing-dashboard-1.jpeg" data-lightbox-title="Workwayz - Quality & Testing Execution Dashboard">
+          <img src="assets/ui/testing-dashboard-1.jpeg" alt="Workwayz Testing Dashboard" loading="lazy">
+          <div class="zoom-badge">🔍 Click to zoom</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab 5: RAID & BCP -->
+    <div class="feature-panel" id="tab-raid-governance">
+      <div class="feature-panel-grid">
+        <div class="feature-info">
+          <h3>AI RAID Intelligence &amp; Business Continuity (BCP)</h3>
+          <p>
+            Automate project governance. Let AI generate common project risks, assumptions, and third-party dependencies from requirements, while keeping critical environment credentials and disaster recovery plans audit-ready.
+          </p>
+          <ul class="feature-bullet-list">
+            <li class="feature-bullet-item">
+              <div class="bullet-icon">&#10003;</div>
+              <div class="bullet-content">
+                <h4>AI RAID Generator</h4>
+                <p>One-click AI extraction of project risks, architecture assumptions, and third-party API dependencies.</p>
+              </div>
+            </li>
+            <li class="feature-bullet-item">
+              <div class="bullet-icon">&#10003;</div>
+              <div class="bullet-content">
+                <h4>Business Continuity Plan (BCP) Vault</h4>
+                <p>Centralized register of environment URLs, SSL/domain expiry dates, git repositories, and designated backup resources.</p>
+              </div>
+            </li>
+            <li class="feature-bullet-item">
+              <div class="bullet-icon">&#10003;</div>
+              <div class="bullet-content">
+                <h4>PMO Mandatory Gateway Sign-Offs</h4>
+                <p>Enforce governance rules: SOW required to kick off development, QA sign-off mandatory before production deployment.</p>
+              </div>
+            </li>
+          </ul>
+          <a href="docs.html#governance-flow" class="btn btn-secondary btn-sm">Read Governance Manual &rarr;</a>
+        </div>
+        <div class="feature-visual-frame" data-lightbox-src="assets/ui/raid-dashboard-1.jpeg" data-lightbox-title="Workwayz - RAID Governance Dashboard">
+          <img src="assets/ui/raid-dashboard-1.jpeg" alt="Workwayz RAID Dashboard" loading="lazy">
+          <div class="zoom-badge">🔍 Click to zoom</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab 6: Resources & Utilization -->
+    <div class="feature-panel" id="tab-resources">
+      <div class="feature-panel-grid">
+        <div class="feature-info">
+          <h3>Global Resource Pool, Utilization &amp; Leave Reflection</h3>
+          <p>
+            Eliminate double-booking and illegal multi-project work. Track developer availability across projects, forecast capacity by architectural competency, and automatically reflect approved leave across active sprints.
+          </p>
+          <ul class="feature-bullet-list">
+            <li class="feature-bullet-item">
+              <div class="bullet-icon">&#10003;</div>
+              <div class="bullet-content">
+                <h4>Resource Occupancy Heatmaps</h4>
+                <p>Visual calendar showing current workload, next available date, and over-allocation percentages.</p>
+              </div>
+            </li>
+            <li class="feature-bullet-item">
+              <div class="bullet-icon">&#10003;</div>
+              <div class="bullet-content">
+                <h4>Multi-Project Leave Reflection</h4>
+                <p>Leaves booked in the central tracker automatically reflect across every project sprint the engineer is assigned to.</p>
+              </div>
+            </li>
+            <li class="feature-bullet-item">
+              <div class="bullet-icon">&#10003;</div>
+              <div class="bullet-content">
+                <h4>Global &amp; Project Holiday Overrides</h4>
+                <p>Define global corporate holidays with per-project timezone and offshore team calendar overrides.</p>
+              </div>
+            </li>
+          </ul>
+          <a href="docs.html#resource-utilization" class="btn btn-secondary btn-sm">Explore Resource Management &rarr;</a>
+        </div>
+        <div class="feature-visual-frame" data-lightbox-src="assets/ui/resource-utilization.jpeg" data-lightbox-title="Workwayz - Resource Utilization & Heatmap">
+          <img src="assets/ui/resource-utilization.jpeg" alt="Workwayz Resource Utilization" loading="lazy">
+          <div class="zoom-badge">🔍 Click to zoom</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Deep-Dive Bento Grid -->
+  <section class="features-grid-section container">
+    <div class="section-header">
+      <span class="section-label">Engineered For Depth</span>
+      <h2 class="section-title">Built to Solve the Nuances Other Tools Ignore</h2>
+      <p class="section-desc">
+        Every detail in Workwayz was crafted from decades of engineering delivery and project management experience.
+      </p>
+    </div>
+
+    <div class="grid-3">
+      <!-- Bento 1 -->
+      <div class="bento-card">
+        <div class="bento-icon-wrapper">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+        </div>
+        <h3 class="bento-title">The Story Points &harr; Hours Bridge</h3>
+        <p class="bento-desc">
+          Stop arguing over abstract points vs billable hours. Configure custom point-to-hour multipliers and get instant conversions for client budgets without ruining team velocity.
+        </p>
+      </div>
+
+      <!-- Bento 2 -->
+      <div class="bento-card">
+        <div class="bento-icon-wrapper blue">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+        </div>
+        <h3 class="bento-title">Bulk Sub-Task Assignment</h3>
+        <p class="bento-desc">
+          Tech leads can view all unassigned sub-tasks across Frontend, Middleware, DB, and Auth in one streamlined grid and assign them in bulk with single-click efficiency.
+        </p>
+      </div>
+
+      <!-- Bento 3 -->
+      <div class="bento-card">
+        <div class="bento-icon-wrapper purple">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+        </div>
+        <h3 class="bento-title">Granular 6-Role RBAC</h3>
+        <p class="bento-desc">
+          Full page-level and CRUD-level permission controls tailored for Administrators, Senior Management, Project Managers, Tech Leads, Team Members, and PMO Auditors.
+        </p>
+      </div>
+
+      <!-- Bento 4 -->
+      <div class="bento-card">
+        <div class="bento-icon-wrapper amber">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+        </div>
+        <h3 class="bento-title">Hybrid Release Trains</h3>
+        <p class="bento-desc">
+          Deliver agile sprints directly into structured enterprise release trains with stages, milestone dates, design freezes, and code freezes cleanly visualized.
+        </p>
+      </div>
+
+      <!-- Bento 5 -->
+      <div class="bento-card">
+        <div class="bento-icon-wrapper">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+        </div>
+        <h3 class="bento-title">Mandatory PMO Sign-Off Gates</h3>
+        <p class="bento-desc">
+          Built-in governance gateways ensure SOW agreements exist prior to sprint kickoff and QA sign-offs are formally verified before code is promoted to production.
+        </p>
+      </div>
+
+      <!-- Bento 6 -->
+      <div class="bento-card">
+        <div class="bento-icon-wrapper blue">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+        </div>
+        <h3 class="bento-title">30-Day Trash &amp; Archival Vault</h3>
+        <p class="bento-desc">
+          Protect critical project history. Auto-archive closed projects to save compute, with 30-day soft-delete protection allowing administrators to restore any item with ease.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison Matrix Table -->
+  <section class="comparison-table-section container">
+    <div class="section-header">
+      <span class="section-label">Head-to-Head Comparison</span>
+      <h2 class="section-title">How Workwayz Stacks Up</h2>
+      <p class="section-desc">
+        See how Workwayz eliminates the need to juggle 4 separate SaaS subscriptions.
+      </p>
+    </div>
+
+    <div class="table-wrapper">
+      <table class="matrix-table">
+        <thead>
+          <tr>
+            <th>Core Capability</th>
+            <th class="highlight-col">Workwayz</th>
+            <th>Jira Software</th>
+            <th>Linear</th>
+            <th>ClickUp</th>
+            <th>Excel / Sheets</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Self-Hostable (Docker / NPM)</strong></td>
+            <td class="highlight-col"><span class="check-icon">&#10003; 100% Yes</span></td>
+            <td><span class="cross-icon">&#10005; No (Cloud only)</span></td>
+            <td><span class="cross-icon">&#10005; No</span></td>
+            <td><span class="cross-icon">&#10005; No</span></td>
+            <td><span class="partial-text">Files only</span></td>
+          </tr>
+          <tr>
+            <td><strong>AI Tech Stack &amp; Baseline Estimator</strong></td>
+            <td class="highlight-col"><span class="check-icon">&#10003; Built-in (Multi-LLM)</span></td>
+            <td><span class="cross-icon">&#10005; None</span></td>
+            <td><span class="cross-icon">&#10005; None</span></td>
+            <td><span class="cross-icon">&#10005; None</span></td>
+            <td><span class="cross-icon">&#10005; Manual</span></td>
+          </tr>
+          <tr>
+            <td><strong>Fixed-Bid &amp; T&amp;M Financial Invoicing</strong></td>
+            <td class="highlight-col"><span class="check-icon">&#10003; Native with Margins</span></td>
+            <td><span class="cross-icon">&#10005; Add-ons needed</span></td>
+            <td><span class="cross-icon">&#10005; No</span></td>
+            <td><span class="partial-text">Basic</span></td>
+            <td><span class="partial-text">Manual math</span></td>
+          </tr>
+          <tr>
+            <td><strong>Story Points &harr; Hours Bridge</strong></td>
+            <td class="highlight-col"><span class="check-icon">&#10003; Native calculator</span></td>
+            <td><span class="cross-icon">&#10005; Complex scripts</span></td>
+            <td><span class="cross-icon">&#10005; No</span></td>
+            <td><span class="cross-icon">&#10005; No</span></td>
+            <td><span class="partial-text">Manual</span></td>
+          </tr>
+          <tr>
+            <td><strong>Architectural Sub-Tasks (FE/BE/DB/Auth)</strong></td>
+            <td class="highlight-col"><span class="check-icon">&#10003; First-class support</span></td>
+            <td><span class="cross-icon">&#10005; Generic subtasks</span></td>
+            <td><span class="cross-icon">&#10005; Simple sub-issues</span></td>
+            <td><span class="cross-icon">&#10005; Generic</span></td>
+            <td><span class="cross-icon">&#10005; No</span></td>
+          </tr>
+          <tr>
+            <td><strong>Full QA Test Plans &amp; Defect Leakage</strong></td>
+            <td class="highlight-col"><span class="check-icon">&#10003; SIT, UAT, Prod metrics</span></td>
+            <td><span class="cross-icon">&#10005; Requires Xray/Zephyr</span></td>
+            <td><span class="cross-icon">&#10005; None</span></td>
+            <td><span class="cross-icon">&#10005; Basic</span></td>
+            <td><span class="cross-icon">&#10005; Disconnected</span></td>
+          </tr>
+          <tr>
+            <td><strong>Autonomous RAID &amp; BCP Vault</strong></td>
+            <td class="highlight-col"><span class="check-icon">&#10003; Integrated + AI Gen</span></td>
+            <td><span class="cross-icon">&#10005; No</span></td>
+            <td><span class="cross-icon">&#10005; No</span></td>
+            <td><span class="cross-icon">&#10005; No</span></td>
+            <td><span class="cross-icon">&#10005; No</span></td>
+          </tr>
+          <tr>
+            <td><strong>Per-Seat User Tax</strong></td>
+            <td class="highlight-col"><span class="check-icon">&#10003; $0 (Self-hosted)</span></td>
+            <td><span class="cross-icon">&#10005; $8.15 - $16 / user</span></td>
+            <td><span class="cross-icon">&#10005; $8 - $14 / user</span></td>
+            <td><span class="cross-icon">&#10005; $7 - $12 / user</span></td>
+            <td><span class="cross-icon">&#10005; M365 license</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 3-Minute Setup Walkthrough -->
+  <section class="setup-guide-section container" id="quickstart">
+    <div class="section-header">
+      <span class="section-label">Zero-Friction Deployment</span>
+      <h2 class="section-title">Up and Running in Under 3 Minutes</h2>
+      <p class="section-desc">
+        No complicated database migration scripts. Workwayz boots with a self-guided configuration wizard right in your browser.
+      </p>
+    </div>
+
+    <div class="setup-steps-grid">
+      <div class="step-card">
+        <div class="step-num">01</div>
+        <h4 class="step-title">Connect Database</h4>
+        <p class="step-desc">Point to your Supabase instance (cloud or local Docker) or paste your Firebase project credentials.</p>
+      </div>
+
+      <div class="step-card">
+        <div class="step-num">02</div>
+        <h4 class="step-title">Setup Identity</h4>
+        <p class="step-desc">Authenticate via Firebase Auth or Supabase Auth. Enable Google SSO or GitHub SSO with single toggles.</p>
+      </div>
+
+      <div class="step-card">
+        <div class="step-num">03</div>
+        <h4 class="step-title">Create Super-Admin</h4>
+        <p class="step-desc">Establish your master administrative account to govern user onboarding, billing rates, and RBAC matrix.</p>
+      </div>
+
+      <div class="step-card">
+        <div class="step-num">04</div>
+        <h4 class="step-title">Connect AI Engine</h4>
+        <p class="step-desc">Input an API key for Google Gemini, Claude, or ChatGPT &mdash; or point to a local Ollama server for 100% private AI.</p>
+      </div>
+
+      <div class="step-card">
+        <div class="step-num">05</div>
+        <h4 class="step-title">Ready to Fly!</h4>
+        <p class="step-desc">Review your configuration summary, click Finish, and immediately begin managing portfolios.</p>
+      </div>
+    </div>
+
+    <!-- Setup Wizard UI Preview -->
+    <div style="margin-top: 3.5rem; text-align: center;">
+      <div class="browser-mockup" style="max-width: 820px; margin: 0 auto;">
+        <div class="browser-bar">
+          <div class="terminal-dots">
+            <span class="dot dot-red"></span>
+            <span class="dot dot-yellow"></span>
+            <span class="dot dot-green"></span>
+          </div>
+          <div class="browser-url-pill">
+            <span>localhost:3000/setup-wizard</span>
+          </div>
+        </div>
+        <div class="browser-viewport" data-lightbox-src="assets/ui/setup-database-1.jpeg" data-lightbox-title="Workwayz - First-Boot Guided Setup Wizard">
+          <img src="assets/ui/setup-database-1.jpeg" alt="Workwayz Setup Wizard Preview" loading="lazy">
+          <div class="viewport-overlay-hint">
+            <span>Click to inspect setup wizard</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section container">
+    <div class="section-header">
+      <span class="section-label">Got Questions?</span>
+      <h2 class="section-title">Frequently Asked Questions</h2>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Can I run Workwayz completely offline on an intranet?</span>
+          <span class="faq-icon">&#9660;</span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            Yes! Workwayz is fully compatible with local, air-gapped, or intranet environments. You can run Supabase locally via Docker and pair it with a local LLM engine like Ollama or LM Studio. No telemetry, no external calls, 100% data sovereignty.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>How does the Story Points to Hours conversion work?</span>
+          <span class="faq-icon">&#9660;</span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            Agile purists prefer story points, while clients and finance teams demand billable hours and delivery dates. Workwayz lets project managers configure a conversion ratio in Project Settings or utilize our quick calculator, ensuring developers can estimate in points while contracts are billed accurately.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>What is the difference between Fixed Bid (FB) and Time &amp; Material (T&amp;M) billing?</span>
+          <span class="faq-icon">&#9660;</span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            In Fixed Bid mode, Workwayz tracks contract payment milestones, milestone completion status logs, and compares total resource costs against agreed contract totals. In Time &amp; Material mode, billing is generated monthly based on active billable days, deducting Loss of Pay (LOP) days and adding billable overtime.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>What is the Business Continuity Plan (BCP) module?</span>
+          <span class="faq-icon">&#9660;</span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            When project managers or senior engineers rotate off a project, teams frequently scramble for environment URLs, SSL expiration dates, repository credentials, and backup contacts. Workwayz includes a dedicated BCP register where these items and designated backup resources are tracked in an audit-ready vault.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>How can I deploy Workwayz when it is published?</span>
+          <span class="faq-icon">&#9660;</span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            You will be able to launch it via <code style="color:#6ee7b7">npx workwayz@latest</code>, run our official Docker container with <code style="color:#6ee7b7">docker run -p 3000:3000 workwayz/app</code>, or clone the repository directly from GitHub to customize source code.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pre-Launch CTA Banner -->
+  <section class="cta-banner container">
+    <div class="cta-box">
+      <h2>Take Control of Your Engineering Portfolios</h2>
+      <p>
+        Stop wrestling with disconnected spreadsheets, missing financial data, and rigid ticketing systems. Experience the complete project operating system.
+      </p>
+      <div class="cta-actions">
+        <a href="https://github.com/ramancnair/Workwayz" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg" id="footer-github-cta">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+          <span>Star on GitHub</span>
+        </a>
+        <a href="docs.html" class="btn btn-secondary btn-lg">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+          <span>Explore User Manual</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox-modal" id="lightbox-modal" role="dialog" aria-modal="true">
+    <div class="lightbox-content-box" onclick="event.stopPropagation()">
+      <div class="lightbox-header">
+        <span class="lightbox-title" id="lightbox-title">Screenshot Preview</span>
+        <button class="lightbox-close-btn" id="lightbox-close-btn" title="Close Preview">&times;</button>
+      </div>
+      <div class="lightbox-img-wrapper">
+        <img src="" id="lightbox-img" alt="Zoomed screenshot">
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="brand-logo">
+            <img src="assets/logo-horizontal-white.png" alt="Workwayz" height="34">
+          </a>
+          <p>
+            Workwayz is the modern, open-source project and portfolio management operating system built for high-velocity software agencies and engineering enterprises.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Platform</h4>
+          <ul class="footer-links">
+            <li><a href="#features" class="footer-link">AI Estimator</a></li>
+            <li><a href="#features" class="footer-link">Architectural Agile</a></li>
+            <li><a href="#financials" class="footer-link">Fixed-Bid &amp; T&amp;M</a></li>
+            <li><a href="#features" class="footer-link">QA &amp; Defect Leakage</a></li>
+            <li><a href="#features" class="footer-link">RAID &amp; BCP Vault</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Deploy</h4>
+          <ul class="footer-links">
+            <li><a href="#quickstart" class="footer-link">NPX Quickstart</a></li>
+            <li><a href="#quickstart" class="footer-link">Docker Container</a></li>
+            <li><a href="#quickstart" class="footer-link">Docker Compose</a></li>
+            <li><a href="https://github.com/ramancnair/Workwayz" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub Repository</a></li>
+            <li><a href="https://www.npmjs.com/search?q=workwayz" target="_blank" rel="noopener noreferrer" class="footer-link">NPM Registry</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Documentation</h4>
+          <ul class="footer-links">
+            <li><a href="docs.html" class="footer-link">Complete Manual</a></li>
+            <li><a href="docs.html#setup-wizard" class="footer-link">Setup Wizard Guide</a></li>
+            <li><a href="docs.html#initial-estimation" class="footer-link">AI Tech Stack Guide</a></li>
+            <li><a href="docs.html#admin-flow" class="footer-link">RBAC &amp; Permissions</a></li>
+            <li><a href="docs.html#business-continuity" class="footer-link">Disaster Recovery &amp; BCP</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Workwayz.in. All rights reserved. Built for engineering excellence.</div>
+        <div style="display:flex; gap: 1.5rem;">
+          <a href="https://github.com/ramancnair/Workwayz" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub</a>
+          <a href="docs.html" class="footer-link">User Manual</a>
+          <a href="#" class="footer-link">Workwayz.in</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Workwayz | Comprehensive User Manual &amp; Architecture Guide</title>
+  
+  <meta name="description" content="Complete documentation and user manual for Workwayz (formerly ProjectFlow). Setup wizard, AI estimation, agile execution, QA testing, RAID governance, and financial billing.">
+  
+  <!-- Favicons -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="brand-logo" title="Workwayz Home">
+        <img src="assets/logo-horizontal-white.png" alt="Workwayz Logo" height="38">
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">&larr; Back to Main Site</a></li>
+        <li><a href="#setup-wizard" class="nav-link">Setup</a></li>
+        <li><a href="#initial-estimation" class="nav-link">AI Estimation</a></li>
+        <li><a href="#project-flow" class="nav-link">Project Flow</a></li>
+        <li><a href="#financial-flow" class="nav-link">Billing</a></li>
+        <li><a href="#governance-flow" class="nav-link">Governance</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="https://github.com/ramancnair/Workwayz" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+          <span>GitHub</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Docs Container -->
+  <div class="container">
+    <div class="docs-layout">
+      
+      <!-- Sticky Sidebar -->
+      <aside class="docs-sidebar">
+        <div class="docs-nav-group">
+          <div class="docs-nav-heading">1. Getting Started</div>
+          <ul class="docs-nav-list">
+            <li><a href="#setup-wizard" class="docs-nav-link">1.1 Setup Wizard</a></li>
+            <li><a href="#db-auth" class="docs-nav-link">1.2 Database &amp; Auth</a></li>
+            <li><a href="#super-admin" class="docs-nav-link">1.3 Super Admin Creation</a></li>
+            <li><a href="#ai-config" class="docs-nav-link">1.4 AI Engine Setup</a></li>
+          </ul>
+        </div>
+
+        <div class="docs-nav-group">
+          <div class="docs-nav-heading">2. User Access &amp; Pools</div>
+          <ul class="docs-nav-list">
+            <li><a href="#signup-login" class="docs-nav-link">2.1 Signup &amp; Enablement</a></li>
+            <li><a href="#user-pool" class="docs-nav-link">2.2 Resource Pools &amp; Rates</a></li>
+            <li><a href="#resource-utilization" class="docs-nav-link">2.3 Heatmaps &amp; Utilization</a></li>
+            <li><a href="#leave-calendar" class="docs-nav-link">2.4 Leaves &amp; Holidays</a></li>
+          </ul>
+        </div>
+
+        <div class="docs-nav-group">
+          <div class="docs-nav-heading">3. AI Scoping &amp; Pitch</div>
+          <ul class="docs-nav-list">
+            <li><a href="#initial-estimation" class="docs-nav-link">3.1 Initial Estimation Flow</a></li>
+            <li><a href="#ai-tech-stacks" class="docs-nav-link">3.2 AI Tech Stack Suggestion</a></li>
+            <li><a href="#ai-horizontals" class="docs-nav-link">3.3 Horizontal Staffing Ratios</a></li>
+            <li><a href="#ai-estimator" class="docs-nav-link">3.4 Benchmark Effort Calculation</a></li>
+          </ul>
+        </div>
+
+        <div class="docs-nav-group">
+          <div class="docs-nav-heading">4. Project Delivery</div>
+          <ul class="docs-nav-list">
+            <li><a href="#project-flow" class="docs-nav-link">4.1 PM Command Dashboard</a></li>
+            <li><a href="#capacity-worklog" class="docs-nav-link">4.2 Capacity &amp; Daily Worklog</a></li>
+            <li><a href="#release-trains" class="docs-nav-link">4.3 Enterprise Release Trains</a></li>
+            <li><a href="#development-flow" class="docs-nav-link">4.4 Backlog &amp; Points-to-Hours</a></li>
+            <li><a href="#subtasks-grooming" class="docs-nav-link">4.5 Sub-Tasks &amp; Grooming</a></li>
+            <li><a href="#kanban-board" class="docs-nav-link">4.6 Dual Kanban Board</a></li>
+          </ul>
+        </div>
+
+        <div class="docs-nav-group">
+          <div class="docs-nav-heading">5. QA &amp; Testing</div>
+          <ul class="docs-nav-list">
+            <li><a href="#testing-flow" class="docs-nav-link">5.1 Testing Dashboard &amp; Trends</a></li>
+            <li><a href="#test-leakage" class="docs-nav-link">5.2 SIT / UAT / Prod Leakage</a></li>
+            <li><a href="#defect-triage" class="docs-nav-link">5.3 Defect Triage Pipeline</a></li>
+          </ul>
+        </div>
+
+        <div class="docs-nav-group">
+          <div class="docs-nav-heading">6. Financials &amp; Invoicing</div>
+          <ul class="docs-nav-list">
+            <li><a href="#fixed-bid-billing" class="docs-nav-link">6.1 Fixed Bid (FB) &amp; Milestones</a></li>
+            <li><a href="#tnm-billing" class="docs-nav-link">6.2 Time &amp; Material (T&amp;M)</a></li>
+            <li><a href="#financial-flow" class="docs-nav-link">6.3 Cash Realization &amp; Margins</a></li>
+          </ul>
+        </div>
+
+        <div class="docs-nav-group">
+          <div class="docs-nav-heading">7. Governance &amp; PMO</div>
+          <ul class="docs-nav-list">
+            <li><a href="#governance-flow" class="docs-nav-link">7.1 RAID &amp; AI Risk Generator</a></li>
+            <li><a href="#pmo-gateways" class="docs-nav-link">7.2 PMO Sign-Off Gateways</a></li>
+            <li><a href="#business-continuity" class="docs-nav-link">7.3 Business Continuity (BCP)</a></li>
+            <li><a href="#admin-flow" class="docs-nav-link">7.4 RBAC &amp; System Settings</a></li>
+          </ul>
+        </div>
+      </aside>
+
+      <!-- Main Docs Content Area -->
+      <main class="docs-content">
+        
+        <!-- Header -->
+        <div style="margin-bottom: 3.5rem;">
+          <span class="badge-pill">Official Documentation</span>
+          <h1 style="font-size: 2.75rem; font-weight: 800; margin: 1rem 0; letter-spacing: -0.02em;">Workwayz User Manual</h1>
+          <p style="color: var(--text-secondary); font-size: 1.15rem; line-height: 1.7;">
+            Welcome to the comprehensive reference guide for Workwayz (formerly ProjectFlow). This manual details all operational flows from initial installation to executive portfolio governance.
+          </p>
+        </div>
+
+        <!-- Section 1 -->
+        <section class="doc-section" id="setup-wizard">
+          <h2>1. Setup Wizard</h2>
+          <p>
+            When opening Workwayz for the first time, you are presented with a streamlined 5-step guided wizard to configure core persistence, authentication, administrator credentials, and artificial intelligence providers.
+          </p>
+
+          <h3 id="db-auth">1.1 Database &amp; Authentication Providers</h3>
+          <p>
+            Workwayz is built to be completely cloud-agnostic and self-hostable. You can choose between:
+          </p>
+          <ul style="color: var(--text-secondary); margin-left: 1.5rem; margin-bottom: 1.25rem;">
+            <li><strong>Supabase (Cloud or Local Docker):</strong> Ideal for fully self-hosted, air-gapped, or privacy-first deployments. Uses Supabase Auth and PostgreSQL.</li>
+            <li><strong>Firebase (Google Cloud):</strong> Ideal for serverless setups using Firestore and Firebase Authentication.</li>
+          </ul>
+          
+          <div class="doc-figure" data-lightbox-src="assets/ui/setup-database-1.jpeg" data-lightbox-title="Setup Wizard - Step 1: Database Setup">
+            <img src="assets/ui/setup-database-1.jpeg" alt="Setup Wizard Database Screen">
+            <div class="doc-caption">
+              <span>Figure 1.1: Database configuration step (Firebase &amp; Supabase)</span>
+              <span>🔍 Click to expand</span>
+            </div>
+          </div>
+
+          <h3 id="super-admin">1.2 Super Admin Account Creation</h3>
+          <p>
+            Once database connectivity is established, Workwayz prompts you to create the initial master administrator (SuperAdmin) account. This account possesses full control over role permissions, billing rates, and system settings.
+          </p>
+
+          <div class="doc-figure" data-lightbox-src="assets/ui/setup-admin-1.jpeg" data-lightbox-title="Setup Wizard - Step 3: Super Admin User Creation">
+            <img src="assets/ui/setup-admin-1.jpeg" alt="Setup Wizard Admin Creation">
+            <div class="doc-caption">
+              <span>Figure 1.2: Master administrator creation screen</span>
+              <span>🔍 Click to expand</span>
+            </div>
+          </div>
+
+          <h3 id="ai-config">1.3 Pluggable AI Configuration</h3>
+          <p>
+            Workwayz features a modular AI adapter system. The platform will operate smoothly without AI, but enabling AI powers tech stack recommendations, horizontal effort ratios, automated risk analysis, and assumption generation.
+          </p>
+          <div class="doc-callout">
+            <strong>Supported AI Engines:</strong> Google Gemini, Anthropic Claude, OpenAI ChatGPT, and local self-hosted engines like <strong>Ollama</strong> or <strong>LM Studio</strong> for zero-data-leakage compliance.
+          </div>
+
+          <div class="doc-figure" data-lightbox-src="assets/ui/setup-ai-1.jpeg" data-lightbox-title="Setup Wizard - Step 4: AI Provider Configuration">
+            <img src="assets/ui/setup-ai-1.jpeg" alt="Setup Wizard AI Configuration">
+            <div class="doc-caption">
+              <span>Figure 1.3: Connecting cloud or local AI engine</span>
+              <span>🔍 Click to expand</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 2 -->
+        <section class="doc-section" id="signup-login">
+          <h2>2. User Lifecycle &amp; Resource Management</h2>
+          <p>
+            Manage team members, billable daily rates, internal cost bases, utilization heatmaps, and enterprise leave calendars across active projects.
+          </p>
+
+          <h3 id="user-pool">2.1 User Pools &amp; Enablement Workflow</h3>
+          <p>
+            New team members can self-register or be provisioned directly by an Administrator. Upon self-registration, accounts enter an <em>Approval Pending</em> state. Administrators are notified to enable the user and assign appropriate global billing and internal cost rates.
+          </p>
+
+          <div class="doc-figure" data-lightbox-src="assets/ui/resource-pool-1.jpeg" data-lightbox-title="Global User Pool & Access Levels">
+            <img src="assets/ui/resource-pool-1.jpeg" alt="Global User Pool">
+            <div class="doc-caption">
+              <span>Figure 2.1: Master User Pool with access levels, annual cost, and approval queue</span>
+              <span>🔍 Click to expand</span>
+            </div>
+          </div>
+
+          <h3 id="resource-utilization">2.2 Resource Utilization Heatmap &amp; Availability</h3>
+          <p>
+            Search any engineer or manager to inspect their active project allocations, monthly occupancy percentage, and exact date when they become available for upcoming initiatives.
+          </p>
+
+          <div class="doc-figure" data-lightbox-src="assets/ui/resource-utilization.jpeg" data-lightbox-title="Resource Utilization & Availability Calendar">
+            <img src="assets/ui/resource-utilization.jpeg" alt="Resource Utilization Calendar">
+            <div class="doc-caption">
+              <span>Figure 2.2: Individual availability outlook and daily occupancy heatmap</span>
+              <span>🔍 Click to expand</span>
+            </div>
+          </div>
+
+          <h3 id="leave-calendar">2.3 Multi-Project Leave Reflection &amp; Holidays</h3>
+          <p>
+            When a team member applies for leave in the central Leave Tracker, their unavailability is <strong>automatically reflected</strong> across every project and sprint they participate in. This eliminates double-booking and prevents unauthorized side-project commitments.
+          </p>
+
+          <div class="doc-figure" data-lightbox-src="assets/ui/leave-tracker.jpeg" data-lightbox-title="Central Leave Tracker">
+            <img src="assets/ui/leave-tracker.jpeg" alt="Leave Tracker">
+            <div class="doc-caption">
+              <span>Figure 2.3: Central Leave Tracker with global leave pool balance ledger</span>
+              <span>🔍 Click to expand</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 3 -->
+        <section class="doc-section" id="initial-estimation">
+          <h2>3. AI-Powered Initial Estimation Flow</h2>
+          <p>
+            Transform high-level client briefs into realistic, system-decomposed budget proposals in minutes using Workwayz's intelligent scoping engine.
+          </p>
+
+          <h3 id="ai-tech-stacks">3.1 AI Tech Stack Suggestions</h3>
+          <p>
+            Paste your project requirements into the project summary. Click <strong>Stack Suggest</strong>, and the AI evaluates the scope to recommend 3 complete architectural blueprints (e.g. Next.js Full-Stack Suite, AWS Serverless, Golang Microservices) with identified impacted subsystems:
+          </p>
+          <ul style="color: var(--text-secondary); margin-left: 1.5rem; margin-bottom: 1.25rem;">
+            <li>Frontend &amp; API Layer</li>
+            <li>Product &amp; User Database</li>
+            <li>Authentication &amp; Session Management</li>
+            <li>Third-party Integrations (Payments, ERP, etc.)</li>
+          </ul>
+
+          <div class="doc-figure" data-lightbox-src="assets/ui/ai-tech-stack-1.jpeg" data-lightbox-title="AI Tech Stack Architecture Recommendation">
+            <img src="assets/ui/ai-tech-stack-1.jpeg" alt="AI Tech Stack Suggestions">
+            <div class="doc-caption">
+              <span>Figure 3.1: AI evaluation of architectural stacks</span>
+              <span>🔍 Click to expand</span>
+            </div>
+          </div>
+
+          <h3 id="ai-horizontals">3.2 Horizontal Strategy &amp; Staffing Ratios</h3>
+          <p>
+            Click <strong>AI Horizontal Suggest</strong> to automatically balance delivery roles across Project Management, Quality Analysis, Business Analysis, Solution Architecture, UI/UX Design, and DevOps based on proven delivery archetypes (e.g. <em>Lean Agile Startup</em> vs. <em>Secure Enterprise Retail</em>).
+          </p>
+
+          <div class="doc-figure" data-lightbox-src="assets/ui/ai-horizontal-strategy-2.jpeg" data-lightbox-title="AI Horizontal Strategy Weightings">
+            <img src="assets/ui/ai-horizontal-strategy-2.jpeg" alt="AI Horizontal Strategy">
+            <div class="doc-caption">
+              <span>Figure 3.2: Role weight percentage breakdown</span>
+              <span>🔍 Click to expand</span>
+            </div>
+          </div>
+
+          <h3 id="ai-estimator">3.3 Automated Baseline Effort Estimator</h3>
+          <p>
+            With systems and horizontals defined, click <strong>AI Estimator</strong>. The engine computes global benchmark effort in man-days, applies daily billing rates, and calculates the total development and grand total cost for proposal sign-off.
+          </p>
+
+          <div class="doc-figure" data-lightbox-src="assets/ui/ai-estimator-results-3.jpeg" data-lightbox-title="AI Estimator Calculation Results">
+            <img src="assets/ui/ai-estimator-results-3.jpeg" alt="AI Estimator Results">
+            <div class="doc-caption">
+              <span>Figure 3.3: Finalized effort estimation table with daily billing rates</span>
+              <span>🔍 Click to expand</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 4 -->
+        <section class="doc-section" id="project-flow">
+          <h2>4. Project Execution &amp; Agile Engineering</h2>
+          <p>
+            Workwayz provides engineering leads and project managers with unified tools to deliver hybrid, multi-system initiatives on time.
+          </p>
+
+          <h3>4.1 Executive PM Command Dashboard</h3>
+          <p>
+            Tracks overall project trajectory across sprints and releases. Features:
+          </p>
+          <ul style="color: var(--text-secondary); margin-left: 1.5rem; margin-bottom: 1.25rem;">
+            <li><strong>Release &amp; Sprint Burn Progression:</strong> Visual donut completion meters.</li>
+            <li><strong>Workload Breakdown:</strong> Distinguishes feature/story development hours from bug-fixing rework hours. Heavy bug-fixing hours immediately flag architectural deficiencies.</li>
+            <li><strong>Resource Cost:</strong> Billed revenue vs actual internal resource expense.</li>
+            <li><strong>Kanban Swim Lane Dwell Time:</strong> Detects bottlenecks across handover phases.</li>
+          </ul>
+
+          <div class="doc-figure" data-lightbox-src="assets/ui/pm-dashboard.jpeg" data-lightbox-title="Executive PM Dashboard">
+            <img src="assets/ui/pm-dashboard.jpeg" alt="Executive PM Dashboard">
+            <div class="doc-caption">
+              <span>Figure 4.1: Flagship Project Management Dashboard</span>
+              <span>🔍 Click to expand</span>
+            </div>
+          </div>
+
+          <h3 id="capacity-worklog">4.2 Capacity Planning &amp; Daily Worklog</h3>
+          <p>
+            Forecast capacity sprint-by-sprint broken down by architectural component (e.g. Middleware API, Web Frontend, Auth, Database). Engineers log time daily against assigned items, capturing actuals for cost variance analysis.
+          </p>
+
+          <div class="doc-figure" data-lightbox-src="assets/ui/daily-worklog-1.jpeg" data-lightbox-title="Daily Engineering Worklog">
+            <img src="assets/ui/daily-worklog-1.jpeg" alt="Daily Worklog">
+            <div class="doc-caption">
+              <span>Figure 4.2: Daily time logging against tasks and activities</span>
+              <span>🔍 Click to expand</span>
+            </div>
+          </div>
+
+          <h3 id="release-trains">4.3 Enterprise Release Trains</h3>
+          <p>
+            For hybrid enterprise contracts where fixed budgets must align with corporate release trains, Workwayz provides an interactive timeline detailing Design Freeze, Development, Testing, and Code Freeze milestones.
+          </p>
+
+          <div class="doc-figure" data-lightbox-src="assets/ui/release-train-timeline.jpeg" data-lightbox-title="Enterprise Release Train & Stages">
+            <img src="assets/ui/release-train-timeline.jpeg" alt="Release Train Timeline">
+            <div class="doc-caption">
+              <span>Figure 4.3: Interactive release timeline with freeze milestones</span>
+              <span>🔍 Click to expand</span>
+            </div>
+          </div>
+
+          <h3 id="development-flow">4.4 Backlog &amp; Story Points &harr; Hours Bridge</h3>
+          <p>
+            Organize requirements by Epics, User Stories, Feature Changes, and Tasks. A built-in converter bridges story point velocity with billable hours to satisfy contractual reporting without slowing engineers down.
+          </p>
+
+          <div class="doc-figure" data-lightbox-src="assets/ui/product-backlog-1.jpeg" data-lightbox-title="Product Backlog Management">
+            <img src="assets/ui/product-backlog-1.jpeg" alt="Product Backlog">
+            <div class="doc-caption">
+              <span>Figure 4.4: Epics and User Story backlog view</span>
+              <span>🔍 Click to expand</span>
+            </div>
+          </div>
+
+          <h3 id="subtasks-grooming">4.5 Architectural Sub-Tasks &amp; Grooming Board</h3>
+          <p>
+            Tech leads can elaborate stories into system-specific sub-tasks (Frontend, Middleware, DB) and assign them in bulk. The <strong>Grooming Board</strong> visually displays sprint readiness: only stories with green checkmarks (all impacted systems estimated) may enter the sprint.
+          </p>
+
+          <div class="doc-figure" data-lightbox-src="assets/ui/grooming-board-1.jpeg" data-lightbox-title="Grooming Board with Readiness Checkmarks">
+            <img src="assets/ui/grooming-board-1.jpeg" alt="Grooming Board">
+            <div class="doc-caption">
+              <span>Figure 4.5: Grooming Board with utilized capacity limits and story readiness status</span>
+              <span>🔍 Click to expand</span>
+            </div>
+          </div>
+
+          <h3 id="kanban-board">4.6 Dual Perspective Kanban Board</h3>
+          <p>
+            Toggle between high-level User Story progression and granular Sub-Task execution. Filter by assignee to run focused daily standups.
+          </p>
+
+          <div class="doc-figure" data-lightbox-src="assets/ui/kanban-board-1.jpeg" data-lightbox-title="Workwayz Kanban Board">
+            <img src="assets/ui/kanban-board-1.jpeg" alt="Kanban Board">
+            <div class="doc-caption">
+              <span>Figure 4.6: Interactive Kanban board with sub-task toggle</span>
+              <span>🔍 Click to expand</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 5 -->
+        <section class="doc-section" id="testing-flow">
+          <h2>5. Quality Assurance &amp; Defect Leakage</h2>
+          <p>
+            Native QA management without expensive third-party plugins. Track test execution velocity, defect leakage across phases, and 100% story test coverage.
+          </p>
+
+          <h3 id="test-leakage">5.1 Testing Dashboard &amp; Defect Leakage Metrics</h3>
+          <p>
+            Monitors bug count across SIT (System Integration Testing), UAT (User Acceptance Testing), and Production. Visual charts reveal whether bugs are caught early or escaping to users.
+          </p>
+
+          <div class="doc-figure" data-lightbox-src="assets/ui/testing-dashboard-1.jpeg" data-lightbox-title="Quality Assurance Dashboard">
+            <img src="assets/ui/testing-dashboard-1.jpeg" alt="Testing Dashboard">
+            <div class="doc-caption">
+              <span>Figure 5.1: Test execution summary, bug severity breakdown, and daily test trends</span>
+              <span>🔍 Click to expand</span>
+            </div>
+          </div>
+
+          <h3 id="defect-triage">5.2 Dedicated Defect Triage Kanban</h3>
+          <p>
+            Manage defects independently through a structured triage flow: <em>In Triage &rarr; Defect Backlog &rarr; In Progress &rarr; Retest &rarr; Closed</em>. Defects link directly to original user stories for complete traceability.
+          </p>
+
+          <div class="doc-figure" data-lightbox-src="assets/ui/defect-tracker-kanban.jpeg" data-lightbox-title="Defect Triage Board">
+            <img src="assets/ui/defect-tracker-kanban.jpeg" alt="Defect Tracker Kanban">
+            <div class="doc-caption">
+              <span>Figure 5.2: Defect triage board filtered by sprint and test plan</span>
+              <span>🔍 Click to expand</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 6 -->
+        <section class="doc-section" id="financial-flow">
+          <h2>6. Project Financials, Margins &amp; Invoicing</h2>
+          <p>
+            Seamlessly calculate profitability across Fixed Bid and Time &amp; Material contracting models.
+          </p>
+
+          <h3 id="fixed-bid-billing">6.1 Fixed Bid (FB) Billing &amp; Milestones</h3>
+          <p>
+            Tracks resource billing rates against actual cost rates to calculate net profit. Captures fixed costs (GIT licenses, cloud hosting, setup fees) and monitors milestone payment history with audit logging.
+          </p>
+
+          <div class="doc-figure" data-lightbox-src="assets/ui/fixed-bid-billing-3.jpeg" data-lightbox-title="Fixed Bid Billing Breakdown">
+            <img src="assets/ui/fixed-bid-billing-3.jpeg" alt="Fixed Bid Invoicing">
+            <div class="doc-caption">
+              <span>Figure 6.1: Fixed bid billing invoice breakdown and fixed cost line items</span>
+              <span>🔍 Click to expand</span>
+            </div>
+          </div>
+
+          <h3 id="tnm-billing">6.2 Time &amp; Material (T&amp;M) Monthly Invoicing</h3>
+          <p>
+            Generates monthly invoices derived from active working days, deducting individual Loss of Pay (LOP) days and adding billable overtime.
+          </p>
+
+          <div class="doc-figure" data-lightbox-src="assets/ui/time-and-material-billing-2.jpeg" data-lightbox-title="Time & Material Monthly Billing">
+            <img src="assets/ui/time-and-material-billing-2.jpeg" alt="Time and Material Billing">
+            <div class="doc-caption">
+              <span>Figure 6.2: Monthly T&amp;M ledger with LOP deductions and resource profit</span>
+              <span>🔍 Click to expand</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 7 -->
+        <section class="doc-section" id="governance-flow">
+          <h2>7. RAID Governance, PMO &amp; Business Continuity</h2>
+          <p>
+            Keep enterprise portfolios compliant, insured, and resilient against turnover.
+          </p>
+
+          <h3>7.1 AI RAID Intelligence</h3>
+          <p>
+            Click <strong>AI Risk Generator</strong>, <strong>AI Gen Assumptions</strong>, or <strong>AI Gen Dependencies</strong> to automatically extract risks and third-party bottlenecks from project specifications.
+          </p>
+
+          <div class="doc-figure" data-lightbox-src="assets/ui/raid-dashboard-1.jpeg" data-lightbox-title="RAID Governance Dashboard">
+            <img src="assets/ui/raid-dashboard-1.jpeg" alt="RAID Dashboard">
+            <div class="doc-caption">
+              <span>Figure 7.1: RAID status dashboard (Risks, Assumptions, Issues, Dependencies)</span>
+              <span>🔍 Click to expand</span>
+            </div>
+          </div>
+
+          <h3 id="pmo-gateways">7.2 PMO Document Verification Gateways</h3>
+          <p>
+            Centralizes links to critical governance documents (SOW, QA Sign-Off, HLD/LLD, Architecture Approvals). Enforces corporate policy: SOW required to commence coding, QA Sign-Off strictly mandatory before production promotion.
+          </p>
+
+          <div class="doc-figure" data-lightbox-src="assets/ui/pmo-documents-gateways.jpeg" data-lightbox-title="PMO Gateways & Document Verification">
+            <img src="assets/ui/pmo-documents-gateways.jpeg" alt="PMO Document Register">
+            <div class="doc-caption">
+              <span>Figure 7.2: PMO verification registry</span>
+              <span>🔍 Click to expand</span>
+            </div>
+          </div>
+
+          <h3 id="business-continuity">7.3 Business Continuity Plan (BCP) Vault</h3>
+          <p>
+            Maintains environment URLs, SSL/domain expiry dates, git repositories, and designated backup resources to safeguard against developer attrition or emergency incidents.
+          </p>
+
+          <div class="doc-figure" data-lightbox-src="assets/ui/business-continuity-bcp-1.jpeg" data-lightbox-title="Business Continuity Register">
+            <img src="assets/ui/business-continuity-bcp-1.jpeg" alt="BCP Vault">
+            <div class="doc-caption">
+              <span>Figure 7.3: Business Continuity Register for environments and repositories</span>
+              <span>🔍 Click to expand</span>
+            </div>
+          </div>
+
+          <h3 id="admin-flow">7.4 Enterprise Role-Based Access Control (RBAC)</h3>
+          <p>
+            Configure granular page-level and CRUD-level permissions across 6 system roles: <em>Administrator, Senior Management, Project Manager, Tech Lead, Team Member,</em> and <em>PMO Auditor</em>.
+          </p>
+
+          <div class="doc-figure" data-lightbox-src="assets/ui/rbac-page-access.jpeg" data-lightbox-title="RBAC Page-Level Access Matrix">
+            <img src="assets/ui/rbac-page-access.jpeg" alt="RBAC Matrix">
+            <div class="doc-caption">
+              <span>Figure 7.4: Granular role access permissions matrix</span>
+              <span>🔍 Click to expand</span>
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox-modal" id="lightbox-modal" role="dialog" aria-modal="true">
+    <div class="lightbox-content-box" onclick="event.stopPropagation()">
+      <div class="lightbox-header">
+        <span class="lightbox-title" id="lightbox-title">Screenshot Preview</span>
+        <button class="lightbox-close-btn" id="lightbox-close-btn" title="Close Preview">&times;</button>
+      </div>
+      <div class="lightbox-img-wrapper">
+        <img src="" id="lightbox-img" alt="Zoomed screenshot">
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>&copy; 2026 Workwayz.in. Project &amp; Portfolio Management Operating System.</div>
+        <div style="display:flex; gap: 1.5rem;">
+          <a href="index.html" class="footer-link">Home</a>
+          <a href="https://github.com/ramancnair/Workwayz" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub</a>
+          <a href="#setup-wizard" class="footer-link">Back to Top &uarr;</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

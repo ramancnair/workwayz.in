@@ -1,0 +1,18 @@
+{
+  "name": "workwayz-website",
+  "version": "1.0.0",
+  "description": "Showcase website and documentation for Workwayz.in",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "workwayz",
+    "ppm",
+    "project-management",
+    "portfolio-management"
+  ],
+  "author": "Workwayz",
+  "license": "MIT"
+}
