@@ -7,7 +7,7 @@ Official marketing showcase, product portal, and interactive **Version 8.0.2 Use
 ## 🌟 What's Included
 
 - **[`index.html`](./index.html)**: Modern SaaS landing page featuring:
-  - Dynamic Quickstart terminal switcher (`npx workwayz@latest`, `npm install -g workwayz`, `docker run ... ghcr.io/ramancnair/workwayz:latest`, custom `--prefix` / `--data-dir`, and `git clone`)
+  - Dynamic Quickstart terminal switcher (`npx workwayz@latest`, `npm install -g workwayz`, `docker run -d -p 3000:3000 -v workwayz-data:/app/data --name workwayz-web --restart always workwayz/workwayz:latest`, custom `--prefix` / `--data-dir`, and `git clone`)
   - **Multi-Tier AI Capabilities** showcase:
     1. 8 One-Click Button-Based AI Generators & Assistants
     2. Executive & Project PromptBoards (`/fp-portfolio-dash` & `/project-details/fp-pm-dash`) with Scheduled AI Cron Jobs
@@ -50,8 +50,8 @@ Then open `http://localhost:3000` (or the port printed in the terminal).
 | :--- | :--- |
 | **Website** | `https://workwayz.in` |
 | **GitHub Repository** | `https://github.com/ramancnair/Workwayz` |
+| **Docker Hub** | `https://hub.docker.com/r/workwayz/workwayz` (`workwayz/workwayz:latest`) |
 | **NPM Package** | `npx workwayz@latest` (`https://www.npmjs.com/package/workwayz`) |
-| **Docker Image** | `ghcr.io/ramancnair/workwayz:latest` |
 
 ---
 

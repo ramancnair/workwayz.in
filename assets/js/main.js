@@ -29,8 +29,8 @@ const terminalData = {
 <span class="prompt-symbol">→</span> Workwayz is live at <a href="http://localhost:3000" target="_blank" style="color:#6ee7b7">http://localhost:3000</a>`
   },
   docker: {
-    command: 'docker run -d -p 3000:3000 -v workwayz-data:/app/data --name workwayz-web --restart always ghcr.io/ramancnair/workwayz:latest',
-    output: `<span class="success">✓ Pulling ghcr.io/ramancnair/workwayz:latest production container...</span><br>
+    command: 'docker run -d -p 3000:3000 -v workwayz-data:/app/data --name workwayz-web --restart always workwayz/workwayz:latest',
+    output: `<span class="success">✓ Pulling workwayz/workwayz:latest production container from Docker Hub...</span><br>
 <span class="success">✓ Mounted persistent volume workwayz-data:/app/data...</span><br>
 <span class="prompt-symbol">→</span> Container <span style="color:#6ee7b7">workwayz-web</span> running on <a href="http://localhost:3000" target="_blank" style="color:#6ee7b7">http://localhost:3000</a>`
   },
