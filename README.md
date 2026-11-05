@@ -1,93 +1,58 @@
-# Workwayz.in Website & Showcase Portal
+# Workwayz.in Website & Interactive Documentation Portal
 
-Official marketing showcase, product portal, and interactive user documentation for **Workwayz** — the open, intelligent project and portfolio management operating system for engineering teams.
+Official marketing showcase, product portal, and interactive **Version 8.0.2 User Manual** for **Workwayz** — the all-in-one AI-powered project and portfolio management platform for small & medium businesses and engineering teams.
 
 ---
 
 ## 🌟 What's Included
 
-- **`index.html`**: The high-converting, modern SaaS landing page featuring:
-  - Dynamic interactive Quickstart terminal switcher (`npx`, `docker`, `docker compose`, `git clone`)
-  - Real-time product mockup showcase embedding actual high-resolution UI views
-  - Problem & Solution engineering comparison (Legacy PPM vs Issue Trackers vs Workwayz)
-  - Interactive Feature Tabs (AI Scoping & Estimation, Architectural Agile, Fixed-Bid & T&M Financials, QA Governance & Defect Leakage, RAID & BCP Vault, Resource Availability)
-  - Head-to-Head Comparison Matrix (Workwayz vs Jira vs Linear vs ClickUp vs Spreadsheets)
-  - 3-Minute Setup Wizard Visual Guide
-  - Full-resolution screenshot lightbox dialog
-  - Interactive FAQ Accordion
-  - Responsive mobile navigation drawer
-- **`docs.html`**: Online interactive reference manual covering all 6 core modules from the 57-page user manual:
-  - 1. Setup Wizard (Supabase, Firebase, SuperAdmin, Pluggable AI: Gemini, Claude, ChatGPT, Ollama)
-  - 2. User Lifecycle, Resource Pools, Utilization Heatmaps & Leave Reflections
-  - 3. AI Scoping (Tech Stack Blueprints, Agile Horizontals, Benchmark Effort Estimator)
-  - 4. Project Execution (PM Dashboard, Capacity Planning, Release Trains, Story Point-to-Hour Converter, Sub-Tasks Matrix, Grooming Board, Dual Kanban)
-  - 5. QA & Testing (SIT/UAT/Prod Test Plans, Defect Leakage & Story Coverage, Defect Triage Board)
-  - 6. Financials & Billing (Fixed-Bid Milestones & Invoicing, Time & Material Monthly Ledgers)
-  - 7. Governance (RAID Dashboard, PMO Document Gateways, BCP Disaster Recovery Vault, 6-Role RBAC Matrix, 30-Day Trash Restoration)
+- **[`index.html`](./index.html)**: Modern SaaS landing page featuring:
+  - Dynamic Quickstart terminal switcher (`npx workwayz@latest`, `npm install -g workwayz`, `docker run ... ghcr.io/ramancnair/workwayz:latest`, custom `--prefix` / `--data-dir`, and `git clone`)
+  - **Multi-Tier AI Capabilities** showcase:
+    1. 8 One-Click Button-Based AI Generators & Assistants
+    2. Executive & Project PromptBoards (`/fp-portfolio-dash` & `/project-details/fp-pm-dash`) with Scheduled AI Cron Jobs
+    3. **WayFinder** Conversational Workspace Agent equipped with 201 specialized tools via hybrid RAG retrieval and live dependency graphs
+  - Interactive 7-Tab Lifecycle Showcase (PromptBoards & WayFinder, Initial Estimation Studio, Agile & 7 PBI Types / Escaped Defects, QA Suite & Bug Tracker, Portfolio & PMO Billing, RAID & BCP Vault, Consolidated Resources / Global Worklog / Leave Synchronization)
+  - Problem & Solution Contrast + Head-to-Head Comparison Matrix (Workwayz v8.0.2 vs Jira vs Linear vs ClickUp vs Excel/Sheets)
+  - 5-Step In-App Setup Wizard & Zero-Config Local Embedded Database / Supabase / Firebase deployment guide
+  - Full-resolution screenshot lightbox modal & FAQ accordion
+- **[`docs.html`](./docs.html)**: Complete online **Version 8.0.2 User Manual & Role-Based Operational Guide** (Author: Raman C Nair) with live sidebar filter, scroll-spy navigation, and all **97 high-resolution v8.0.2 UI figures**:
+  - **1. Setup Wizard** (`1.1 Database Setup`, `1.2 Authentication Setup`, `1.3 Super Admin User Creation`, `1.4 AI Configuration Setup`, `1.5 Finish Setup`)
+  - **2. Signup, Login & Account Management** (`2.1 Login Portal`, `2.2 Self-Service Signup`, `2.3 First-Login Password Reset & Pending Enablement`, `2.4 Profile & Account Settings`)
+  - **3. Access Levels & Role-Based Workspace Guide** (Complete 7-Level RBAC Matrix + workspace views for Super Admin, Administrator, Senior Management, Project Manager, Lead, Team Member, and PMO)
+  - **4. Portfolio Flow** (`4.1 My Projects`, `4.2 Global Worklog`, `4.3 Leave Tracker`, `4.4 Messages`, `4.5 Project Home`, `4.6 Portfolio Dashboard`, `4.7 Portfolio PromptBoard`, `4.8 Estimation Variance`, `4.9 Defect Containment`, `4.10 Portfolio Billing Dashboard`, `4.11 Billing Rate & Rate Cards`, `4.12 User List`, `4.13 Resource Utilization`, `4.14 Company Holidays`, `4.15 Leave Policy & Quotas`)
+  - **5. Initial Estimation Flow** (`5.1 Specifications, Stack Suggest & Impacted Systems`, `5.2 Horizontals, AI Estimator & Confirming Estimation`, `5.3 Initial Estimation — Project Status`)
+  - **6. Project Flow** (`6.1 PM Dashboard`, `6.2 Project PromptBoard`, `6.3 Project Status`, `6.4 Specifications & Environments`, `6.5 Project Releases, Stages & Milestones`, `6.6 Development Dashboard`, `6.7 Product Backlog, Add Requirement & Escaped Defects`, `6.8 Grooming Board`, `6.9 Kanban Board`, `6.10 Sub-Tasks`, `6.11 Test Dashboard`, `6.12 Test Cases, Test Cycles & Test Executions`, `6.13 Testing — Bugs`, `6.14 Testing — Bug Tracker`, `6.15 Project Resources & Capacity Planning`, `6.16 Resource Workload`, `6.17 Leave Calendar, Leave Summary & Company Holidays`, `6.18 Governance — RAID Dashboard, Risks, Assumptions, Issues & Dependencies`, `6.19 PMO — Project Documents & Governance Gates`, `6.20 PMO — Fixed Bid (FB) Billing & Payment Milestones`, `6.21 PMO — Time & Material (TnM) Billing & Payment Milestones`, `6.22 PMO — Business Continuity`, `6.23 Project Settings & Project Trash`)
+  - **7. Admin Flow** (`7.1 Access Settings (Page & CRUD Matrices)`, `7.2 Database`, `7.3 Authentication`, `7.4 AI Config`, `7.5 Inactive Projects & Archiving`, `7.6 Cron Jobs Management`, `7.7 Test Data Studio`, `7.8 Portfolio Trash`)
 - **`assets/`**:
-  - `logo-horizontal.png` & `logo-horizontal-white.png`: Official Workwayz logo variants
-  - `logo-icon.png` & `logo-symbol.png`: Standalone brand marks
-  - `favicon.ico`, `favicon-32x32.png`, `apple-touch-icon.png`: Retina browser icons
-  - `ui/`: 70+ crystal-clear, extracted high-definition UI screenshots of Workwayz
-- **`CNAME`**: Configured for `workwayz.in` for instant one-click GitHub Pages deployment.
+  - Brand logos, favicons, and `assets/ui/` containing all 97 extracted v8.0.2 PNG screenshots alongside legacy UI images.
+- **`CNAME`**: Configured for `workwayz.in`.
 
 ---
 
 ## 🚀 Local Development & Preview
 
-You can preview the site immediately with any local HTTP server:
-
 ```bash
-# Option 1: Python built-in server
-python -m http.server 8080
+# Option 1: Built-in Node preview server
+npm start
 
-# Option 2: Node / NPX
+# Option 2: NPX serve
 npx serve .
 ```
 
-Then visit: `http://localhost:8080` (or the port specified).
+Then open `http://localhost:3000` (or the port printed in the terminal).
 
 ---
 
-## 🔗 Customizing Your Links
+## 🔗 Official Links
 
-When you are ready to publish your app to GitHub, Docker Hub, and NPM, simply update the URLs in `index.html` and `docs.html`:
-
-| Service | Current Placeholder | Update In |
-| :--- | :--- | :--- |
-| **GitHub Repo** | `https://github.com/ramancnair/Workwayz` | `index.html` (lines 48, 86, 280, 420) & `docs.html` |
-| **Docker Hub** | `workwayz/app:latest` | `assets/js/main.js` (line 21) & `index.html` |
-| **NPM Package** | `npx workwayz@latest` | `assets/js/main.js` (line 15) & `index.html` |
-| **Support / Email** | `contact@workwayz.in` | Footer section |
+| Service | URL / Command |
+| :--- | :--- |
+| **Website** | `https://workwayz.in` |
+| **GitHub Repository** | `https://github.com/ramancnair/Workwayz` |
+| **NPM Package** | `npx workwayz@latest` (`https://www.npmjs.com/package/workwayz`) |
+| **Docker Image** | `ghcr.io/ramancnair/workwayz:latest` |
 
 ---
 
-## 🌐 Deploying to Workwayz.in
-
-### Method 1: GitHub Pages (Recommended & Free)
-1. Initialize git in this directory:
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial Workwayz website launch"
-   ```
-2. Create a repository on GitHub (e.g. `your-username/workwayz.in` or as the `gh-pages` branch of your main repo).
-3. Push to GitHub and go to **Settings &rarr; Pages**.
-4. Set source to `main` branch.
-5. In your domain registrar (where you bought `Workwayz.in`), add the DNS records for GitHub Pages:
-   - **A Records** pointing to:
-     - `185.199.108.153`
-     - `185.199.109.153`
-     - `185.199.110.153`
-     - `185.199.111.153`
-   - **CNAME Record**: `www` &rarr; `<your-github-username>.github.io`
-
-### Method 2: Vercel / Cloudflare Pages / Netlify
-1. Connect your repository to Vercel or Cloudflare Pages.
-2. Framework Preset: **Other / Static HTML**.
-3. Output Directory: `.` (root).
-4. Add custom domain `workwayz.in`.
-
----
-
-&copy; 2026 Workwayz. All rights reserved.
+&copy; 2026 Workwayz. Distributed under the Apache 2.0 License.

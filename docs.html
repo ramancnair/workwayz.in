@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Workwayz | Comprehensive User Manual &amp; Architecture Guide</title>
+  <title>Workwayz User Manual (v8.0.2) | Role-Based Operational Guide</title>
   
-  <meta name="description" content="Complete documentation and user manual for Workwayz (formerly ProjectFlow). Setup wizard, AI estimation, agile execution, QA testing, RAID governance, and financial billing.">
+  <meta name="description" content="Official Workwayz v8.0.2 User Manual & Role-Based Operational Guide by Raman C Nair. Covers Setup Wizard, 7-Level RBAC, Portfolio Flow, Initial Estimation, Project Lifecycle Flow, Two-Tier Bug/Escaped Defect Architecture, and Admin Flow.">
   
   <!-- Favicons -->
   <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -26,26 +26,49 @@
   <header class="navbar">
     <div class="container">
       <a href="index.html" class="brand-logo" title="Workwayz Home">
-        <img src="assets/logo-horizontal-white.png" alt="Workwayz Logo" height="38">
+        <img src="assets/logo-horizontal-white.png" alt="Workwayz Logo" height="36">
       </a>
 
       <ul class="nav-links">
-        <li><a href="index.html" class="nav-link">&larr; Back to Main Site</a></li>
-        <li><a href="#setup-wizard" class="nav-link">Setup</a></li>
-        <li><a href="#initial-estimation" class="nav-link">AI Estimation</a></li>
-        <li><a href="#project-flow" class="nav-link">Project Flow</a></li>
-        <li><a href="#financial-flow" class="nav-link">Billing</a></li>
-        <li><a href="#governance-flow" class="nav-link">Governance</a></li>
+        <li><a href="index.html" class="nav-link">&larr; Home</a></li>
+        <li><a href="#setup-wizard" class="nav-link">1. Setup</a></li>
+        <li><a href="#signup-login" class="nav-link">2. Auth</a></li>
+        <li><a href="#access-levels" class="nav-link">3. Roles</a></li>
+        <li><a href="#portfolio-flow" class="nav-link">4. Portfolio</a></li>
+        <li><a href="#initial-estimation" class="nav-link">5. Estimation</a></li>
+        <li><a href="#project-flow" class="nav-link">6. Projects</a></li>
+        <li><a href="#admin-flow" class="nav-link">7. Admin</a></li>
       </ul>
 
       <div class="nav-actions">
-        <a href="https://github.com/ramancnair/Workwayz" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+        <a href="assets/docs/Workwayz_User_Manual.pdf" download="Workwayz_User_Manual.pdf" class="btn btn-primary btn-sm" title="Download Official 57-Page PDF Manual">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          <span>Download PDF</span>
+        </a>
+        <a href="https://github.com/ramancnair/Workwayz" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" title="View Source on GitHub">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
           <span>GitHub</span>
         </a>
+        <button class="mobile-toggle" id="mobile-toggle-btn" aria-label="Toggle navigation">&#9776;</button>
       </div>
     </div>
   </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-drawer" id="mobile-nav-drawer">
+    <a href="index.html" class="nav-link">&larr; Back to Home</a>
+    <a href="#setup-wizard" class="nav-link">1. Setup Wizard</a>
+    <a href="#signup-login" class="nav-link">2. Signup, Login &amp; Account</a>
+    <a href="#access-levels" class="nav-link">3. Roles &amp; Workspaces (RBAC)</a>
+    <a href="#portfolio-flow" class="nav-link">4. Portfolio Flow</a>
+    <a href="#initial-estimation" class="nav-link">5. Initial Estimation</a>
+    <a href="#project-flow" class="nav-link">6. Project Lifecycle Flow</a>
+    <a href="#admin-flow" class="nav-link">7. Admin Flow &amp; Test Data</a>
+    <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.75rem;">
+      <a href="assets/docs/Workwayz_User_Manual.pdf" download="Workwayz_User_Manual.pdf" class="btn btn-primary">Download PDF Manual (57 Pages)</a>
+      <a href="https://github.com/ramancnair/Workwayz" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">View on GitHub</a>
+    </div>
+  </div>
 
   <!-- Docs Container -->
   <div class="container">
@@ -53,73 +76,119 @@
       
       <!-- Sticky Sidebar -->
       <aside class="docs-sidebar">
+        <div class="docs-search-box">
+          <input type="text" id="docs-search-input" class="docs-search-input" placeholder="Filter 55 manual sections (e.g. bug, cron)...">
+        </div>
+        <div style="margin-bottom: 1.25rem;">
+          <a href="assets/docs/Workwayz_User_Manual.pdf" download="Workwayz_User_Manual.pdf" class="btn btn-outline btn-sm" style="width:100%; display:flex; justify-content:center; gap:0.5rem; font-size:0.8rem;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            <span>Download PDF Manual (11 MB)</span>
+          </a>
+        </div>
+
         <div class="docs-nav-group">
-          <div class="docs-nav-heading">1. Getting Started</div>
+          <div class="docs-nav-heading"><a href="#setup-wizard">1. Setup Wizard</a></div>
           <ul class="docs-nav-list">
-            <li><a href="#setup-wizard" class="docs-nav-link">1.1 Setup Wizard</a></li>
-            <li><a href="#db-auth" class="docs-nav-link">1.2 Database &amp; Auth</a></li>
-            <li><a href="#super-admin" class="docs-nav-link">1.3 Super Admin Creation</a></li>
-            <li><a href="#ai-config" class="docs-nav-link">1.4 AI Engine Setup</a></li>
+            <li><a href="#db-auth" class="docs-nav-link">1.1 Database Setup</a></li>
+            <li><a href="#sec-1-2" class="docs-nav-link">1.2 Authentication Setup</a></li>
+            <li><a href="#super-admin" class="docs-nav-link">1.3 Super Admin User Creation</a></li>
+            <li><a href="#ai-config" class="docs-nav-link">1.4 AI Configuration Setup</a></li>
+            <li><a href="#sec-1-5" class="docs-nav-link">1.5 Finish Setup</a></li>
           </ul>
         </div>
 
         <div class="docs-nav-group">
-          <div class="docs-nav-heading">2. User Access &amp; Pools</div>
+          <div class="docs-nav-heading"><a href="#signup-login">2. Signup, Login &amp; Account Management</a></div>
           <ul class="docs-nav-list">
-            <li><a href="#signup-login" class="docs-nav-link">2.1 Signup &amp; Enablement</a></li>
-            <li><a href="#user-pool" class="docs-nav-link">2.2 Resource Pools &amp; Rates</a></li>
-            <li><a href="#resource-utilization" class="docs-nav-link">2.3 Heatmaps &amp; Utilization</a></li>
-            <li><a href="#leave-calendar" class="docs-nav-link">2.4 Leaves &amp; Holidays</a></li>
+            <li><a href="#sec-2-1" class="docs-nav-link">2.1 Login Portal (Home)</a></li>
+            <li><a href="#sec-2-2" class="docs-nav-link">2.2 Self-Service Signup</a></li>
+            <li><a href="#sec-2-3" class="docs-nav-link">2.3 First-Login Password Reset &amp; Pending Enablement</a></li>
+            <li><a href="#sec-2-4" class="docs-nav-link">2.4 Profile &amp; Account Settings</a></li>
           </ul>
         </div>
 
         <div class="docs-nav-group">
-          <div class="docs-nav-heading">3. AI Scoping &amp; Pitch</div>
+          <div class="docs-nav-heading"><a href="#access-levels">3. Access Levels &amp; Role-Based Workspace Guide</a></div>
           <ul class="docs-nav-list">
-            <li><a href="#initial-estimation" class="docs-nav-link">3.1 Initial Estimation Flow</a></li>
-            <li><a href="#ai-tech-stacks" class="docs-nav-link">3.2 AI Tech Stack Suggestion</a></li>
-            <li><a href="#ai-horizontals" class="docs-nav-link">3.3 Horizontal Staffing Ratios</a></li>
-            <li><a href="#ai-estimator" class="docs-nav-link">3.4 Benchmark Effort Calculation</a></li>
+            <li><a href="#sec-3-1" class="docs-nav-link">3.1 Super Admin &amp; Administrator Workspace View</a></li>
+            <li><a href="#sec-3-2" class="docs-nav-link">3.2 Senior Management Workspace View</a></li>
+            <li><a href="#sec-3-3" class="docs-nav-link">3.3 Project Manager Workspace View</a></li>
+            <li><a href="#sec-3-4" class="docs-nav-link">3.4 Lead Workspace View</a></li>
+            <li><a href="#sec-3-5" class="docs-nav-link">3.5 Team Member Workspace View</a></li>
+            <li><a href="#sec-3-6" class="docs-nav-link">3.6 PMO Workspace View</a></li>
           </ul>
         </div>
 
         <div class="docs-nav-group">
-          <div class="docs-nav-heading">4. Project Delivery</div>
+          <div class="docs-nav-heading"><a href="#portfolio-flow">4. Portfolio Flow</a></div>
           <ul class="docs-nav-list">
-            <li><a href="#project-flow" class="docs-nav-link">4.1 PM Command Dashboard</a></li>
-            <li><a href="#capacity-worklog" class="docs-nav-link">4.2 Capacity &amp; Daily Worklog</a></li>
-            <li><a href="#release-trains" class="docs-nav-link">4.3 Enterprise Release Trains</a></li>
-            <li><a href="#development-flow" class="docs-nav-link">4.4 Backlog &amp; Points-to-Hours</a></li>
-            <li><a href="#subtasks-grooming" class="docs-nav-link">4.5 Sub-Tasks &amp; Grooming</a></li>
-            <li><a href="#kanban-board" class="docs-nav-link">4.6 Dual Kanban Board</a></li>
+            <li><a href="#sec-4-1" class="docs-nav-link">4.1 My Workspace — My Projects</a></li>
+            <li><a href="#sec-4-2" class="docs-nav-link">4.2 My Workspace — Global Worklog</a></li>
+            <li><a href="#sec-4-3" class="docs-nav-link">4.3 My Workspace — Leave Tracker</a></li>
+            <li><a href="#sec-4-4" class="docs-nav-link">4.4 My Workspace — Messages</a></li>
+            <li><a href="#sec-4-5" class="docs-nav-link">4.5 Projects — Project Home</a></li>
+            <li><a href="#sec-4-6" class="docs-nav-link">4.6 Projects — Portfolio Dashboard</a></li>
+            <li><a href="#portfolio-promptboard" class="docs-nav-link">4.7 Projects — Portfolio PromptBoard</a></li>
+            <li><a href="#quality-estimations" class="docs-nav-link">4.8 Quality — Estimation Variance</a></li>
+            <li><a href="#quality-defects" class="docs-nav-link">4.9 Quality — Defect Containment</a></li>
+            <li><a href="#portfolio-billing" class="docs-nav-link">4.10 Billing — Portfolio Billing Dashboard</a></li>
+            <li><a href="#sec-4-11" class="docs-nav-link">4.11 Billing — Billing Rate &amp; Rate Cards</a></li>
+            <li><a href="#user-pool" class="docs-nav-link">4.12 Users — User List</a></li>
+            <li><a href="#users-utilization" class="docs-nav-link">4.13 Users — Resource Utilization</a></li>
+            <li><a href="#leave-calendar" class="docs-nav-link">4.14 Time Off — Company Holidays</a></li>
+            <li><a href="#sec-4-15" class="docs-nav-link">4.15 Time Off — Leave Policy &amp; Quotas</a></li>
           </ul>
         </div>
 
         <div class="docs-nav-group">
-          <div class="docs-nav-heading">5. QA &amp; Testing</div>
+          <div class="docs-nav-heading"><a href="#initial-estimation">5. Initial Estimation Flow</a></div>
           <ul class="docs-nav-list">
-            <li><a href="#testing-flow" class="docs-nav-link">5.1 Testing Dashboard &amp; Trends</a></li>
-            <li><a href="#test-leakage" class="docs-nav-link">5.2 SIT / UAT / Prod Leakage</a></li>
-            <li><a href="#defect-triage" class="docs-nav-link">5.3 Defect Triage Pipeline</a></li>
+            <li><a href="#ai-tech-stacks" class="docs-nav-link">5.1 Specifications, Stack Suggest &amp; Impacted Systems</a></li>
+            <li><a href="#ai-horizontals" class="docs-nav-link">5.2 Horizontals, AI Estimator &amp; Confirming Estimation</a></li>
+            <li><a href="#sec-5-3" class="docs-nav-link">5.3 Initial Estimation — Project Status</a></li>
           </ul>
         </div>
 
         <div class="docs-nav-group">
-          <div class="docs-nav-heading">6. Financials &amp; Invoicing</div>
+          <div class="docs-nav-heading"><a href="#project-flow">6. Project Flow</a></div>
           <ul class="docs-nav-list">
-            <li><a href="#fixed-bid-billing" class="docs-nav-link">6.1 Fixed Bid (FB) &amp; Milestones</a></li>
-            <li><a href="#tnm-billing" class="docs-nav-link">6.2 Time &amp; Material (T&amp;M)</a></li>
-            <li><a href="#financial-flow" class="docs-nav-link">6.3 Cash Realization &amp; Margins</a></li>
+            <li><a href="#pm-dashboard" class="docs-nav-link">6.1 Project Details — PM Dashboard</a></li>
+            <li><a href="#project-promptboard" class="docs-nav-link">6.2 Project Details — Project PromptBoard</a></li>
+            <li><a href="#sec-6-3" class="docs-nav-link">6.3 Project Details — Project Status</a></li>
+            <li><a href="#sec-6-4" class="docs-nav-link">6.4 Project Details — Specifications &amp; Environments</a></li>
+            <li><a href="#release-trains" class="docs-nav-link">6.5 Project Details — Project Releases, Stages &amp; Milestones</a></li>
+            <li><a href="#sec-6-6" class="docs-nav-link">6.6 Development — Development Dashboard</a></li>
+            <li><a href="#development-backlog" class="docs-nav-link">6.7 Development — Product Backlog, Add Requirement &amp; Escaped Defects</a></li>
+            <li><a href="#subtasks-grooming" class="docs-nav-link">6.8 Development — Grooming Board</a></li>
+            <li><a href="#kanban-board" class="docs-nav-link">6.9 Development — Kanban Board</a></li>
+            <li><a href="#sec-6-10" class="docs-nav-link">6.10 Development — Sub-Tasks</a></li>
+            <li><a href="#testing-dashboard" class="docs-nav-link">6.11 Testing — Test Dashboard</a></li>
+            <li><a href="#sec-6-12" class="docs-nav-link">6.12 Testing — Test Cases, Test Cycles &amp; Test Executions</a></li>
+            <li><a href="#testing-bugs" class="docs-nav-link">6.13 Testing — Bugs</a></li>
+            <li><a href="#defect-triage" class="docs-nav-link">6.14 Testing — Bug Tracker</a></li>
+            <li><a href="#project-resources" class="docs-nav-link">6.15 Resources — Project Resources &amp; Capacity Planning</a></li>
+            <li><a href="#sec-6-16" class="docs-nav-link">6.16 Resources — Resource Workload</a></li>
+            <li><a href="#sec-6-17" class="docs-nav-link">6.17 Resources — Leave Calendar, Leave Summary &amp; Company Holidays</a></li>
+            <li><a href="#governance-raid" class="docs-nav-link">6.18 Governance — RAID Dashboard, Risks, Assumptions, Issues &amp; Dependencies</a></li>
+            <li><a href="#pmo-gateways" class="docs-nav-link">6.19 PMO — Project Documents &amp; Governance Gates</a></li>
+            <li><a href="#fixed-bid-billing" class="docs-nav-link">6.20 PMO — Fixed Bid (FB) Billing &amp; Payment Milestones</a></li>
+            <li><a href="#tnm-billing" class="docs-nav-link">6.21 PMO — Time &amp; Material (TnM) Billing &amp; Payment Milestones</a></li>
+            <li><a href="#business-continuity" class="docs-nav-link">6.22 PMO — Business Continuity</a></li>
+            <li><a href="#sec-6-23" class="docs-nav-link">6.23 Project Settings &amp; Project Trash</a></li>
           </ul>
         </div>
 
         <div class="docs-nav-group">
-          <div class="docs-nav-heading">7. Governance &amp; PMO</div>
+          <div class="docs-nav-heading"><a href="#admin-flow">7. Admin Flow</a></div>
           <ul class="docs-nav-list">
-            <li><a href="#governance-flow" class="docs-nav-link">7.1 RAID &amp; AI Risk Generator</a></li>
-            <li><a href="#pmo-gateways" class="docs-nav-link">7.2 PMO Sign-Off Gateways</a></li>
-            <li><a href="#business-continuity" class="docs-nav-link">7.3 Business Continuity (BCP)</a></li>
-            <li><a href="#admin-flow" class="docs-nav-link">7.4 RBAC &amp; System Settings</a></li>
+            <li><a href="#access-settings" class="docs-nav-link">7.1 Portfolio Settings — Access Settings</a></li>
+            <li><a href="#sec-7-2" class="docs-nav-link">7.2 Portfolio Settings — Database</a></li>
+            <li><a href="#sec-7-3" class="docs-nav-link">7.3 Portfolio Settings — Authentication</a></li>
+            <li><a href="#sec-7-4" class="docs-nav-link">7.4 Portfolio Settings — AI Config</a></li>
+            <li><a href="#sec-7-5" class="docs-nav-link">7.5 Portfolio Settings — Inactive Projects &amp; Archiving</a></li>
+            <li><a href="#sec-7-6" class="docs-nav-link">7.6 Portfolio Settings — Cron Jobs Management</a></li>
+            <li><a href="#sec-7-7" class="docs-nav-link">7.7 Portfolio Settings — Test Data Studio</a></li>
+            <li><a href="#sec-7-8" class="docs-nav-link">7.8 Portfolio Trash</a></li>
           </ul>
         </div>
       </aside>
@@ -128,387 +197,774 @@
       <main class="docs-content">
         
         <!-- Header -->
-        <div style="margin-bottom: 3.5rem;">
-          <span class="badge-pill">Official Documentation</span>
-          <h1 style="font-size: 2.75rem; font-weight: 800; margin: 1rem 0; letter-spacing: -0.02em;">Workwayz User Manual</h1>
-          <p style="color: var(--text-secondary); font-size: 1.15rem; line-height: 1.7;">
-            Welcome to the comprehensive reference guide for Workwayz (formerly ProjectFlow). This manual details all operational flows from initial installation to executive portfolio governance.
+        <div style="margin-bottom: 3rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border-subtle);">
+          <div style="display:flex; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 0.85rem;">
+            <span class="badge-pill">Version 8.0.2</span>
+            <span class="badge-pill" style="background:rgba(59,130,246,0.15); color:var(--brand-blue-light); border-color:var(--border-blue);">Author: Raman C Nair</span>
+            <span class="badge-pill" style="background:rgba(168,85,247,0.15); color:#c084fc; border-color:rgba(168,85,247,0.35);">97 High-Resolution Figures</span>
+          </div>
+          <h1 style="font-size: 2.6rem; font-weight: 800; margin: 0.5rem 0 0.85rem; letter-spacing: -0.02em;">Workwayz User Manual &amp; Role-Based Operational Guide</h1>
+          <p style="color: var(--text-secondary); font-size: 1.1rem; line-height: 1.7; margin-bottom: 1.25rem;">
+            Enterprise AI-Powered Project &amp; Portfolio Management Platform &mdash; featuring <strong>Consolidated Lifecycle Navigation</strong>, <strong>Two-Tier Bug/Escaped Defect Architecture</strong>, <strong>Multi-Tier AI &amp; WayFinder Agent (201 Tools)</strong>, and <strong>Zero-Config Local or Cloud Deployment</strong>.
           </p>
+          <div style="display:flex; gap: 1rem; flex-wrap: wrap;">
+            <a href="assets/docs/Workwayz_User_Manual.pdf" download="Workwayz_User_Manual.pdf" class="btn btn-primary btn-sm">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              <span>Download Official PDF Guide (57 Pages)</span>
+            </a>
+            <a href="index.html#quickstart" class="btn btn-secondary btn-sm">
+              <span>Quickstart &amp; NPX Command &rarr;</span>
+            </a>
+          </div>
         </div>
 
-        <!-- Section 1 -->
-        <section class="doc-section" id="setup-wizard">
-          <h2>1. Setup Wizard</h2>
-          <p>
-            When opening Workwayz for the first time, you are presented with a streamlined 5-step guided wizard to configure core persistence, authentication, administrator credentials, and artificial intelligence providers.
-          </p>
+        <!-- Legacy Anchor Aliases for Backwards Compatibility -->
+        <div id="development-flow" style="position:relative;top:-80px;"></div>
+        <div id="testing-flow" style="position:relative;top:-80px;"></div>
+        <div id="financial-flow" style="position:relative;top:-80px;"></div>
+        <div id="billing-flow" style="position:relative;top:-80px;"></div>
+        <div id="governance-flow" style="position:relative;top:-80px;"></div>
+        <div id="resource-utilization" style="position:relative;top:-80px;"></div>
 
-          <h3 id="db-auth">1.1 Database &amp; Authentication Providers</h3>
-          <p>
-            Workwayz is built to be completely cloud-agnostic and self-hostable. You can choose between:
-          </p>
-          <ul style="color: var(--text-secondary); margin-left: 1.5rem; margin-bottom: 1.25rem;">
-            <li><strong>Supabase (Cloud or Local Docker):</strong> Ideal for fully self-hosted, air-gapped, or privacy-first deployments. Uses Supabase Auth and PostgreSQL.</li>
-            <li><strong>Firebase (Google Cloud):</strong> Ideal for serverless setups using Firestore and Firebase Authentication.</li>
-          </ul>
-          
-          <div class="doc-figure" data-lightbox-src="assets/ui/setup-database-1.jpeg" data-lightbox-title="Setup Wizard - Step 1: Database Setup">
-            <img src="assets/ui/setup-database-1.jpeg" alt="Setup Wizard Database Screen">
-            <div class="doc-caption">
-              <span>Figure 1.1: Database configuration step (Firebase &amp; Supabase)</span>
-              <span>🔍 Click to expand</span>
-            </div>
-          </div>
-
-          <h3 id="super-admin">1.2 Super Admin Account Creation</h3>
-          <p>
-            Once database connectivity is established, Workwayz prompts you to create the initial master administrator (SuperAdmin) account. This account possesses full control over role permissions, billing rates, and system settings.
-          </p>
-
-          <div class="doc-figure" data-lightbox-src="assets/ui/setup-admin-1.jpeg" data-lightbox-title="Setup Wizard - Step 3: Super Admin User Creation">
-            <img src="assets/ui/setup-admin-1.jpeg" alt="Setup Wizard Admin Creation">
-            <div class="doc-caption">
-              <span>Figure 1.2: Master administrator creation screen</span>
-              <span>🔍 Click to expand</span>
-            </div>
-          </div>
-
-          <h3 id="ai-config">1.3 Pluggable AI Configuration</h3>
-          <p>
-            Workwayz features a modular AI adapter system. The platform will operate smoothly without AI, but enabling AI powers tech stack recommendations, horizontal effort ratios, automated risk analysis, and assumption generation.
-          </p>
-          <div class="doc-callout">
-            <strong>Supported AI Engines:</strong> Google Gemini, Anthropic Claude, OpenAI ChatGPT, and local self-hosted engines like <strong>Ollama</strong> or <strong>LM Studio</strong> for zero-data-leakage compliance.
-          </div>
-
-          <div class="doc-figure" data-lightbox-src="assets/ui/setup-ai-1.jpeg" data-lightbox-title="Setup Wizard - Step 4: AI Provider Configuration">
-            <img src="assets/ui/setup-ai-1.jpeg" alt="Setup Wizard AI Configuration">
-            <div class="doc-caption">
-              <span>Figure 1.3: Connecting cloud or local AI engine</span>
-              <span>🔍 Click to expand</span>
-            </div>
-          </div>
-        </section>
-
-        <!-- Section 2 -->
-        <section class="doc-section" id="signup-login">
-          <h2>2. User Lifecycle &amp; Resource Management</h2>
-          <p>
-            Manage team members, billable daily rates, internal cost bases, utilization heatmaps, and enterprise leave calendars across active projects.
-          </p>
-
-          <h3 id="user-pool">2.1 User Pools &amp; Enablement Workflow</h3>
-          <p>
-            New team members can self-register or be provisioned directly by an Administrator. Upon self-registration, accounts enter an <em>Approval Pending</em> state. Administrators are notified to enable the user and assign appropriate global billing and internal cost rates.
-          </p>
-
-          <div class="doc-figure" data-lightbox-src="assets/ui/resource-pool-1.jpeg" data-lightbox-title="Global User Pool & Access Levels">
-            <img src="assets/ui/resource-pool-1.jpeg" alt="Global User Pool">
-            <div class="doc-caption">
-              <span>Figure 2.1: Master User Pool with access levels, annual cost, and approval queue</span>
-              <span>🔍 Click to expand</span>
-            </div>
-          </div>
-
-          <h3 id="resource-utilization">2.2 Resource Utilization Heatmap &amp; Availability</h3>
-          <p>
-            Search any engineer or manager to inspect their active project allocations, monthly occupancy percentage, and exact date when they become available for upcoming initiatives.
-          </p>
-
-          <div class="doc-figure" data-lightbox-src="assets/ui/resource-utilization.jpeg" data-lightbox-title="Resource Utilization & Availability Calendar">
-            <img src="assets/ui/resource-utilization.jpeg" alt="Resource Utilization Calendar">
-            <div class="doc-caption">
-              <span>Figure 2.2: Individual availability outlook and daily occupancy heatmap</span>
-              <span>🔍 Click to expand</span>
-            </div>
-          </div>
-
-          <h3 id="leave-calendar">2.3 Multi-Project Leave Reflection &amp; Holidays</h3>
-          <p>
-            When a team member applies for leave in the central Leave Tracker, their unavailability is <strong>automatically reflected</strong> across every project and sprint they participate in. This eliminates double-booking and prevents unauthorized side-project commitments.
-          </p>
-
-          <div class="doc-figure" data-lightbox-src="assets/ui/leave-tracker.jpeg" data-lightbox-title="Central Leave Tracker">
-            <img src="assets/ui/leave-tracker.jpeg" alt="Leave Tracker">
-            <div class="doc-caption">
-              <span>Figure 2.3: Central Leave Tracker with global leave pool balance ledger</span>
-              <span>🔍 Click to expand</span>
-            </div>
-          </div>
-        </section>
-
-        <!-- Section 3 -->
-        <section class="doc-section" id="initial-estimation">
-          <h2>3. AI-Powered Initial Estimation Flow</h2>
-          <p>
-            Transform high-level client briefs into realistic, system-decomposed budget proposals in minutes using Workwayz's intelligent scoping engine.
-          </p>
-
-          <h3 id="ai-tech-stacks">3.1 AI Tech Stack Suggestions</h3>
-          <p>
-            Paste your project requirements into the project summary. Click <strong>Stack Suggest</strong>, and the AI evaluates the scope to recommend 3 complete architectural blueprints (e.g. Next.js Full-Stack Suite, AWS Serverless, Golang Microservices) with identified impacted subsystems:
-          </p>
-          <ul style="color: var(--text-secondary); margin-left: 1.5rem; margin-bottom: 1.25rem;">
-            <li>Frontend &amp; API Layer</li>
-            <li>Product &amp; User Database</li>
-            <li>Authentication &amp; Session Management</li>
-            <li>Third-party Integrations (Payments, ERP, etc.)</li>
-          </ul>
-
-          <div class="doc-figure" data-lightbox-src="assets/ui/ai-tech-stack-1.jpeg" data-lightbox-title="AI Tech Stack Architecture Recommendation">
-            <img src="assets/ui/ai-tech-stack-1.jpeg" alt="AI Tech Stack Suggestions">
-            <div class="doc-caption">
-              <span>Figure 3.1: AI evaluation of architectural stacks</span>
-              <span>🔍 Click to expand</span>
-            </div>
-          </div>
-
-          <h3 id="ai-horizontals">3.2 Horizontal Strategy &amp; Staffing Ratios</h3>
-          <p>
-            Click <strong>AI Horizontal Suggest</strong> to automatically balance delivery roles across Project Management, Quality Analysis, Business Analysis, Solution Architecture, UI/UX Design, and DevOps based on proven delivery archetypes (e.g. <em>Lean Agile Startup</em> vs. <em>Secure Enterprise Retail</em>).
-          </p>
-
-          <div class="doc-figure" data-lightbox-src="assets/ui/ai-horizontal-strategy-2.jpeg" data-lightbox-title="AI Horizontal Strategy Weightings">
-            <img src="assets/ui/ai-horizontal-strategy-2.jpeg" alt="AI Horizontal Strategy">
-            <div class="doc-caption">
-              <span>Figure 3.2: Role weight percentage breakdown</span>
-              <span>🔍 Click to expand</span>
-            </div>
-          </div>
-
-          <h3 id="ai-estimator">3.3 Automated Baseline Effort Estimator</h3>
-          <p>
-            With systems and horizontals defined, click <strong>AI Estimator</strong>. The engine computes global benchmark effort in man-days, applies daily billing rates, and calculates the total development and grand total cost for proposal sign-off.
-          </p>
-
-          <div class="doc-figure" data-lightbox-src="assets/ui/ai-estimator-results-3.jpeg" data-lightbox-title="AI Estimator Calculation Results">
-            <img src="assets/ui/ai-estimator-results-3.jpeg" alt="AI Estimator Results">
-            <div class="doc-caption">
-              <span>Figure 3.3: Finalized effort estimation table with daily billing rates</span>
-              <span>🔍 Click to expand</span>
-            </div>
-          </div>
-        </section>
-
-        <!-- Section 4 -->
-        <section class="doc-section" id="project-flow">
-          <h2>4. Project Execution &amp; Agile Engineering</h2>
-          <p>
-            Workwayz provides engineering leads and project managers with unified tools to deliver hybrid, multi-system initiatives on time.
-          </p>
-
-          <h3>4.1 Executive PM Command Dashboard</h3>
-          <p>
-            Tracks overall project trajectory across sprints and releases. Features:
-          </p>
-          <ul style="color: var(--text-secondary); margin-left: 1.5rem; margin-bottom: 1.25rem;">
-            <li><strong>Release &amp; Sprint Burn Progression:</strong> Visual donut completion meters.</li>
-            <li><strong>Workload Breakdown:</strong> Distinguishes feature/story development hours from bug-fixing rework hours. Heavy bug-fixing hours immediately flag architectural deficiencies.</li>
-            <li><strong>Resource Cost:</strong> Billed revenue vs actual internal resource expense.</li>
-            <li><strong>Kanban Swim Lane Dwell Time:</strong> Detects bottlenecks across handover phases.</li>
-          </ul>
-
-          <div class="doc-figure" data-lightbox-src="assets/ui/pm-dashboard.jpeg" data-lightbox-title="Executive PM Dashboard">
-            <img src="assets/ui/pm-dashboard.jpeg" alt="Executive PM Dashboard">
-            <div class="doc-caption">
-              <span>Figure 4.1: Flagship Project Management Dashboard</span>
-              <span>🔍 Click to expand</span>
-            </div>
-          </div>
-
-          <h3 id="capacity-worklog">4.2 Capacity Planning &amp; Daily Worklog</h3>
-          <p>
-            Forecast capacity sprint-by-sprint broken down by architectural component (e.g. Middleware API, Web Frontend, Auth, Database). Engineers log time daily against assigned items, capturing actuals for cost variance analysis.
-          </p>
-
-          <div class="doc-figure" data-lightbox-src="assets/ui/daily-worklog-1.jpeg" data-lightbox-title="Daily Engineering Worklog">
-            <img src="assets/ui/daily-worklog-1.jpeg" alt="Daily Worklog">
-            <div class="doc-caption">
-              <span>Figure 4.2: Daily time logging against tasks and activities</span>
-              <span>🔍 Click to expand</span>
-            </div>
-          </div>
-
-          <h3 id="release-trains">4.3 Enterprise Release Trains</h3>
-          <p>
-            For hybrid enterprise contracts where fixed budgets must align with corporate release trains, Workwayz provides an interactive timeline detailing Design Freeze, Development, Testing, and Code Freeze milestones.
-          </p>
-
-          <div class="doc-figure" data-lightbox-src="assets/ui/release-train-timeline.jpeg" data-lightbox-title="Enterprise Release Train & Stages">
-            <img src="assets/ui/release-train-timeline.jpeg" alt="Release Train Timeline">
-            <div class="doc-caption">
-              <span>Figure 4.3: Interactive release timeline with freeze milestones</span>
-              <span>🔍 Click to expand</span>
-            </div>
-          </div>
-
-          <h3 id="development-flow">4.4 Backlog &amp; Story Points &harr; Hours Bridge</h3>
-          <p>
-            Organize requirements by Epics, User Stories, Feature Changes, and Tasks. A built-in converter bridges story point velocity with billable hours to satisfy contractual reporting without slowing engineers down.
-          </p>
-
-          <div class="doc-figure" data-lightbox-src="assets/ui/product-backlog-1.jpeg" data-lightbox-title="Product Backlog Management">
-            <img src="assets/ui/product-backlog-1.jpeg" alt="Product Backlog">
-            <div class="doc-caption">
-              <span>Figure 4.4: Epics and User Story backlog view</span>
-              <span>🔍 Click to expand</span>
-            </div>
-          </div>
-
-          <h3 id="subtasks-grooming">4.5 Architectural Sub-Tasks &amp; Grooming Board</h3>
-          <p>
-            Tech leads can elaborate stories into system-specific sub-tasks (Frontend, Middleware, DB) and assign them in bulk. The <strong>Grooming Board</strong> visually displays sprint readiness: only stories with green checkmarks (all impacted systems estimated) may enter the sprint.
-          </p>
-
-          <div class="doc-figure" data-lightbox-src="assets/ui/grooming-board-1.jpeg" data-lightbox-title="Grooming Board with Readiness Checkmarks">
-            <img src="assets/ui/grooming-board-1.jpeg" alt="Grooming Board">
-            <div class="doc-caption">
-              <span>Figure 4.5: Grooming Board with utilized capacity limits and story readiness status</span>
-              <span>🔍 Click to expand</span>
-            </div>
-          </div>
-
-          <h3 id="kanban-board">4.6 Dual Perspective Kanban Board</h3>
-          <p>
-            Toggle between high-level User Story progression and granular Sub-Task execution. Filter by assignee to run focused daily standups.
-          </p>
-
-          <div class="doc-figure" data-lightbox-src="assets/ui/kanban-board-1.jpeg" data-lightbox-title="Workwayz Kanban Board">
-            <img src="assets/ui/kanban-board-1.jpeg" alt="Kanban Board">
-            <div class="doc-caption">
-              <span>Figure 4.6: Interactive Kanban board with sub-task toggle</span>
-              <span>🔍 Click to expand</span>
-            </div>
-          </div>
-        </section>
-
-        <!-- Section 5 -->
-        <section class="doc-section" id="testing-flow">
-          <h2>5. Quality Assurance &amp; Defect Leakage</h2>
-          <p>
-            Native QA management without expensive third-party plugins. Track test execution velocity, defect leakage across phases, and 100% story test coverage.
-          </p>
-
-          <h3 id="test-leakage">5.1 Testing Dashboard &amp; Defect Leakage Metrics</h3>
-          <p>
-            Monitors bug count across SIT (System Integration Testing), UAT (User Acceptance Testing), and Production. Visual charts reveal whether bugs are caught early or escaping to users.
-          </p>
-
-          <div class="doc-figure" data-lightbox-src="assets/ui/testing-dashboard-1.jpeg" data-lightbox-title="Quality Assurance Dashboard">
-            <img src="assets/ui/testing-dashboard-1.jpeg" alt="Testing Dashboard">
-            <div class="doc-caption">
-              <span>Figure 5.1: Test execution summary, bug severity breakdown, and daily test trends</span>
-              <span>🔍 Click to expand</span>
-            </div>
-          </div>
-
-          <h3 id="defect-triage">5.2 Dedicated Defect Triage Kanban</h3>
-          <p>
-            Manage defects independently through a structured triage flow: <em>In Triage &rarr; Defect Backlog &rarr; In Progress &rarr; Retest &rarr; Closed</em>. Defects link directly to original user stories for complete traceability.
-          </p>
-
-          <div class="doc-figure" data-lightbox-src="assets/ui/defect-tracker-kanban.jpeg" data-lightbox-title="Defect Triage Board">
-            <img src="assets/ui/defect-tracker-kanban.jpeg" alt="Defect Tracker Kanban">
-            <div class="doc-caption">
-              <span>Figure 5.2: Defect triage board filtered by sprint and test plan</span>
-              <span>🔍 Click to expand</span>
-            </div>
-          </div>
-        </section>
-
-        <!-- Section 6 -->
-        <section class="doc-section" id="financial-flow">
-          <h2>6. Project Financials, Margins &amp; Invoicing</h2>
-          <p>
-            Seamlessly calculate profitability across Fixed Bid and Time &amp; Material contracting models.
-          </p>
-
-          <h3 id="fixed-bid-billing">6.1 Fixed Bid (FB) Billing &amp; Milestones</h3>
-          <p>
-            Tracks resource billing rates against actual cost rates to calculate net profit. Captures fixed costs (GIT licenses, cloud hosting, setup fees) and monitors milestone payment history with audit logging.
-          </p>
-
-          <div class="doc-figure" data-lightbox-src="assets/ui/fixed-bid-billing-3.jpeg" data-lightbox-title="Fixed Bid Billing Breakdown">
-            <img src="assets/ui/fixed-bid-billing-3.jpeg" alt="Fixed Bid Invoicing">
-            <div class="doc-caption">
-              <span>Figure 6.1: Fixed bid billing invoice breakdown and fixed cost line items</span>
-              <span>🔍 Click to expand</span>
-            </div>
-          </div>
-
-          <h3 id="tnm-billing">6.2 Time &amp; Material (T&amp;M) Monthly Invoicing</h3>
-          <p>
-            Generates monthly invoices derived from active working days, deducting individual Loss of Pay (LOP) days and adding billable overtime.
-          </p>
-
-          <div class="doc-figure" data-lightbox-src="assets/ui/time-and-material-billing-2.jpeg" data-lightbox-title="Time & Material Monthly Billing">
-            <img src="assets/ui/time-and-material-billing-2.jpeg" alt="Time and Material Billing">
-            <div class="doc-caption">
-              <span>Figure 6.2: Monthly T&amp;M ledger with LOP deductions and resource profit</span>
-              <span>🔍 Click to expand</span>
-            </div>
-          </div>
-        </section>
-
-        <!-- Section 7 -->
-        <section class="doc-section" id="governance-flow">
-          <h2>7. RAID Governance, PMO &amp; Business Continuity</h2>
-          <p>
-            Keep enterprise portfolios compliant, insured, and resilient against turnover.
-          </p>
-
-          <h3>7.1 AI RAID Intelligence</h3>
-          <p>
-            Click <strong>AI Risk Generator</strong>, <strong>AI Gen Assumptions</strong>, or <strong>AI Gen Dependencies</strong> to automatically extract risks and third-party bottlenecks from project specifications.
-          </p>
-
-          <div class="doc-figure" data-lightbox-src="assets/ui/raid-dashboard-1.jpeg" data-lightbox-title="RAID Governance Dashboard">
-            <img src="assets/ui/raid-dashboard-1.jpeg" alt="RAID Dashboard">
-            <div class="doc-caption">
-              <span>Figure 7.1: RAID status dashboard (Risks, Assumptions, Issues, Dependencies)</span>
-              <span>🔍 Click to expand</span>
-            </div>
-          </div>
-
-          <h3 id="pmo-gateways">7.2 PMO Document Verification Gateways</h3>
-          <p>
-            Centralizes links to critical governance documents (SOW, QA Sign-Off, HLD/LLD, Architecture Approvals). Enforces corporate policy: SOW required to commence coding, QA Sign-Off strictly mandatory before production promotion.
-          </p>
-
-          <div class="doc-figure" data-lightbox-src="assets/ui/pmo-documents-gateways.jpeg" data-lightbox-title="PMO Gateways & Document Verification">
-            <img src="assets/ui/pmo-documents-gateways.jpeg" alt="PMO Document Register">
-            <div class="doc-caption">
-              <span>Figure 7.2: PMO verification registry</span>
-              <span>🔍 Click to expand</span>
-            </div>
-          </div>
-
-          <h3 id="business-continuity">7.3 Business Continuity Plan (BCP) Vault</h3>
-          <p>
-            Maintains environment URLs, SSL/domain expiry dates, git repositories, and designated backup resources to safeguard against developer attrition or emergency incidents.
-          </p>
-
-          <div class="doc-figure" data-lightbox-src="assets/ui/business-continuity-bcp-1.jpeg" data-lightbox-title="Business Continuity Register">
-            <img src="assets/ui/business-continuity-bcp-1.jpeg" alt="BCP Vault">
-            <div class="doc-caption">
-              <span>Figure 7.3: Business Continuity Register for environments and repositories</span>
-              <span>🔍 Click to expand</span>
-            </div>
-          </div>
-
-          <h3 id="admin-flow">7.4 Enterprise Role-Based Access Control (RBAC)</h3>
-          <p>
-            Configure granular page-level and CRUD-level permissions across 6 system roles: <em>Administrator, Senior Management, Project Manager, Tech Lead, Team Member,</em> and <em>PMO Auditor</em>.
-          </p>
-
-          <div class="doc-figure" data-lightbox-src="assets/ui/rbac-page-access.jpeg" data-lightbox-title="RBAC Page-Level Access Matrix">
-            <img src="assets/ui/rbac-page-access.jpeg" alt="RBAC Matrix">
-            <div class="doc-caption">
-              <span>Figure 7.4: Granular role access permissions matrix</span>
-              <span>🔍 Click to expand</span>
-            </div>
-          </div>
-        </section>
+<section class="doc-section" id="setup-wizard">
+  <h2>1. Setup Wizard</h2>
+  <p>When opening the Workwayz application for the first time (or launching the Setup Wizard at /setup-wizard), a guided 5-step wizard configures your database engine, authentication provider, master Super Admin user account, and generative AI integration.</p>
+  <h3 id="db-auth">1.1 Database Setup</h3>
+  <p>Configure your primary database connection. Workwayz supports zero-configuration local storage as well as cloud/containerized databases:</p>
+  <ul class="doc-list">
+    <li><strong>Project Name:</strong> An identifier label for this database connection profile (e.g., Local Workspace DB or Production DB).</li>
+    <li><strong>Database Provider:</strong> Supports Local Embedded Database (Built-in / Zero-Config stored in ~/.workwayz), Supabase (cloud or self-hosted Docker), and Firebase (Firestore).</li>
+    <li><strong>Credentials:</strong> When Local Embedded Database is selected, no external URL or API key is required. When Firebase or Supabase is selected, enter the Project ID / URL and API / Publishable Key from your provider console.</li>
+    <li><strong>Actions:</strong> Click Next → to proceed to Authentication Setup.</li>
+  </ul>
+  <div class="doc-figure" data-lightbox-src="assets/ui/image1_01_wizard_step1_database.png" data-lightbox-title="Figure 1.1 — Setup Wizard Step 1: Database Setup">
+    <img src="assets/ui/image1_01_wizard_step1_database.png" alt="Figure 1.1 — Setup Wizard Step 1: Database Setup" loading="lazy">
+    <div class="doc-caption"><span>Figure 1.1 — Setup Wizard Step 1: Database Setup</span><span>🔍 Click to expand</span></div>
+  </div>
+  <h3 id="sec-1-2">1.2 Authentication Setup</h3>
+  <p>Configure how users authenticate when signing into Workwayz. The Authentication Provider automatically aligns with your selected Database Provider:</p>
+  <ul class="doc-list">
+    <li><strong>Authentication Provider:</strong> Supports Local Built-in Auth (hashes and stores credentials locally with zero external setup), Supabase Auth, and Firebase Auth.</li>
+    <li><strong>Single Sign-On (SSO):</strong> Optional toggles to Enable Google SSO and Enable GitHub SSO.</li>
+  </ul>
+  <div class="doc-figure" data-lightbox-src="assets/ui/image2_02_wizard_step2_auth.png" data-lightbox-title="Figure 1.2 — Setup Wizard Step 2: Authentication Setup">
+    <img src="assets/ui/image2_02_wizard_step2_auth.png" alt="Figure 1.2 — Setup Wizard Step 2: Authentication Setup" loading="lazy">
+    <div class="doc-caption"><span>Figure 1.2 — Setup Wizard Step 2: Authentication Setup</span><span>🔍 Click to expand</span></div>
+  </div>
+  <h3 id="super-admin">1.3 Super Admin User Creation</h3>
+  <p>Establish or reconnect the master Super Admin account for the Workwayz instance:</p>
+  <ul class="doc-list">
+    <li><strong>Create New Super Admin:</strong> Enter First Name, Last Name, Email ID, Password, and Re-enter Password to provision a fresh master Super Admin account.</li>
+    <li><strong>Use Existing Credentials:</strong> If reconnecting to an existing database after reinstallation, toggle to &quot;Use Existing Credentials&quot; to verify and link your existing Super Admin account without resetting data.</li>
+    <li><strong>Role &amp; Project Assignment Rules:</strong> The first user created is assigned the Super Admin role with full access across all modules and settings. This account cannot be deleted from the UI. Note that Super Admin and Administrator accounts act strictly as system/portfolio administrators and cannot be assigned to projects as team resources or Project Managers.</li>
+  </ul>
+  <div class="doc-figure" data-lightbox-src="assets/ui/image3_03_wizard_step3_admin.png" data-lightbox-title="Figure 1.3 — Setup Wizard Step 3: Super Admin User Setup">
+    <img src="assets/ui/image3_03_wizard_step3_admin.png" alt="Figure 1.3 — Setup Wizard Step 3: Super Admin User Setup" loading="lazy">
+    <div class="doc-caption"><span>Figure 1.3 — Setup Wizard Step 3: Super Admin User Setup</span><span>🔍 Click to expand</span></div>
+  </div>
+  <h3 id="ai-config">1.4 AI Configuration Setup</h3>
+  <p>Connect a generative AI provider to power WayFinder AI, automated stack/horizontal recommendations, AI estimation, backlog generation, test case generation, and RAID analysis. The core application runs without AI if you check &quot;Configure AI Later&quot;.</p>
+  <ul class="doc-list">
+    <li><strong>Project Name:</strong> Identifier for the AI configuration profile.</li>
+    <li><strong>AI Provider:</strong> Supports Google Gemini, OpenAI (ChatGPT), Anthropic (Claude), Ollama (Local), and LM Studio (Local).</li>
+    <li><strong>API Key / Base URL &amp; Default Model Override:</strong> Enter your provider API key (or local endpoint URL) and optional model override.</li>
+  </ul>
+  <div class="doc-figure" data-lightbox-src="assets/ui/image4_04_wizard_step4_ai.png" data-lightbox-title="Figure 1.4 — Setup Wizard Step 4: AI Configuration Setup">
+    <img src="assets/ui/image4_04_wizard_step4_ai.png" alt="Figure 1.4 — Setup Wizard Step 4: AI Configuration Setup" loading="lazy">
+    <div class="doc-caption"><span>Figure 1.4 — Setup Wizard Step 4: AI Configuration Setup</span><span>🔍 Click to expand</span></div>
+  </div>
+  <h3 id="sec-1-5">1.5 Finish Setup</h3>
+  <p>Review the configuration summary (Database, Authentication, Admin Account, and AI Integration) and click Complete Setup to persist the profiles and launch the Workwayz login screen.</p>
+  <div class="doc-figure" data-lightbox-src="assets/ui/image5_05_wizard_step5_finish.png" data-lightbox-title="Figure 1.5 — Setup Wizard Step 5: Finish &amp; Summary Review">
+    <img src="assets/ui/image5_05_wizard_step5_finish.png" alt="Figure 1.5 — Setup Wizard Step 5: Finish &amp; Summary Review" loading="lazy">
+    <div class="doc-caption"><span>Figure 1.5 — Setup Wizard Step 5: Finish &amp; Summary Review</span><span>🔍 Click to expand</span></div>
+  </div>
+</section>
+<section class="doc-section" id="signup-login">
+  <h2>2. Signup, Login &amp; Account Management</h2>
+  <p>Workwayz provides a unified authentication portal with role-aware session management, mandatory first-login password updates for admin-created accounts, and self-service registration with administrator approval gating.</p>
+  <h3 id="sec-2-1">2.1 Login Portal (Home)</h3>
+  <p>Opening the root URL (/) or /login presents the Workwayz login screen.</p>
+  <ul class="doc-list">
+    <li><strong>Credentials:</strong> Enter your registered Email and Password.</li>
+    <li><strong>Remember Me:</strong> Check &quot;Remember me on this computer&quot; to persist your session across browser restarts.</li>
+    <li><strong>Admin-Provisioned Users:</strong> When an Administrator creates a user directly from the User List, the default password is set to &quot;P@ssw0rd&quot;. On first login, the user is automatically prompted to set a new password.</li>
+  </ul>
+  <div class="doc-figure" data-lightbox-src="assets/ui/image6_06_auth_login.png" data-lightbox-title="Figure 2.1 — Workwayz Login Portal">
+    <img src="assets/ui/image6_06_auth_login.png" alt="Figure 2.1 — Workwayz Login Portal" loading="lazy">
+    <div class="doc-caption"><span>Figure 2.1 — Workwayz Login Portal</span><span>🔍 Click to expand</span></div>
+  </div>
+  <h3 id="sec-2-2">2.2 Self-Service Signup</h3>
+  <p>New users can register an account by clicking &quot;Sign up&quot; on the login screen <span class="route-pill">/signup</span>.</p>
+  <ul class="doc-list">
+    <li><strong>Required Fields:</strong> First Name, Last Name, Emp ID, Phone, Experience (years), Email, and Password.</li>
+    <li><strong>Enablement Gate:</strong> Newly registered users are placed in a pending state and restricted to the My Projects screen until an Administrator enables their account and assigns an Access Level under Users → User List.</li>
+  </ul>
+  <div class="doc-figure" data-lightbox-src="assets/ui/image7_07_auth_signup.png" data-lightbox-title="Figure 2.2 — Create an Account (Signup Screen)">
+    <img src="assets/ui/image7_07_auth_signup.png" alt="Figure 2.2 — Create an Account (Signup Screen)" loading="lazy">
+    <div class="doc-caption"><span>Figure 2.2 — Create an Account (Signup Screen)</span><span>🔍 Click to expand</span></div>
+  </div>
+  <h3 id="sec-2-3">2.3 First-Login Password Reset &amp; Pending Enablement</h3>
+  <p>To enforce security and access governance during onboarding, Workwayz intercepts sessions that require action before granting workspace access:</p>
+  <ul class="doc-list">
+    <li><strong>Reset Your Password:</strong> Displayed immediately when logging in with the default &quot;P@ssw0rd&quot; credential. Requires a new password (minimum 6 characters, different from default).</li>
+    <li><strong>Account Pending Enablement:</strong> Displayed on My Projects when a self-registered user logs in prior to administrator approval.</li>
+  </ul>
+  <div class="doc-figure-grid">
+    <div class="doc-figure" data-lightbox-src="assets/ui/image8_08_auth_password_reset.png" data-lightbox-title="Figure 2.3a — Mandatory First-Login Password Reset Screen">
+      <img src="assets/ui/image8_08_auth_password_reset.png" alt="Figure 2.3a — Mandatory First-Login Password Reset Screen" loading="lazy">
+      <div class="doc-caption"><span>Figure 2.3a — Mandatory First-Login Password Reset Screen</span><span>🔍 Click to expand</span></div>
+    </div>
+    <div class="doc-figure" data-lightbox-src="assets/ui/image9_09_auth_pending_enablement.png" data-lightbox-title="Figure 2.3b — Account Pending Enablement Screen">
+      <img src="assets/ui/image9_09_auth_pending_enablement.png" alt="Figure 2.3b — Account Pending Enablement Screen" loading="lazy">
+      <div class="doc-caption"><span>Figure 2.3b — Account Pending Enablement Screen</span><span>🔍 Click to expand</span></div>
+    </div>
+  </div>
+  <h3 id="sec-2-4">2.4 Profile &amp; Account Settings</h3>
+  <p>Every authenticated user can click their profile card in the bottom-left sidebar footer and select &quot;Profile &amp; Account&quot; <span class="route-pill">/my-account</span> to update their First Name, Last Name, profile avatar image, or account password.</p>
+  <div class="doc-figure" data-lightbox-src="assets/ui/image10_09b_my_account_profile.png" data-lightbox-title="Figure 2.4 — Profile &amp; Account Settings (/my-account)">
+    <img src="assets/ui/image10_09b_my_account_profile.png" alt="Figure 2.4 — Profile &amp; Account Settings (/my-account)" loading="lazy">
+    <div class="doc-caption"><span>Figure 2.4 — Profile &amp; Account Settings (/my-account)</span><span>🔍 Click to expand</span></div>
+  </div>
+</section>
+<section class="doc-section" id="access-levels">
+  <h2>3. Access Levels &amp; Role-Based Workspace Guide</h2>
+  <p>Workwayz enforces role-based access control (RBAC) across 7 distinct Access Levels: Super Admin, Administrator, Senior Management, Project Manager, Lead, Team Member, and PMO. Both top-navigation tabs and left-sidebar menu items dynamically adapt to the logged-in user’s role.</p>
+  <div class="doc-table-wrapper">
+    <table class="doc-table">
+      <thead><tr>
+        <th>Access Level</th>
+        <th>Portfolio &amp; Global Pages Accessible</th>
+        <th>Project Pages Accessible (Lifecycle Order)</th>
+      </tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>Super Admin &amp; Administrator</strong></td>
+          <td>All Global Tabs: My Workspace (My Projects, Worklog, Leave Tracker, Messages), Projects (Project Home, Portfolio Dashboard, Portfolio PromptBoard), Quality (Estimation Variance, Defect Containment), Billing (Billing, Billing Rate), Users (User List, Utilization), Time Off (Company Holidays, Leave Policy &amp; Quotas), Portfolio Settings (Access Settings, Database, Authentication, AI Config, Inactive Projects, Cron Jobs, Test Data Studio), Portfolio Trash.</td>
+          <td>All Project Tabs (via Project Home inspection; note that Super Admin &amp; Administrator accounts cannot be staffed as project resources or Project Managers).</td>
+        </tr>
+        <tr>
+          <td><strong>Senior Management</strong></td>
+          <td>My Workspace (All), Projects (Project Home, Portfolio Dashboard, Portfolio PromptBoard), Quality (Estimation Variance, Defect Containment), Billing (Billing, Billing Rate), Users (User List, Utilization), Time Off (Company Holidays, Leave Policy &amp; Quotas).</td>
+          <td>Initial Estimation, Project Details (PM Dashboard, Project PromptBoard, Project Status, Specifications, Project Releases), Development (All), Testing (Test Dashboard, Test Cases, Test Cycles, Test Executions, Bugs, Bug Tracker), Resources (Project Resources, Resource Workload, Leave Calendar, Leave Summary, Company Holidays), Governance (All), PMO (All).</td>
+        </tr>
+        <tr>
+          <td><strong>Project Manager</strong></td>
+          <td>My Workspace (All), Projects (Project Home, Portfolio PromptBoard), Quality (Estimation Variance, Defect Containment), Billing (Billing, Billing Rate), Users (User List, Utilization), Time Off (Company Holidays, Leave Policy &amp; Quotas).</td>
+          <td>All Project Tabs: Initial Estimation, Project Details (incl. Project Releases), Development, Testing (incl. Bugs &amp; Bug Tracker), Resources (incl. Leave Summary &amp; Company Holidays), Governance, PMO, Project Settings (Board, Sprint, Effort Settings), and Project Trash.</td>
+        </tr>
+        <tr>
+          <td><strong>Lead</strong></td>
+          <td>My Workspace (My Projects, Worklog, Leave Tracker, Messages), Projects (Project Home), Users (User List), Time Off (Company Holidays).</td>
+          <td>Project Details (Project Status, Specifications, Project Releases), Development (All), Testing (Test Dashboard, Test Cases, Test Cycles, Test Executions, Bugs, Bug Tracker), Resources (Project Resources, Resource Workload, Leave Calendar, Leave Summary, Company Holidays), Governance (All), PMO (Documents, Business Continuity), Project Settings (Board &amp; Sprint Settings).</td>
+        </tr>
+        <tr>
+          <td><strong>Team Member</strong></td>
+          <td>My Workspace (My Projects, Worklog, Leave Tracker, Messages), Projects (Project Home).</td>
+          <td>Project Details (Project Status, Specifications), Development (Development Dashboard, Kanban Board, Sub-Tasks), Testing (Test Dashboard, Test Cases, Test Executions, Bugs, Bug Tracker), Resources (Project Resources, Company Holidays), Governance (RAID Dashboard), PMO (Documents).</td>
+        </tr>
+        <tr>
+          <td><strong>PMO</strong></td>
+          <td>My Workspace (My Projects, Worklog, Leave Tracker, Messages), Projects (Project Home), Billing (Billing, Billing Rate), Users (User List, Utilization), Time Off (Company Holidays).</td>
+          <td>Project Details (PM Dashboard, Project PromptBoard, Project Status, Project Releases), Resources (Project Resources, Resource Workload), PMO (Documents, FB Billing, FB Payment Milestones, TnM Billing, TnM Payment Milestones, Business Continuity).</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <h3 id="sec-3-1">3.1 Super Admin &amp; Administrator Workspace View</h3>
+  <p>When logged in as Super Admin (e.g., Raman Nair) or Administrator (e.g., Taylor Mercer), all portfolio tabs plus the Portfolio Settings (gear icon) and Portfolio Trash (trash icon) tabs are visible in the top navigation bar.</p>
+  <div class="doc-figure-grid">
+    <div class="doc-figure" data-lightbox-src="assets/ui/image11_10_role_super_admin_portfolio.png" data-lightbox-title="Figure 3.1a — Logged in as Super Admin: Full Portfolio &amp; Admin Navigation">
+      <img src="assets/ui/image11_10_role_super_admin_portfolio.png" alt="Figure 3.1a — Logged in as Super Admin: Full Portfolio &amp; Admin Navigation" loading="lazy">
+      <div class="doc-caption"><span>Figure 3.1a — Logged in as Super Admin: Full Portfolio &amp; Admin Navigation</span><span>🔍 Click to expand</span></div>
+    </div>
+    <div class="doc-figure" data-lightbox-src="assets/ui/image12_11_role_administrator_users.png" data-lightbox-title="Figure 3.1b — Logged in as Administrator: Users &amp; Access Governance View">
+      <img src="assets/ui/image12_11_role_administrator_users.png" alt="Figure 3.1b — Logged in as Administrator: Users &amp; Access Governance View" loading="lazy">
+      <div class="doc-caption"><span>Figure 3.1b — Logged in as Administrator: Users &amp; Access Governance View</span><span>🔍 Click to expand</span></div>
+    </div>
+  </div>
+  <h3 id="sec-3-2">3.2 Senior Management Workspace View</h3>
+  <p>When logged in as Senior Management (e.g., Morgan Chen), executive oversight tabs (Projects → Portfolio Dashboard &amp; PromptBoard, Quality, Billing, Users, Time Off) are available without system infrastructure settings.</p>
+  <div class="doc-figure" data-lightbox-src="assets/ui/image13_12_role_senior_mgmt_portfolio_dashboard.png" data-lightbox-title="Figure 3.2 — Logged in as Senior Management: Portfolio Executive Dashboard">
+    <img src="assets/ui/image13_12_role_senior_mgmt_portfolio_dashboard.png" alt="Figure 3.2 — Logged in as Senior Management: Portfolio Executive Dashboard" loading="lazy">
+    <div class="doc-caption"><span>Figure 3.2 — Logged in as Senior Management: Portfolio Executive Dashboard</span><span>🔍 Click to expand</span></div>
+  </div>
+  <h3 id="sec-3-3">3.3 Project Manager Workspace View</h3>
+  <p>When logged in as a Project Manager (e.g., Chris Novak), the user sees their assigned active projects and Initial Estimations on My Projects, along with portfolio operational tabs and full project-level settings.</p>
+  <div class="doc-figure" data-lightbox-src="assets/ui/image14_13_role_pm_my_projects.png" data-lightbox-title="Figure 3.3 — Logged in as Project Manager: My Workspace &amp; Assigned Initiatives">
+    <img src="assets/ui/image14_13_role_pm_my_projects.png" alt="Figure 3.3 — Logged in as Project Manager: My Workspace &amp; Assigned Initiatives" loading="lazy">
+    <div class="doc-caption"><span>Figure 3.3 — Logged in as Project Manager: My Workspace &amp; Assigned Initiatives</span><span>🔍 Click to expand</span></div>
+  </div>
+  <h3 id="sec-3-4">3.4 Lead Workspace View</h3>
+  <p>When logged in as a Lead (e.g., Riley Thornton), the user has access to technical delivery, architecture specifications, backlog elaboration, sub-tasks, sprint grooming, test cycles, in-sprint bugs, RAID governance, and board/sprint configuration.</p>
+  <div class="doc-figure" data-lightbox-src="assets/ui/image15_14_role_lead_dev_dashboard.png" data-lightbox-title="Figure 3.4 — Logged in as Lead: Project Development &amp; Delivery Workspace">
+    <img src="assets/ui/image15_14_role_lead_dev_dashboard.png" alt="Figure 3.4 — Logged in as Lead: Project Development &amp; Delivery Workspace" loading="lazy">
+    <div class="doc-caption"><span>Figure 3.4 — Logged in as Lead: Project Development &amp; Delivery Workspace</span><span>🔍 Click to expand</span></div>
+  </div>
+  <h3 id="sec-3-5">3.5 Team Member Workspace View</h3>
+  <p>When logged in as a Team Member (e.g., Quinn Sterling), navigation is streamlined to personal workspace tools (My Projects, Worklog, Leave Tracker, Messages) and execution boards (Development Dashboard, Kanban Board, Sub-Tasks, Test Executions, Bugs, and Bug Tracker).</p>
+  <div class="doc-figure" data-lightbox-src="assets/ui/image16_15_role_team_member_my_projects.png" data-lightbox-title="Figure 3.5 — Logged in as Team Member: Streamlined Execution Workspace">
+    <img src="assets/ui/image16_15_role_team_member_my_projects.png" alt="Figure 3.5 — Logged in as Team Member: Streamlined Execution Workspace" loading="lazy">
+    <div class="doc-caption"><span>Figure 3.5 — Logged in as Team Member: Streamlined Execution Workspace</span><span>🔍 Click to expand</span></div>
+  </div>
+  <h3 id="sec-3-6">3.6 PMO Workspace View</h3>
+  <p>When logged in as PMO (e.g., Blake Sterling), navigation focuses on financial governance, billing &amp; rate cards, resource utilization, release schedules, project documents/permits, Fixed Bid &amp; T&amp;M invoicing, and Business Continuity.</p>
+  <div class="doc-figure" data-lightbox-src="assets/ui/image17_16_role_pmo_billing.png" data-lightbox-title="Figure 3.6 — Logged in as PMO: Billing, Financial &amp; Governance Workspace">
+    <img src="assets/ui/image17_16_role_pmo_billing.png" alt="Figure 3.6 — Logged in as PMO: Billing, Financial &amp; Governance Workspace" loading="lazy">
+    <div class="doc-caption"><span>Figure 3.6 — Logged in as PMO: Billing, Financial &amp; Governance Workspace</span><span>🔍 Click to expand</span></div>
+  </div>
+</section>
+<section class="doc-section" id="portfolio-flow">
+  <h2>4. Portfolio Flow</h2>
+  <p>The Global Portfolio Hub provides cross-project visibility across personal workspaces, enterprise project directories, executive health dashboards, AI analytics, quality conformance, financial billing ledgers, resource utilization, and organizational time-off policies.</p>
+  <h3 id="sec-4-1">4.1 My Workspace — My Projects <span class="route-pill">/my-projects</span></h3>
+  <p>Displays cards for all active projects and initial estimations to which the logged-in user is assigned (either as Project Manager or as a staffed project resource). Clicking a project card navigates directly to the user’s permitted landing page for that project.</p>
+  <div class="doc-figure" data-lightbox-src="assets/ui/image18_13_role_pm_my_projects.png" data-lightbox-title="Figure 4.1 — My Workspace: My Projects">
+    <img src="assets/ui/image18_13_role_pm_my_projects.png" alt="Figure 4.1 — My Workspace: My Projects" loading="lazy">
+    <div class="doc-caption"><span>Figure 4.1 — My Workspace: My Projects</span><span>🔍 Click to expand</span></div>
+  </div>
+  <h3 id="sec-4-2">4.2 My Workspace — Global Worklog <span class="route-pill">/worklog</span></h3>
+  <p>Allows team members to log daily work hours across all projects they are staffed on from a single weekly timesheet grid. Users can select a project, pick a work item (Story, Sub-Task, Bug, Meeting, or Other), enter daily hours across the week, and save or submit their timesheet.</p>
+  <div class="doc-figure" data-lightbox-src="assets/ui/image19_17_workspace_global_worklog.png" data-lightbox-title="Figure 4.2 — My Workspace: Global Weekly Worklog">
+    <img src="assets/ui/image19_17_workspace_global_worklog.png" alt="Figure 4.2 — My Workspace: Global Weekly Worklog" loading="lazy">
+    <div class="doc-caption"><span>Figure 4.2 — My Workspace: Global Weekly Worklog</span><span>🔍 Click to expand</span></div>
+  </div>
+  <h3 id="sec-4-3">4.3 My Workspace — Leave Tracker <span class="route-pill">/holidays/leave-tracker</span></h3>
+  <p>Self-service portal where employees view their annual leave quota, carried-over balance, remaining paid leave balance, and Loss of Pay (LOP) days, and submit new leave periods (Full Day or Half Day). Leave periods logged here automatically synchronize across all projects the employee is assigned to.</p>
+  <div class="doc-figure" data-lightbox-src="assets/ui/image20_18_workspace_leave_tracker.png" data-lightbox-title="Figure 4.3 — My Workspace: Employee Leave Tracker">
+    <img src="assets/ui/image20_18_workspace_leave_tracker.png" alt="Figure 4.3 — My Workspace: Employee Leave Tracker" loading="lazy">
+    <div class="doc-caption"><span>Figure 4.3 — My Workspace: Employee Leave Tracker</span><span>🔍 Click to expand</span></div>
+  </div>
+  <h3 id="sec-4-4">4.4 My Workspace — Messages <span class="route-pill">/messages</span></h3>
+  <p>Built-in internal messaging center supporting Inbox, Starred, Sent, and Trash folders. Users can send messages to individual colleagues or role/project distribution lists, reply/reply-all, and view automated scheduled report digests containing interactive embedded charts.</p>
+  <div class="doc-figure-grid">
+    <div class="doc-figure" data-lightbox-src="assets/ui/image21_19_workspace_messages.png" data-lightbox-title="Figure 4.4a — My Workspace: Internal Messages Inbox &amp; Reader">
+      <img src="assets/ui/image21_19_workspace_messages.png" alt="Figure 4.4a — My Workspace: Internal Messages Inbox &amp; Reader" loading="lazy">
+      <div class="doc-caption"><span>Figure 4.4a — My Workspace: Internal Messages Inbox &amp; Reader</span><span>🔍 Click to expand</span></div>
+    </div>
+    <div class="doc-figure" data-lightbox-src="assets/ui/image22_19b_workspace_messages_compose.png" data-lightbox-title="Figure 4.4b — Compose New Message Dialog with Distribution Lists">
+      <img src="assets/ui/image22_19b_workspace_messages_compose.png" alt="Figure 4.4b — Compose New Message Dialog with Distribution Lists" loading="lazy">
+      <div class="doc-caption"><span>Figure 4.4b — Compose New Message Dialog with Distribution Lists</span><span>🔍 Click to expand</span></div>
+    </div>
+  </div>
+  <h3 id="sec-4-5">4.5 Projects — Project Home <span class="route-pill">/project-home</span></h3>
+  <p>Lists all portfolios and active, initial estimate, or inactive/closed projects across the organization.</p>
+  <ul class="doc-list">
+    <li><strong>Portfolio Grouping:</strong> Every project belongs to a Portfolio. Use the &quot;New Portfolio&quot; button to create portfolio containers (or an Unassigned portfolio).</li>
+    <li><strong>Creating a Project:</strong> Click &quot;New Project&quot; to select the Portfolio, Project Name, Start/End Dates, Project Manager, Status (e.g., Initial Estimation or Active), and Pricing Model (Fixed Bid or T&amp;M).</li>
+  </ul>
+  <div class="doc-figure-grid">
+    <div class="doc-figure" data-lightbox-src="assets/ui/image23_20_portfolio_project_home.png" data-lightbox-title="Figure 4.5a — Projects: Project Home Directory">
+      <img src="assets/ui/image23_20_portfolio_project_home.png" alt="Figure 4.5a — Projects: Project Home Directory" loading="lazy">
+      <div class="doc-caption"><span>Figure 4.5a — Projects: Project Home Directory</span><span>🔍 Click to expand</span></div>
+    </div>
+    <div class="doc-figure" data-lightbox-src="assets/ui/image24_20b_portfolio_create_project_modal.png" data-lightbox-title="Figure 4.5b — Create New Project Modal">
+      <img src="assets/ui/image24_20b_portfolio_create_project_modal.png" alt="Figure 4.5b — Create New Project Modal" loading="lazy">
+      <div class="doc-caption"><span>Figure 4.5b — Create New Project Modal</span><span>🔍 Click to expand</span></div>
+    </div>
+  </div>
+  <h3 id="sec-4-6">4.6 Projects — Portfolio Dashboard <span class="route-pill">/portfolio-dashboard</span></h3>
+  <p>Designed for Senior Management and executives to monitor portfolio health, delivery risks, and quality across active initiatives. Structured into three analytical views:</p>
+  <ul class="doc-list">
+    <li><strong>Overview Tab:</strong> Displays portfolio KPI cards, RAG health distribution, Red/Amber health projects requiring attention, and upcoming release milestones.</li>
+    <li><strong>Quality &amp; Testing Tab:</strong> Summarizes cross-project bug/defect severity, test execution coverage, and open bug bottlenecks.</li>
+    <li><strong>Risks &amp; Issues (RAID) Tab:</strong> Highlights High Potential Risks and Critical/High Priority operational Issues across all active projects.</li>
+  </ul>
+  <div class="doc-figure-grid">
+    <div class="doc-figure" data-lightbox-src="assets/ui/image25_12_role_senior_mgmt_portfolio_dashboard.png" data-lightbox-title="Figure 4.6a — Portfolio Dashboard: Executive Overview Tab">
+      <img src="assets/ui/image25_12_role_senior_mgmt_portfolio_dashboard.png" alt="Figure 4.6a — Portfolio Dashboard: Executive Overview Tab" loading="lazy">
+      <div class="doc-caption"><span>Figure 4.6a — Portfolio Dashboard: Executive Overview Tab</span><span>🔍 Click to expand</span></div>
+    </div>
+    <div class="doc-figure" data-lightbox-src="assets/ui/image26_21b_portfolio_dashboard_quality_tab.png" data-lightbox-title="Figure 4.6b — Portfolio Dashboard: Quality &amp; Testing Tab">
+      <img src="assets/ui/image26_21b_portfolio_dashboard_quality_tab.png" alt="Figure 4.6b — Portfolio Dashboard: Quality &amp; Testing Tab" loading="lazy">
+      <div class="doc-caption"><span>Figure 4.6b — Portfolio Dashboard: Quality &amp; Testing Tab</span><span>🔍 Click to expand</span></div>
+    </div>
+    <div class="doc-figure" data-lightbox-src="assets/ui/image27_21c_portfolio_dashboard_raid_tab.png" data-lightbox-title="Figure 4.6c — Portfolio Dashboard: Risks &amp; Issues (RAID) Tab">
+      <img src="assets/ui/image27_21c_portfolio_dashboard_raid_tab.png" alt="Figure 4.6c — Portfolio Dashboard: Risks &amp; Issues (RAID) Tab" loading="lazy">
+      <div class="doc-caption"><span>Figure 4.6c — Portfolio Dashboard: Risks &amp; Issues (RAID) Tab</span><span>🔍 Click to expand</span></div>
+    </div>
+  </div>
+  <h3 id="portfolio-promptboard">4.7 Projects — Portfolio PromptBoard <span class="route-pill">/fp-portfolio-dash</span></h3>
+  <p>WayFinder AI-powered natural language analytics board for portfolio-wide insights. Users can click preset executive prompts (e.g., Projects by PM, Project RAG Health, Pricing Model Breakdown, Critical Risks, Billing Valuation, Resource Allocation) or type custom queries, switch between Split/Chart/Table views, export CSVs, and schedule recurring report jobs.</p>
+  <div class="doc-figure" data-lightbox-src="assets/ui/image28_22_portfolio_promptboard.png" data-lightbox-title="Figure 4.7 — Portfolio PromptBoard (WayFinder AI Analytics)">
+    <img src="assets/ui/image28_22_portfolio_promptboard.png" alt="Figure 4.7 — Portfolio PromptBoard (WayFinder AI Analytics)" loading="lazy">
+    <div class="doc-caption"><span>Figure 4.7 — Portfolio PromptBoard (WayFinder AI Analytics)</span><span>🔍 Click to expand</span></div>
+  </div>
+  <h3 id="quality-estimations">4.8 Quality — Estimation Variance <span class="route-pill">/quality/estimations</span></h3>
+  <p>Compares three estimation baselines across every project: Initial Estimate (ballpark scoping in man-days), Planned Estimate (sum of elaborated story/sub-task estimates), and Actual Logged effort (from employee worklogs). Helps upper management monitor estimation variance and plan consumption.</p>
+  <div class="doc-figure" data-lightbox-src="assets/ui/image29_23_portfolio_quality_estimations.png" data-lightbox-title="Figure 4.8 — Quality: Estimation Variance &amp; Conformance Dashboard">
+    <img src="assets/ui/image29_23_portfolio_quality_estimations.png" alt="Figure 4.8 — Quality: Estimation Variance &amp; Conformance Dashboard" loading="lazy">
+    <div class="doc-caption"><span>Figure 4.8 — Quality: Estimation Variance &amp; Conformance Dashboard</span><span>🔍 Click to expand</span></div>
+  </div>
+  <h3 id="quality-defects">4.9 Quality — Defect Containment <span class="route-pill">/quality/defects</span></h3>
+  <p>Tracks bug and defect counts discovered at each testing phase (SIT Phase, UAT Phase, Production Escaped Defects) and calculates the Average Leakage Rate % to measure how effectively QA teams catch issues early in the lifecycle.</p>
+  <div class="doc-figure" data-lightbox-src="assets/ui/image30_24_portfolio_quality_defects.png" data-lightbox-title="Figure 4.9 — Quality: Defect Containment &amp; Leakage Metrics">
+    <img src="assets/ui/image30_24_portfolio_quality_defects.png" alt="Figure 4.9 — Quality: Defect Containment &amp; Leakage Metrics" loading="lazy">
+    <div class="doc-caption"><span>Figure 4.9 — Quality: Defect Containment &amp; Leakage Metrics</span><span>🔍 Click to expand</span></div>
+  </div>
+  <h3 id="portfolio-billing">4.10 Billing — Portfolio Billing Dashboard <span class="route-pill">/billing</span></h3>
+  <p>Provides a financial ledger across all projects showing Total Revenue (Fixed Bid contract value or accumulated T&amp;M monthly billing), Resource Cost, Fixed Costs (hosting, licenses, GIT, setup), Net Profit, and Collected Payments, filterable by Lifetime, Month, Quarter, or Year.</p>
+  <div class="doc-figure" data-lightbox-src="assets/ui/image31_25_portfolio_billing.png" data-lightbox-title="Figure 4.10 — Billing: Portfolio Financial Overview &amp; Project Breakdown">
+    <img src="assets/ui/image31_25_portfolio_billing.png" alt="Figure 4.10 — Billing: Portfolio Financial Overview &amp; Project Breakdown" loading="lazy">
+    <div class="doc-caption"><span>Figure 4.10 — Billing: Portfolio Financial Overview &amp; Project Breakdown</span><span>🔍 Click to expand</span></div>
+  </div>
+  <h3 id="sec-4-11">4.11 Billing — Billing Rate &amp; Rate Cards <span class="route-pill">/billing-rate</span></h3>
+  <p>Centralizes resource billing rate auditing and organizational rate card standards across two tabs:</p>
+  <ul class="doc-list">
+    <li><strong>Project Resource Rates:</strong> Displays each resource’s Billed Rate/day, Cost Rate/day, Margin, and Margin % across projects (grouped by person or flat view).</li>
+    <li><strong>Standard Role Rate Cards:</strong> Defines baseline Low, Medium, and High experience daily billing rates across Tech Roles and Horizontal Roles for use during project estimation.</li>
+  </ul>
+  <div class="doc-figure-grid">
+    <div class="doc-figure" data-lightbox-src="assets/ui/image32_26_portfolio_billing_rate_resources.png" data-lightbox-title="Figure 4.11a — Billing Rate: Project Resource Rates &amp; Margin Analysis">
+      <img src="assets/ui/image32_26_portfolio_billing_rate_resources.png" alt="Figure 4.11a — Billing Rate: Project Resource Rates &amp; Margin Analysis" loading="lazy">
+      <div class="doc-caption"><span>Figure 4.11a — Billing Rate: Project Resource Rates &amp; Margin Analysis</span><span>🔍 Click to expand</span></div>
+    </div>
+    <div class="doc-figure" data-lightbox-src="assets/ui/image33_26b_portfolio_billing_rate_cards.png" data-lightbox-title="Figure 4.11b — Billing Rate: Standard Role Rate Cards">
+      <img src="assets/ui/image33_26b_portfolio_billing_rate_cards.png" alt="Figure 4.11b — Billing Rate: Standard Role Rate Cards" loading="lazy">
+      <div class="doc-caption"><span>Figure 4.11b — Billing Rate: Standard Role Rate Cards</span><span>🔍 Click to expand</span></div>
+    </div>
+  </div>
+  <h3 id="user-pool">4.12 Users — User List <span class="route-pill">/users</span></h3>
+  <p>Directory of all registered employees. Displays a &quot;Users Awaiting Enablement&quot; approval queue at the top for newly signed-up users, and allows Administrators to directly provision new users (&quot;Add User&quot;) with an Access Level, Role, Cost Rate, and default password (&quot;P@ssw0rd&quot;).</p>
+  <div class="doc-figure-grid">
+    <div class="doc-figure" data-lightbox-src="assets/ui/image34_11_role_administrator_users.png" data-lightbox-title="Figure 4.12a — Users: User List &amp; Enablement Queue">
+      <img src="assets/ui/image34_11_role_administrator_users.png" alt="Figure 4.12a — Users: User List &amp; Enablement Queue" loading="lazy">
+      <div class="doc-caption"><span>Figure 4.12a — Users: User List &amp; Enablement Queue</span><span>🔍 Click to expand</span></div>
+    </div>
+    <div class="doc-figure" data-lightbox-src="assets/ui/image35_28_portfolio_users_add_modal.png" data-lightbox-title="Figure 4.12b — Add New User Modal">
+      <img src="assets/ui/image35_28_portfolio_users_add_modal.png" alt="Figure 4.12b — Add New User Modal" loading="lazy">
+      <div class="doc-caption"><span>Figure 4.12b — Add New User Modal</span><span>🔍 Click to expand</span></div>
+    </div>
+  </div>
+  <h3 id="users-utilization">4.13 Users — Resource Utilization <span class="route-pill">/utilization</span></h3>
+  <p>Visualizes cross-project allocation timelines and capacity utilization per employee. Selecting a user displays their Availability Outlook (current occupancy status, utilization %, active project count, next available date) alongside a daily Availability Grid.</p>
+  <div class="doc-figure" data-lightbox-src="assets/ui/image36_29_portfolio_utilization.png" data-lightbox-title="Figure 4.13 — Users: Resource Utilization &amp; Availability Grid">
+    <img src="assets/ui/image36_29_portfolio_utilization.png" alt="Figure 4.13 — Users: Resource Utilization &amp; Availability Grid" loading="lazy">
+    <div class="doc-caption"><span>Figure 4.13 — Users: Resource Utilization &amp; Availability Grid</span><span>🔍 Click to expand</span></div>
+  </div>
+  <h3 id="leave-calendar">4.14 Time Off — Company Holidays <span class="route-pill">/holidays/holiday-calendar</span></h3>
+  <p>Configures organization-wide Weekly Off-Days (e.g., Saturday and Sunday) and the Yearly Holidays calendar. Includes an &quot;Auto-fill with AI&quot; button to populate regional/national holidays automatically.</p>
+  <div class="doc-figure" data-lightbox-src="assets/ui/image37_30_portfolio_holiday_calendar.png" data-lightbox-title="Figure 4.14 — Time Off: Global Company Holidays &amp; Weekly Off-Days">
+    <img src="assets/ui/image37_30_portfolio_holiday_calendar.png" alt="Figure 4.14 — Time Off: Global Company Holidays &amp; Weekly Off-Days" loading="lazy">
+    <div class="doc-caption"><span>Figure 4.14 — Time Off: Global Company Holidays &amp; Weekly Off-Days</span><span>🔍 Click to expand</span></div>
+  </div>
+  <h3 id="sec-4-15">4.15 Time Off — Leave Policy &amp; Quotas <span class="route-pill">/holidays/leave-settings</span></h3>
+  <p>Configures the global Annual Paid Leaves Quota, Carry-Over Leaves toggle, and Carry-Over Days Limit, and displays the Resource Leave Accounts summary table for all employees.</p>
+  <div class="doc-figure" data-lightbox-src="assets/ui/image38_31_portfolio_leave_settings.png" data-lightbox-title="Figure 4.15 — Time Off: Global Leave Policy &amp; Resource Leave Accounts">
+    <img src="assets/ui/image38_31_portfolio_leave_settings.png" alt="Figure 4.15 — Time Off: Global Leave Policy &amp; Resource Leave Accounts" loading="lazy">
+    <div class="doc-caption"><span>Figure 4.15 — Time Off: Global Leave Policy &amp; Resource Leave Accounts</span><span>🔍 Click to expand</span></div>
+  </div>
+</section>
+<section class="doc-section" id="initial-estimation">
+  <h2>5. Initial Estimation Flow</h2>
+  <p>When a new project is created with the status set to &quot;Initial Estimation&quot;, Workwayz opens the Initial Estimation workspace. Here, Project Managers and Architects define the project summary, select or generate impacted technology systems and horizontal practices, and compute ballpark effort and cost estimates.</p>
+  <h3 id="ai-tech-stacks">5.1 Specifications, Stack Suggest &amp; Impacted Systems</h3>
+  <p>In the Initial Estimation → Specifications page <span class="route-pill">/projects/[id]/initial-estimation/specifications</span>:</p>
+  <ul class="doc-list">
+    <li><strong>Project Summary:</strong> Enter a detailed overview of the project goals, functional scope, and target architecture, then click Save.</li>
+    <li><strong>Stack Suggest (AI) / Add System:</strong> Click &quot;Stack Suggest&quot; to let AI recommend 3 tailored technology stacks based on the Project Summary, or click &quot;Add System&quot; to manually add Impacted Systems. Enter the Daily Billing Rate (USD) for each system.</li>
+  </ul>
+  <div class="doc-figure" data-lightbox-src="assets/ui/image39_35_initial_estimation_specifications.png" data-lightbox-title="Figure 5.1 — Initial Estimation: Project Summary &amp; Impacted Systems">
+    <img src="assets/ui/image39_35_initial_estimation_specifications.png" alt="Figure 5.1 — Initial Estimation: Project Summary &amp; Impacted Systems" loading="lazy">
+    <div class="doc-caption"><span>Figure 5.1 — Initial Estimation: Project Summary &amp; Impacted Systems</span><span>🔍 Click to expand</span></div>
+  </div>
+  <h3 id="ai-horizontals">5.2 Horizontals, AI Estimator &amp; Confirming Estimation</h3>
+  <p>Below Impacted Systems, configure the supporting Horizontal practices (Project Management, Business Analysis, Quality Analysis, Solution Architecture, UI/UX, DevOps):</p>
+  <ul class="doc-list">
+    <li><strong>Horizontal Suggest (AI) / Add Horizontal:</strong> Use AI to recommend horizontal weightage percentages or configure weightages and daily billing rates manually.</li>
+    <li><strong>AI Estimator:</strong> Click &quot;AI Estimator&quot; to automatically calculate benchmark man-day efforts across all Impacted Systems and Horizontals based on project scope. Adjust values as needed for your team’s velocity.</li>
+    <li><strong>Confirm Estimation:</strong> Click &quot;Confirm Estimation&quot; to baseline the estimate and transition the project into active delivery.</li>
+  </ul>
+  <div class="doc-figure" data-lightbox-src="assets/ui/image40_35b_initial_estimation_horizontals.png" data-lightbox-title="Figure 5.2 — Initial Estimation: Horizontals, AI Estimator &amp; Confirm Estimation">
+    <img src="assets/ui/image40_35b_initial_estimation_horizontals.png" alt="Figure 5.2 — Initial Estimation: Horizontals, AI Estimator &amp; Confirm Estimation" loading="lazy">
+    <div class="doc-caption"><span>Figure 5.2 — Initial Estimation: Horizontals, AI Estimator &amp; Confirm Estimation</span><span>🔍 Click to expand</span></div>
+  </div>
+  <h3 id="sec-5-3">5.3 Initial Estimation — Project Status</h3>
+  <p>The Initial Estimation → Project Status page <span class="route-pill">/projects/[id]/initial-estimation/project-status</span> allows viewing and updating core project metadata (Project Manager, Pricing Model, Start/End Dates, and Status) while the project is in the estimation phase.</p>
+  <div class="doc-figure" data-lightbox-src="assets/ui/image41_36_initial_estimation_status.png" data-lightbox-title="Figure 5.3 — Initial Estimation: Project Status &amp; Key Information">
+    <img src="assets/ui/image41_36_initial_estimation_status.png" alt="Figure 5.3 — Initial Estimation: Project Status &amp; Key Information" loading="lazy">
+    <div class="doc-caption"><span>Figure 5.3 — Initial Estimation: Project Status &amp; Key Information</span><span>🔍 Click to expand</span></div>
+  </div>
+</section>
+<section class="doc-section" id="project-flow">
+  <h2>6. Project Flow</h2>
+  <p>Once a project is active, the Project Detail Hub provides end-to-end delivery management ordered across the project lifecycle in the top navigation bar: Initial Estimation → Project Details (including Project Releases) → Development → Testing → Resources (including Leave &amp; Company Holidays) → Governance (RAID) → PMO Financials → Project Settings → Project Trash.</p>
+  <h3 id="pm-dashboard">6.1 Project Details — PM Dashboard <span class="route-pill">/project-details/pm-dashboard</span></h3>
+  <p>The first view inside Project Details is a comprehensive analytical dashboard for Project Managers, Senior Management, and PMO:</p>
+  <ul class="doc-list">
+    <li><strong>Release, Sprint &amp; Epic Progress:</strong> Radial progress charts for releases and sprints alongside epic completion bars.</li>
+    <li><strong>Time &amp; Workload:</strong> Compares Worklog, Derived, and Planned hours, and breaks down resource hours into Sub-Task Effort vs. Bug Fixing Effort (high bug-fixing effort signals requirement or design gaps).</li>
+    <li>Resource Costs, Fixed Costs, Swim Lane Bottlenecks &amp; Time by Resource: Compares revenue vs. cost per role, tracks fixed overhead costs, measures average residence time per Kanban swim lane, and highlights average task cycle time per engineer.</li>
+  </ul>
+  <div class="doc-figure-grid">
+    <div class="doc-figure" data-lightbox-src="assets/ui/image42_42_project_pm_dashboard_top.png" data-lightbox-title="Figure 6.1a — PM Dashboard: Release, Sprint, Epic, Time &amp; Workload Analytics">
+      <img src="assets/ui/image42_42_project_pm_dashboard_top.png" alt="Figure 6.1a — PM Dashboard: Release, Sprint, Epic, Time &amp; Workload Analytics" loading="lazy">
+      <div class="doc-caption"><span>Figure 6.1a — PM Dashboard: Release, Sprint, Epic, Time &amp; Workload Analytics</span><span>🔍 Click to expand</span></div>
+    </div>
+    <div class="doc-figure" data-lightbox-src="assets/ui/image43_42b_project_pm_dashboard_bottom.png" data-lightbox-title="Figure 6.1b — PM Dashboard: Resource Costs, Fixed Costs, Swim Lane &amp; Resource Cycle Time">
+      <img src="assets/ui/image43_42b_project_pm_dashboard_bottom.png" alt="Figure 6.1b — PM Dashboard: Resource Costs, Fixed Costs, Swim Lane &amp; Resource Cycle Time" loading="lazy">
+      <div class="doc-caption"><span>Figure 6.1b — PM Dashboard: Resource Costs, Fixed Costs, Swim Lane &amp; Resource Cycle Time</span><span>🔍 Click to expand</span></div>
+    </div>
+  </div>
+  <h3 id="project-promptboard">6.2 Project Details — Project PromptBoard <span class="route-pill">/project-details/fp-pm-dash</span></h3>
+  <p>Project-scoped WayFinder AI dashboard enabling natural language and preset queries specifically for the active project (Sprint Delivery &amp; Velocity, Stories by Status, Bug &amp; Defect Breakdown, Critical RAID Items, Team Workload), complete with chart/table views and automated cron report scheduling.</p>
+  <div class="doc-figure" data-lightbox-src="assets/ui/image44_43_project_promptboard.png" data-lightbox-title="Figure 6.2 — Project Details: Project PromptBoard (WayFinder AI)">
+    <img src="assets/ui/image44_43_project_promptboard.png" alt="Figure 6.2 — Project Details: Project PromptBoard (WayFinder AI)" loading="lazy">
+    <div class="doc-caption"><span>Figure 6.2 — Project Details: Project PromptBoard (WayFinder AI)</span><span>🔍 Click to expand</span></div>
+  </div>
+  <h3 id="sec-6-3">6.3 Project Details — Project Status <span class="route-pill">/project-details/project-status</span></h3>
+  <p>Displays and edits Key Information (Status, Project Manager, Pricing Model [Fixed Bid or T&amp;M], Start Date, End Date) and Project Health indicators (Overall Health, Scope, Cost, and Time RAG statuses with status comments and historical log).</p>
+  <div class="doc-figure" data-lightbox-src="assets/ui/image45_40_project_status.png" data-lightbox-title="Figure 6.3 — Project Details: Project Status &amp; RAG Health Indicators">
+    <img src="assets/ui/image45_40_project_status.png" alt="Figure 6.3 — Project Details: Project Status &amp; RAG Health Indicators" loading="lazy">
+    <div class="doc-caption"><span>Figure 6.3 — Project Details: Project Status &amp; RAG Health Indicators</span><span>🔍 Click to expand</span></div>
+  </div>
+  <h3 id="sec-6-4">6.4 Project Details — Specifications &amp; Environments <span class="route-pill">/project-details/specifications</span></h3>
+  <p>Extends the Initial Estimation specifications with an Environments management section where teams define and order testing/deployment environments (e.g., Dev, SIT, UAT, Production, VAPT, Performance).</p>
+  <div class="doc-figure-grid">
+    <div class="doc-figure" data-lightbox-src="assets/ui/image46_41_project_specifications.png" data-lightbox-title="Figure 6.4a — Project Details: Specifications (Summary &amp; Impacted Systems)">
+      <img src="assets/ui/image46_41_project_specifications.png" alt="Figure 6.4a — Project Details: Specifications (Summary &amp; Impacted Systems)" loading="lazy">
+      <div class="doc-caption"><span>Figure 6.4a — Project Details: Specifications (Summary &amp; Impacted Systems)</span><span>🔍 Click to expand</span></div>
+    </div>
+    <div class="doc-figure" data-lightbox-src="assets/ui/image47_41b_project_specifications_environments.png" data-lightbox-title="Figure 6.4b — Project Details: Horizontals &amp; Testing Environments">
+      <img src="assets/ui/image47_41b_project_specifications_environments.png" alt="Figure 6.4b — Project Details: Horizontals &amp; Testing Environments" loading="lazy">
+      <div class="doc-caption"><span>Figure 6.4b — Project Details: Horizontals &amp; Testing Environments</span><span>🔍 Click to expand</span></div>
+    </div>
+  </div>
+  <h3 id="release-trains">6.5 Project Details — Project Releases, Stages &amp; Milestones <span class="route-pill">/releases/project-releases</span></h3>
+  <p>Consolidated directly under Project Details for seamless milestone governance. Provides a visual Release Timeline (Gantt) and structured table to manage parent Releases (REL-*), delivery Stages (S-*, e.g., Design, Development, Testing), and contractual Milestones (M-*, e.g., Design Freeze, Code Freeze).</p>
+  <div class="doc-figure" data-lightbox-src="assets/ui/image48_47_project_releases.png" data-lightbox-title="Figure 6.5 — Project Details: Project Releases Timeline, Stages &amp; Milestones">
+    <img src="assets/ui/image48_47_project_releases.png" alt="Figure 6.5 — Project Details: Project Releases Timeline, Stages &amp; Milestones" loading="lazy">
+    <div class="doc-caption"><span>Figure 6.5 — Project Details: Project Releases Timeline, Stages &amp; Milestones</span><span>🔍 Click to expand</span></div>
+  </div>
+  <h3 id="sec-6-6">6.6 Development — Development Dashboard <span class="route-pill">/development/dashboard</span></h3>
+  <p>Displays counts of Stories, Feature Changes, Tasks, and Bugs alongside the interactive Sprint Burndown chart and Release Burnup chart.</p>
+  <div class="doc-figure" data-lightbox-src="assets/ui/image49_14_role_lead_dev_dashboard.png" data-lightbox-title="Figure 6.6 — Development: Development Dashboard (Sprint Burndown &amp; Release Burnup)">
+    <img src="assets/ui/image49_14_role_lead_dev_dashboard.png" alt="Figure 6.6 — Development: Development Dashboard (Sprint Burndown &amp; Release Burnup)" loading="lazy">
+    <div class="doc-caption"><span>Figure 6.6 — Development: Development Dashboard (Sprint Burndown &amp; Release Burnup)</span><span>🔍 Click to expand</span></div>
+  </div>
+  <h3 id="development-backlog">6.7 Development — Product Backlog, Add Requirement &amp; Escaped Defects <span class="route-pill">/development/backlog</span></h3>
+  <p>Central repository for Epics and Product Backlog Items (PBIs). Clicking the &quot;Add Requirement&quot; button opens the &quot;Add New Requirement&quot; dialog supporting seven distinct PBI types:</p>
+  <ul class="doc-list">
+    <li><strong>PBI Types under Add Requirement:</strong> User Story (US-*), Feature Change (FC-*), Task (TASK-*), Enabler (EN-*), Tech Debt (TD-*), Spike (SPK-*), and Defect (Escaped Defect, DEF-*).</li>
+    <li><strong>Two-Tier Bug vs. Escaped Defect Taxonomy:</strong> Production or post-acceptance escaped defects are logged here as &quot;Defect&quot; (itemType: &quot;Escaped Defect&quot;, ID prefix DEF-*). Because the original story’s sprint has already closed, an Escaped Defect is estimated, assigned to an Epic, and prioritized into an upcoming sprint as a standalone PBI without reopening closed historical stories.</li>
+    <li><strong>Elaboration Flow &amp; AI Assistance:</strong> Product Owners/BAs create requirements under Epics; Tech Leads tag Impacted Systems; Developers break items into Sub-Tasks. Includes &quot;AI Req Gen&quot; and inline AI Sub-Task/Test Case generation.</li>
+  </ul>
+  <div class="doc-figure-grid">
+    <div class="doc-figure" data-lightbox-src="assets/ui/image50_49_project_product_backlog.png" data-lightbox-title="Figure 6.7a — Development: Product Backlog Grouped by Epics (Add Requirement)">
+      <img src="assets/ui/image50_49_project_product_backlog.png" alt="Figure 6.7a — Development: Product Backlog Grouped by Epics (Add Requirement)" loading="lazy">
+      <div class="doc-caption"><span>Figure 6.7a — Development: Product Backlog Grouped by Epics (Add Requirement)</span><span>🔍 Click to expand</span></div>
+    </div>
+    <div class="doc-figure" data-lightbox-src="assets/ui/image51_49b_project_backlog_add_modal.png" data-lightbox-title="Figure 6.7b — Add New Requirement Modal (User Story, Feature Change, Task, Enabler, Tech Debt, Spike, Defect)">
+      <img src="assets/ui/image51_49b_project_backlog_add_modal.png" alt="Figure 6.7b — Add New Requirement Modal (User Story, Feature Change, Task, Enabler, Tech Debt, Spike, Defect)" loading="lazy">
+      <div class="doc-caption"><span>Figure 6.7b — Add New Requirement Modal (User Story, Feature Change, Task, Enabler, Tech Debt, Spike, Defect)</span><span>🔍 Click to expand</span></div>
+    </div>
+  </div>
+  <h3 id="subtasks-grooming">6.8 Development — Grooming Board <span class="route-pill">/development/grooming</span></h3>
+  <p>Dual-column sprint planning workspace showing unassigned Backlog items on the left and target Sprints on the right. Requirements with a green readiness tick (indicating sub-tasks with effort are defined for all impacted systems) can be moved into a sprint while monitoring real-time system capacity bars at the top of the sprint column.</p>
+  <div class="doc-figure" data-lightbox-src="assets/ui/image52_51_project_grooming.png" data-lightbox-title="Figure 6.8 — Development: Grooming Board &amp; Sprint Capacity Bars">
+    <img src="assets/ui/image52_51_project_grooming.png" alt="Figure 6.8 — Development: Grooming Board &amp; Sprint Capacity Bars" loading="lazy">
+    <div class="doc-caption"><span>Figure 6.8 — Development: Grooming Board &amp; Sprint Capacity Bars</span><span>🔍 Click to expand</span></div>
+  </div>
+  <h3 id="kanban-board">6.9 Development — Kanban Board <span class="route-pill">/development/kanban</span></h3>
+  <p>Interactive drag-and-drop board for moving work items across swim lanes (To Do, In Progress, In QA, Done). Supports switching the View filter between parent Stories/Requirements and granular Sub-Tasks, as well as filtering by Assignee.</p>
+  <div class="doc-figure-grid">
+    <div class="doc-figure" data-lightbox-src="assets/ui/image53_52_project_kanban_stories.png" data-lightbox-title="Figure 6.9a — Development: Kanban Board (Stories View)">
+      <img src="assets/ui/image53_52_project_kanban_stories.png" alt="Figure 6.9a — Development: Kanban Board (Stories View)" loading="lazy">
+      <div class="doc-caption"><span>Figure 6.9a — Development: Kanban Board (Stories View)</span><span>🔍 Click to expand</span></div>
+    </div>
+    <div class="doc-figure" data-lightbox-src="assets/ui/image54_52b_project_kanban_subtasks.png" data-lightbox-title="Figure 6.9b — Development: Kanban Board (Sub-Tasks View)">
+      <img src="assets/ui/image54_52b_project_kanban_subtasks.png" alt="Figure 6.9b — Development: Kanban Board (Sub-Tasks View)" loading="lazy">
+      <div class="doc-caption"><span>Figure 6.9b — Development: Kanban Board (Sub-Tasks View)</span><span>🔍 Click to expand</span></div>
+    </div>
+  </div>
+  <h3 id="sec-6-10">6.10 Development — Sub-Tasks <span class="route-pill">/development/development-tasks</span></h3>
+  <p>Provides a dedicated tabular view of all engineering sub-tasks across the project so Tech Leads and Managers can filter, inspect unassigned items, and assign or update sub-tasks in bulk.</p>
+  <div class="doc-figure-grid">
+    <div class="doc-figure" data-lightbox-src="assets/ui/image55_50_project_subtasks.png" data-lightbox-title="Figure 6.10a — Development: Sub-Tasks Bulk Management Table">
+      <img src="assets/ui/image55_50_project_subtasks.png" alt="Figure 6.10a — Development: Sub-Tasks Bulk Management Table" loading="lazy">
+      <div class="doc-caption"><span>Figure 6.10a — Development: Sub-Tasks Bulk Management Table</span><span>🔍 Click to expand</span></div>
+    </div>
+    <div class="doc-figure" data-lightbox-src="assets/ui/image56_50b_project_subtasks_add_modal.png" data-lightbox-title="Figure 6.10b — Add New Sub-Task Modal">
+      <img src="assets/ui/image56_50b_project_subtasks_add_modal.png" alt="Figure 6.10b — Add New Sub-Task Modal" loading="lazy">
+      <div class="doc-caption"><span>Figure 6.10b — Add New Sub-Task Modal</span><span>🔍 Click to expand</span></div>
+    </div>
+  </div>
+  <h3 id="testing-dashboard">6.11 Testing — Test Dashboard <span class="route-pill">/testing/dashboard</span></h3>
+  <p>Provides complete QA visibility across Test Cycles (SIT, UAT, Prod), ordered as the first item under the Testing tab:</p>
+  <ul class="doc-list">
+    <li><strong>Test Execution Summary:</strong> Pie charts for Test Cases by Status, Bugs by Status, and Open Bugs by Severity.</li>
+    <li><strong>Daily View:</strong> Line trends tracking daily Planned/Executed/Closed test cases and daily Opened/Closed bugs.</li>
+    <li><strong>Test Leakage &amp; Story Test Coverage:</strong> Bar chart of bugs leaked across test cycles by severity, and a coverage ring showing the percentage of stories covered by linked test cases.</li>
+  </ul>
+  <div class="doc-figure-grid">
+    <div class="doc-figure" data-lightbox-src="assets/ui/image57_53_project_testing_dashboard_top.png" data-lightbox-title="Figure 6.11a — Test Dashboard: Execution Summary &amp; Daily Trends">
+      <img src="assets/ui/image57_53_project_testing_dashboard_top.png" alt="Figure 6.11a — Test Dashboard: Execution Summary &amp; Daily Trends" loading="lazy">
+      <div class="doc-caption"><span>Figure 6.11a — Test Dashboard: Execution Summary &amp; Daily Trends</span><span>🔍 Click to expand</span></div>
+    </div>
+    <div class="doc-figure" data-lightbox-src="assets/ui/image58_53b_project_testing_dashboard_bottom.png" data-lightbox-title="Figure 6.11b — Test Dashboard: Test Leakage &amp; Story Test Coverage">
+      <img src="assets/ui/image58_53b_project_testing_dashboard_bottom.png" alt="Figure 6.11b — Test Dashboard: Test Leakage &amp; Story Test Coverage" loading="lazy">
+      <div class="doc-caption"><span>Figure 6.11b — Test Dashboard: Test Leakage &amp; Story Test Coverage</span><span>🔍 Click to expand</span></div>
+    </div>
+  </div>
+  <h3 id="sec-6-12">6.12 Testing — Test Cases, Test Cycles &amp; Test Executions</h3>
+  <p>Following the natural QA execution sequence in the Testing sidebar (Test Cases → Test Cycles → Test Executions):</p>
+  <ul class="doc-list">
+    <li><strong>Test Cases <span class="route-pill">/testing/test-cases</span>:</strong> Master test case repository with AI Test Case Generator (&quot;AI TC Gen&quot;) and manual creation.</li>
+    <li><strong>Test Cycles <span class="route-pill">/testing/test-cycle</span>:</strong> Create Sprint or Release test plans mapped to an Environment (SIT, UAT, Prod) and copy test cases from the repository into scheduled execution dates.</li>
+    <li><strong>Test Executions <span class="route-pill">/testing/test-execution</span>:</strong> Interactive test execution workspace featuring a day-by-day queue, built-in execution timer (Start/Pause/Stop), status selector (Not Run, Passed, Failed, Blocked, Skipped), actual effort logging, and one-click &quot;Fail &amp; Log Bug&quot;.</li>
+  </ul>
+  <div class="doc-figure-grid">
+    <div class="doc-figure" data-lightbox-src="assets/ui/image59_55_project_test_cases.png" data-lightbox-title="Figure 6.12a — Testing: Test Cases Repository">
+      <img src="assets/ui/image59_55_project_test_cases.png" alt="Figure 6.12a — Testing: Test Cases Repository" loading="lazy">
+      <div class="doc-caption"><span>Figure 6.12a — Testing: Test Cases Repository</span><span>🔍 Click to expand</span></div>
+    </div>
+    <div class="doc-figure" data-lightbox-src="assets/ui/image60_56_project_test_cycles.png" data-lightbox-title="Figure 6.12b — Testing: Test Cycles &amp; Test Plan Assignment">
+      <img src="assets/ui/image60_56_project_test_cycles.png" alt="Figure 6.12b — Testing: Test Cycles &amp; Test Plan Assignment" loading="lazy">
+      <div class="doc-caption"><span>Figure 6.12b — Testing: Test Cycles &amp; Test Plan Assignment</span><span>🔍 Click to expand</span></div>
+    </div>
+    <div class="doc-figure" data-lightbox-src="assets/ui/image61_56b_project_test_execution.png" data-lightbox-title="Figure 6.12c — Testing: Interactive Test Executions Runner &amp; Timer">
+      <img src="assets/ui/image61_56b_project_test_execution.png" alt="Figure 6.12c — Testing: Interactive Test Executions Runner &amp; Timer" loading="lazy">
+      <div class="doc-caption"><span>Figure 6.12c — Testing: Interactive Test Executions Runner &amp; Timer</span><span>🔍 Click to expand</span></div>
+    </div>
+  </div>
+  <h3 id="testing-bugs">6.13 Testing — Bugs <span class="route-pill">/testing/defects</span></h3>
+  <p>Tabular In-Sprint Bugs log where testers click &quot;Add Bug&quot; to record bugs (ID prefix BUG-*) discovered during active sprint testing. Each In-Sprint Bug is linked to its parent in-sprint Story (Related Story), inherits the story’s Epic and Sprint, carries 0 story points so velocity is not inflated, and appears embedded inside the parent story card.</p>
+  <div class="doc-figure-grid">
+    <div class="doc-figure" data-lightbox-src="assets/ui/image62_57_project_defects.png" data-lightbox-title="Figure 6.13a — Testing: Project In-Sprint Bugs Log">
+      <img src="assets/ui/image62_57_project_defects.png" alt="Figure 6.13a — Testing: Project In-Sprint Bugs Log" loading="lazy">
+      <div class="doc-caption"><span>Figure 6.13a — Testing: Project In-Sprint Bugs Log</span><span>🔍 Click to expand</span></div>
+    </div>
+    <div class="doc-figure" data-lightbox-src="assets/ui/image63_57b_project_defects_add_modal.png" data-lightbox-title="Figure 6.13b — Add New Bug Modal">
+      <img src="assets/ui/image63_57b_project_defects_add_modal.png" alt="Figure 6.13b — Add New Bug Modal" loading="lazy">
+      <div class="doc-caption"><span>Figure 6.13b — Add New Bug Modal</span><span>🔍 Click to expand</span></div>
+    </div>
+  </div>
+  <h3 id="defect-triage">6.14 Testing — Bug Tracker <span class="route-pill">/testing/defect-tracker</span></h3>
+  <p>Dedicated Kanban board for tracking In-Sprint Bug resolution across QA workflow stages (To Triage, Open, In Progress, Resolved, Verified, Closed), with filters for Sprint/Release, Test Cycle, and Assignee.</p>
+  <div class="doc-figure" data-lightbox-src="assets/ui/image64_54_project_defect_tracker.png" data-lightbox-title="Figure 6.14 — Testing: Bug Tracker Workflow Board">
+    <img src="assets/ui/image64_54_project_defect_tracker.png" alt="Figure 6.14 — Testing: Bug Tracker Workflow Board" loading="lazy">
+    <div class="doc-caption"><span>Figure 6.14 — Testing: Bug Tracker Workflow Board</span><span>🔍 Click to expand</span></div>
+  </div>
+  <h3 id="project-resources">6.15 Resources — Project Resources &amp; Capacity Planning <span class="route-pill">/resources/project-resources</span></h3>
+  <p>Manages the project team roster, capability assignment, and capacity forecasting under the consolidated Resources tab:</p>
+  <ul class="doc-list">
+    <li><strong>Project Resources:</strong> Onboard users from the global pool and map their Capabilities to the project’s Impacted Systems.</li>
+    <li><strong>Add User to Project Dialog:</strong> Assigns Role, Availability (%), Capability (Impacted Systems or Horizontals), Onboarding/Offboarding Dates, Client ID/Email, and BCP Support designation.</li>
+    <li><strong>Capacity Planning:</strong> Displays Total Capacity per Impacted System across Sprint, Month, or Week views in Days or Hours.</li>
+  </ul>
+  <div class="doc-figure-grid">
+    <div class="doc-figure" data-lightbox-src="assets/ui/image65_44_project_resources.png" data-lightbox-title="Figure 6.15a — Resources: Assigned Project Team Roster">
+      <img src="assets/ui/image65_44_project_resources.png" alt="Figure 6.15a — Resources: Assigned Project Team Roster" loading="lazy">
+      <div class="doc-caption"><span>Figure 6.15a — Resources: Assigned Project Team Roster</span><span>🔍 Click to expand</span></div>
+    </div>
+    <div class="doc-figure" data-lightbox-src="assets/ui/image66_44b_project_capacity_planning.png" data-lightbox-title="Figure 6.15b — Resources: Capacity Planning by Impacted System">
+      <img src="assets/ui/image66_44b_project_capacity_planning.png" alt="Figure 6.15b — Resources: Capacity Planning by Impacted System" loading="lazy">
+      <div class="doc-caption"><span>Figure 6.15b — Resources: Capacity Planning by Impacted System</span><span>🔍 Click to expand</span></div>
+    </div>
+    <div class="doc-figure" data-lightbox-src="assets/ui/image67_44c_project_gantt.png" data-lightbox-title="Figure 6.15c — Resources: Add User to Project Dialog">
+      <img src="assets/ui/image67_44c_project_gantt.png" alt="Figure 6.15c — Resources: Add User to Project Dialog" loading="lazy">
+      <div class="doc-caption"><span>Figure 6.15c — Resources: Add User to Project Dialog</span><span>🔍 Click to expand</span></div>
+    </div>
+  </div>
+  <h3 id="sec-6-16">6.16 Resources — Resource Workload <span class="route-pill">/resources/resource-workload</span></h3>
+  <p>Monthly calendar heatmap for PMs and Leads to inspect daily workload bars per engineer and spot over- or under-allocation across the project team.</p>
+  <div class="doc-figure" data-lightbox-src="assets/ui/image68_45_project_resource_workload.png" data-lightbox-title="Figure 6.16 — Resources: Monthly Resource Workload Heatmap">
+    <img src="assets/ui/image68_45_project_resource_workload.png" alt="Figure 6.16 — Resources: Monthly Resource Workload Heatmap" loading="lazy">
+    <div class="doc-caption"><span>Figure 6.16 — Resources: Monthly Resource Workload Heatmap</span><span>🔍 Click to expand</span></div>
+  </div>
+  <h3 id="sec-6-17">6.17 Resources — Leave Calendar, Leave Summary &amp; Company Holidays</h3>
+  <p>All project team availability, leave accounting, and holiday calendar views are consolidated directly inside the Resources sidebar:</p>
+  <ul class="doc-list">
+    <li><strong>Leave Calendar <span class="route-pill">/resources/leave-calendar</span>:</strong> Monthly calendar showing which staffed project members are on leave on any given day.</li>
+    <li><strong>Leave Summary <span class="route-pill">/holidays/leave-summary</span>:</strong> Summarizes Paid Leaves and Loss of Pay (LOP) days taken by each project team member for accurate client billing.</li>
+    <li><strong>Company Holidays <span class="route-pill">/holidays</span>:</strong> Displays the project holiday calendar and allows PMs to override global holiday settings if the project follows a different client region or time zone.</li>
+  </ul>
+  <div class="doc-figure-grid">
+    <div class="doc-figure" data-lightbox-src="assets/ui/image69_46_project_leave_calendar.png" data-lightbox-title="Figure 6.17a — Resources: Project Team Leave Calendar">
+      <img src="assets/ui/image69_46_project_leave_calendar.png" alt="Figure 6.17a — Resources: Project Team Leave Calendar" loading="lazy">
+      <div class="doc-caption"><span>Figure 6.17a — Resources: Project Team Leave Calendar</span><span>🔍 Click to expand</span></div>
+    </div>
+    <div class="doc-figure" data-lightbox-src="assets/ui/image70_64_project_leave_summary.png" data-lightbox-title="Figure 6.17b — Resources: Team Leave &amp; LOP Summary">
+      <img src="assets/ui/image70_64_project_leave_summary.png" alt="Figure 6.17b — Resources: Team Leave &amp; LOP Summary" loading="lazy">
+      <div class="doc-caption"><span>Figure 6.17b — Resources: Team Leave &amp; LOP Summary</span><span>🔍 Click to expand</span></div>
+    </div>
+    <div class="doc-figure" data-lightbox-src="assets/ui/image71_63_project_holidays.png" data-lightbox-title="Figure 6.17c — Resources: Company Holidays &amp; Regional Override">
+      <img src="assets/ui/image71_63_project_holidays.png" alt="Figure 6.17c — Resources: Company Holidays &amp; Regional Override" loading="lazy">
+      <div class="doc-caption"><span>Figure 6.17c — Resources: Company Holidays &amp; Regional Override</span><span>🔍 Click to expand</span></div>
+    </div>
+  </div>
+  <h3 id="governance-raid">6.18 Governance — RAID Dashboard, Risks, Assumptions, Issues &amp; Dependencies</h3>
+  <p>Tracks project governance across five dedicated screens:</p>
+  <ul class="doc-list">
+    <li><strong>RAID Dashboard <span class="route-pill">/raid-dashboard</span>:</strong> Summary counts and status charts for Risks, Assumptions, Issues, and Dependencies.</li>
+    <li><strong>Risks <span class="route-pill">/risks</span>:</strong> Logs project risks with Severity and Probability to compute Risk Potential, mitigation/contingency plans, and &quot;AI Risk Gen&quot;.</li>
+    <li><strong>Assumptions <span class="route-pill">/assumptions</span>:</strong> Captures technical, resource, business, and external assumptions with validation status and &quot;AI Gen Assumptions&quot;.</li>
+    <li><strong>Issues <span class="route-pill">/issues</span>:</strong> Tracks materialized operational blockers and project issues (distinct from software bugs/defects).</li>
+    <li><strong>Dependencies <span class="route-pill">/dependencies</span>:</strong> Tracks internal and external handoff dependencies with expected dates, status, and &quot;AI Gen Dependencies&quot;.</li>
+  </ul>
+  <div class="doc-figure-grid">
+    <div class="doc-figure" data-lightbox-src="assets/ui/image72_58_project_raid_dashboard.png" data-lightbox-title="Figure 6.18a — Governance: RAID Dashboard">
+      <img src="assets/ui/image72_58_project_raid_dashboard.png" alt="Figure 6.18a — Governance: RAID Dashboard" loading="lazy">
+      <div class="doc-caption"><span>Figure 6.18a — Governance: RAID Dashboard</span><span>🔍 Click to expand</span></div>
+    </div>
+    <div class="doc-figure" data-lightbox-src="assets/ui/image73_59_project_risks.png" data-lightbox-title="Figure 6.18b — Governance: Project Risks Register">
+      <img src="assets/ui/image73_59_project_risks.png" alt="Figure 6.18b — Governance: Project Risks Register" loading="lazy">
+      <div class="doc-caption"><span>Figure 6.18b — Governance: Project Risks Register</span><span>🔍 Click to expand</span></div>
+    </div>
+    <div class="doc-figure" data-lightbox-src="assets/ui/image74_60_project_assumptions.png" data-lightbox-title="Figure 6.18c — Governance: Project Assumptions">
+      <img src="assets/ui/image74_60_project_assumptions.png" alt="Figure 6.18c — Governance: Project Assumptions" loading="lazy">
+      <div class="doc-caption"><span>Figure 6.18c — Governance: Project Assumptions</span><span>🔍 Click to expand</span></div>
+    </div>
+    <div class="doc-figure" data-lightbox-src="assets/ui/image75_61_project_issues.png" data-lightbox-title="Figure 6.18d — Governance: Project Operational Issues">
+      <img src="assets/ui/image75_61_project_issues.png" alt="Figure 6.18d — Governance: Project Operational Issues" loading="lazy">
+      <div class="doc-caption"><span>Figure 6.18d — Governance: Project Operational Issues</span><span>🔍 Click to expand</span></div>
+    </div>
+    <div class="doc-figure" data-lightbox-src="assets/ui/image76_62_project_dependencies.png" data-lightbox-title="Figure 6.18e — Governance: Project Dependencies">
+      <img src="assets/ui/image76_62_project_dependencies.png" alt="Figure 6.18e — Governance: Project Dependencies" loading="lazy">
+      <div class="doc-caption"><span>Figure 6.18e — Governance: Project Dependencies</span><span>🔍 Click to expand</span></div>
+    </div>
+  </div>
+  <h3 id="pmo-gateways">6.19 PMO — Project Documents &amp; Governance Gates <span class="route-pill">/pmo/documents</span></h3>
+  <p>Stores external links (URLs) to mandatory project governance artifacts (SOW, Requirements, HLD/DD, UI/UX Designs, QA Approval, BCP, etc.) and provides PMO sign-off controls for Permit to Build and Permit to Deploy.</p>
+  <div class="doc-figure" data-lightbox-src="assets/ui/image77_65_project_pmo_documents.png" data-lightbox-title="Figure 6.19 — PMO: Project Documents &amp; Permit Approval Gates">
+    <img src="assets/ui/image77_65_project_pmo_documents.png" alt="Figure 6.19 — PMO: Project Documents &amp; Permit Approval Gates" loading="lazy">
+    <div class="doc-caption"><span>Figure 6.19 — PMO: Project Documents &amp; Permit Approval Gates</span><span>🔍 Click to expand</span></div>
+  </div>
+  <h3 id="fixed-bid-billing">6.20 PMO — Fixed Bid (FB) Billing &amp; Payment Milestones</h3>
+  <p>For Fixed Bid projects, Workwayz provides a complete commercial ledger:</p>
+  <ul class="doc-list">
+    <li><strong>FB Billing <span class="route-pill">/pmo/fb-billing</span>:</strong> Computes resource billing vs. cost rates across the project duration, tracks one-time and monthly Fixed Costs (Hosting, GIT, Set-up), and generates a comprehensive client Invoice breakdown.</li>
+    <li><strong>FB Payment Milestones <span class="route-pill">/pmo/fb-payment-milestones</span>:</strong> Tracks deliverable-based payment milestones, billing percentages, invoice status transitions (TBD, In Progress, Milestone Completed, Invoice Raised, Payment Completed), and status change history.</li>
+  </ul>
+  <div class="doc-figure-grid">
+    <div class="doc-figure" data-lightbox-src="assets/ui/image78_66_project_pmo_fb_billing_top.png" data-lightbox-title="Figure 6.20a — PMO: Fixed Bid (FB) Resource Billing &amp; Fixed Costs">
+      <img src="assets/ui/image78_66_project_pmo_fb_billing_top.png" alt="Figure 6.20a — PMO: Fixed Bid (FB) Resource Billing &amp; Fixed Costs" loading="lazy">
+      <div class="doc-caption"><span>Figure 6.20a — PMO: Fixed Bid (FB) Resource Billing &amp; Fixed Costs</span><span>🔍 Click to expand</span></div>
+    </div>
+    <div class="doc-figure" data-lightbox-src="assets/ui/image79_66b_project_pmo_fb_billing_invoice.png" data-lightbox-title="Figure 6.20b — PMO: Fixed Bid Comprehensive Client Invoice">
+      <img src="assets/ui/image79_66b_project_pmo_fb_billing_invoice.png" alt="Figure 6.20b — PMO: Fixed Bid Comprehensive Client Invoice" loading="lazy">
+      <div class="doc-caption"><span>Figure 6.20b — PMO: Fixed Bid Comprehensive Client Invoice</span><span>🔍 Click to expand</span></div>
+    </div>
+    <div class="doc-figure" data-lightbox-src="assets/ui/image80_66c_project_pmo_fb_milestones.png" data-lightbox-title="Figure 6.20c — PMO: Fixed Bid Payment Milestones">
+      <img src="assets/ui/image80_66c_project_pmo_fb_milestones.png" alt="Figure 6.20c — PMO: Fixed Bid Payment Milestones" loading="lazy">
+      <div class="doc-caption"><span>Figure 6.20c — PMO: Fixed Bid Payment Milestones</span><span>🔍 Click to expand</span></div>
+    </div>
+  </div>
+  <h3 id="tnm-billing">6.21 PMO — Time &amp; Material (TnM) Billing &amp; Payment Milestones</h3>
+  <p>For Time &amp; Material (T&amp;M) projects (e.g., P2600002), billing is computed monthly:</p>
+  <ul class="doc-list">
+    <li><strong>TnM Billing <span class="route-pill">/pmo/tnm-billing</span>:</strong> Selects a Billing Month and automatically factors in working days, employee Loss of Pay (LOP) days, Overtime days, and monthly Fixed Costs to generate the monthly client Invoice.</li>
+    <li><strong>TnM Payment Milestones <span class="route-pill">/pmo/tnm-payment-milestones</span>:</strong> Tracks monthly invoice amounts and payment realization status for each calendar month.</li>
+  </ul>
+  <div class="doc-figure-grid">
+    <div class="doc-figure" data-lightbox-src="assets/ui/image81_67_project_pmo_tnm_billing_top.png" data-lightbox-title="Figure 6.21a — PMO: Time &amp; Material (TnM) Monthly Billing Ledger">
+      <img src="assets/ui/image81_67_project_pmo_tnm_billing_top.png" alt="Figure 6.21a — PMO: Time &amp; Material (TnM) Monthly Billing Ledger" loading="lazy">
+      <div class="doc-caption"><span>Figure 6.21a — PMO: Time &amp; Material (TnM) Monthly Billing Ledger</span><span>🔍 Click to expand</span></div>
+    </div>
+    <div class="doc-figure" data-lightbox-src="assets/ui/image82_67b_project_pmo_tnm_billing_invoice.png" data-lightbox-title="Figure 6.21b — PMO: Time &amp; Material Monthly Invoice Breakdown">
+      <img src="assets/ui/image82_67b_project_pmo_tnm_billing_invoice.png" alt="Figure 6.21b — PMO: Time &amp; Material Monthly Invoice Breakdown" loading="lazy">
+      <div class="doc-caption"><span>Figure 6.21b — PMO: Time &amp; Material Monthly Invoice Breakdown</span><span>🔍 Click to expand</span></div>
+    </div>
+    <div class="doc-figure" data-lightbox-src="assets/ui/image83_67c_project_pmo_tnm_milestones.png" data-lightbox-title="Figure 6.21c — PMO: Time &amp; Material Monthly Payment Milestones">
+      <img src="assets/ui/image83_67c_project_pmo_tnm_milestones.png" alt="Figure 6.21c — PMO: Time &amp; Material Monthly Payment Milestones" loading="lazy">
+      <div class="doc-caption"><span>Figure 6.21c — PMO: Time &amp; Material Monthly Payment Milestones</span><span>🔍 Click to expand</span></div>
+    </div>
+  </div>
+  <h3 id="business-continuity">6.22 PMO — Business Continuity <span class="route-pill">/pmo/business-continuity</span></h3>
+  <p>Safeguards operational continuity against resource turnover by recording Environment URLs and SSL/certificate expiry dates, Code Repository URLs and token expiry dates, and designated BCP Support Resources.</p>
+  <div class="doc-figure" data-lightbox-src="assets/ui/image84_67d_project_pmo_business_continuity.png" data-lightbox-title="Figure 6.22 — PMO: Business Continuity (Environments, Repositories &amp; BCP Resources)">
+    <img src="assets/ui/image84_67d_project_pmo_business_continuity.png" alt="Figure 6.22 — PMO: Business Continuity (Environments, Repositories &amp; BCP Resources)" loading="lazy">
+    <div class="doc-caption"><span>Figure 6.22 — PMO: Business Continuity (Environments, Repositories &amp; BCP Resources)</span><span>🔍 Click to expand</span></div>
+  </div>
+  <h3 id="sec-6-23">6.23 Project Settings &amp; Project Trash</h3>
+  <p>Project Managers and Leads can customize agile execution parameters and recover deleted project items:</p>
+  <ul class="doc-list">
+    <li><strong>Board Settings <span class="route-pill">/project-settings/board</span>:</strong> Add, rename, drag-to-reorder, or remove custom Kanban swimlanes.</li>
+    <li><strong>Sprint Settings <span class="route-pill">/project-settings/sprint</span>:</strong> Configure default Sprint Duration (1–8 weeks) and Sprint Start Day.</li>
+    <li><strong>Effort Settings <span class="route-pill">/project-settings/effort</span>:</strong> Define conversion ratios for Man-Month to Man-Days, Man-Day to Man-Hours, and Story Point to Man-Hours.</li>
+    <li><strong>Project Trash <span class="route-pill">/project-trash</span>:</strong> Restore or permanently delete soft-deleted stories, sub-tasks, test cases, RAID items, and documents.</li>
+  </ul>
+  <div class="doc-figure-grid">
+    <div class="doc-figure" data-lightbox-src="assets/ui/image85_68a_project_settings_board.png" data-lightbox-title="Figure 6.23a — Project Settings: Kanban Board Swimlane Settings">
+      <img src="assets/ui/image85_68a_project_settings_board.png" alt="Figure 6.23a — Project Settings: Kanban Board Swimlane Settings" loading="lazy">
+      <div class="doc-caption"><span>Figure 6.23a — Project Settings: Kanban Board Swimlane Settings</span><span>🔍 Click to expand</span></div>
+    </div>
+    <div class="doc-figure" data-lightbox-src="assets/ui/image86_68b_project_settings_sprint.png" data-lightbox-title="Figure 6.23b — Project Settings: Default Sprint Configuration">
+      <img src="assets/ui/image86_68b_project_settings_sprint.png" alt="Figure 6.23b — Project Settings: Default Sprint Configuration" loading="lazy">
+      <div class="doc-caption"><span>Figure 6.23b — Project Settings: Default Sprint Configuration</span><span>🔍 Click to expand</span></div>
+    </div>
+    <div class="doc-figure" data-lightbox-src="assets/ui/image87_68c_project_settings_effort.png" data-lightbox-title="Figure 6.23c — Project Settings: Effort Conversion Formulas">
+      <img src="assets/ui/image87_68c_project_settings_effort.png" alt="Figure 6.23c — Project Settings: Effort Conversion Formulas" loading="lazy">
+      <div class="doc-caption"><span>Figure 6.23c — Project Settings: Effort Conversion Formulas</span><span>🔍 Click to expand</span></div>
+    </div>
+    <div class="doc-figure" data-lightbox-src="assets/ui/image88_69_project_trash.png" data-lightbox-title="Figure 6.23d — Project Trash &amp; Item Recovery">
+      <img src="assets/ui/image88_69_project_trash.png" alt="Figure 6.23d — Project Trash &amp; Item Recovery" loading="lazy">
+      <div class="doc-caption"><span>Figure 6.23d — Project Trash &amp; Item Recovery</span><span>🔍 Click to expand</span></div>
+    </div>
+  </div>
+</section>
+<section class="doc-section" id="admin-flow">
+  <h2>7. Admin Flow</h2>
+  <p>Accessible exclusively to Super Admin and Administrator roles via the Portfolio Settings (gear icon) and Portfolio Trash (trash icon) tabs, the Admin Flow governs platform-wide security permissions, infrastructure bindings, scheduled jobs, synthetic test data, and retention policies.</p>
+  <h3 id="access-settings">7.1 Portfolio Settings — Access Settings <span class="route-pill">/portfolio-settings/access-settings</span></h3>
+  <p>Configures role-based permissions across two matrices:</p>
+  <ul class="doc-list">
+    <li><strong>Page Access Tab:</strong> Toggles visibility of Admin Level Pages, Portfolio Level Pages, and Project Level Pages (aligned with the consolidated 7 project lifecycle tabs) for Administrator, Senior Management, Project Manager, Lead, Team Member, and PMO roles.</li>
+    <li><strong>CRUD Access Tab:</strong> Configures granular Create (C), Read (R), Update (U), and Delete (D) permissions across Portfolio Level, Project Level, Story/Feature Change/Task Level, and Sub-tasks/Bugs/Test Cases Level.</li>
+  </ul>
+  <div class="doc-figure-grid">
+    <div class="doc-figure" data-lightbox-src="assets/ui/image89_70_admin_access_settings_pages.png" data-lightbox-title="Figure 7.1a — Access Settings: Page Access Permission Matrix">
+      <img src="assets/ui/image89_70_admin_access_settings_pages.png" alt="Figure 7.1a — Access Settings: Page Access Permission Matrix" loading="lazy">
+      <div class="doc-caption"><span>Figure 7.1a — Access Settings: Page Access Permission Matrix</span><span>🔍 Click to expand</span></div>
+    </div>
+    <div class="doc-figure" data-lightbox-src="assets/ui/image90_71_admin_access_settings_crud.png" data-lightbox-title="Figure 7.1b — Access Settings: CRUD Operation Permission Matrix">
+      <img src="assets/ui/image90_71_admin_access_settings_crud.png" alt="Figure 7.1b — Access Settings: CRUD Operation Permission Matrix" loading="lazy">
+      <div class="doc-caption"><span>Figure 7.1b — Access Settings: CRUD Operation Permission Matrix</span><span>🔍 Click to expand</span></div>
+    </div>
+  </div>
+  <h3 id="sec-7-2">7.2 Portfolio Settings — Database <span class="route-pill">/portfolio-settings/database</span></h3>
+  <p>Displays the active database binding and allows Administrators to configure, test, and switch connection profiles between Local Embedded Database, Supabase, and Firebase.</p>
+  <div class="doc-figure" data-lightbox-src="assets/ui/image91_72_admin_database.png" data-lightbox-title="Figure 7.2 — Portfolio Settings: Database Connection Management">
+    <img src="assets/ui/image91_72_admin_database.png" alt="Figure 7.2 — Portfolio Settings: Database Connection Management" loading="lazy">
+    <div class="doc-caption"><span>Figure 7.2 — Portfolio Settings: Database Connection Management</span><span>🔍 Click to expand</span></div>
+  </div>
+  <h3 id="sec-7-3">7.3 Portfolio Settings — Authentication <span class="route-pill">/portfolio-settings/authentication</span></h3>
+  <p>Manages the active authentication provider profile and Single Sign-On (SSO) integrations.</p>
+  <div class="doc-figure" data-lightbox-src="assets/ui/image92_73_admin_authentication.png" data-lightbox-title="Figure 7.3 — Portfolio Settings: Authentication Configuration">
+    <img src="assets/ui/image92_73_admin_authentication.png" alt="Figure 7.3 — Portfolio Settings: Authentication Configuration" loading="lazy">
+    <div class="doc-caption"><span>Figure 7.3 — Portfolio Settings: Authentication Configuration</span><span>🔍 Click to expand</span></div>
+  </div>
+  <h3 id="sec-7-4">7.4 Portfolio Settings — AI Config <span class="route-pill">/portfolio-settings/ai-config</span></h3>
+  <p>Manages generative AI connection profiles (Google Gemini, OpenAI, Anthropic Claude, Ollama, LM Studio), API keys, default model overrides, and live token/cost rate utilization telemetry.</p>
+  <div class="doc-figure" data-lightbox-src="assets/ui/image93_74_admin_ai_config.png" data-lightbox-title="Figure 7.4 — Portfolio Settings: Generative AI Configuration &amp; Telemetry">
+    <img src="assets/ui/image93_74_admin_ai_config.png" alt="Figure 7.4 — Portfolio Settings: Generative AI Configuration &amp; Telemetry" loading="lazy">
+    <div class="doc-caption"><span>Figure 7.4 — Portfolio Settings: Generative AI Configuration &amp; Telemetry</span><span>🔍 Click to expand</span></div>
+  </div>
+  <h3 id="sec-7-5">7.5 Portfolio Settings — Inactive Projects &amp; Archiving <span class="route-pill">/portfolio-settings/archive</span></h3>
+  <p>Configures automated project archiving timeframes for completed projects and auto-deletion rules for archived projects, and provides manual archiving controls.</p>
+  <div class="doc-figure" data-lightbox-src="assets/ui/image94_75_admin_archive.png" data-lightbox-title="Figure 7.5 — Portfolio Settings: Inactive Projects &amp; Archive Policy">
+    <img src="assets/ui/image94_75_admin_archive.png" alt="Figure 7.5 — Portfolio Settings: Inactive Projects &amp; Archive Policy" loading="lazy">
+    <div class="doc-caption"><span>Figure 7.5 — Portfolio Settings: Inactive Projects &amp; Archive Policy</span><span>🔍 Click to expand</span></div>
+  </div>
+  <h3 id="sec-7-6">7.6 Portfolio Settings — Cron Jobs Management <span class="route-pill">/portfolio-settings/cron-jobs</span></h3>
+  <p>Centralized administration console for all scheduled WayFinder PromptBoard report jobs across portfolios and projects. Administrators can inspect execution counts, trigger immediate runs, pause/resume schedules, or delete jobs.</p>
+  <div class="doc-figure" data-lightbox-src="assets/ui/image95_76_admin_cron_jobs.png" data-lightbox-title="Figure 7.6 — Portfolio Settings: Automated Cron Jobs Management">
+    <img src="assets/ui/image95_76_admin_cron_jobs.png" alt="Figure 7.6 — Portfolio Settings: Automated Cron Jobs Management" loading="lazy">
+    <div class="doc-caption"><span>Figure 7.6 — Portfolio Settings: Automated Cron Jobs Management</span><span>🔍 Click to expand</span></div>
+  </div>
+  <h3 id="sec-7-7">7.7 Portfolio Settings — Test Data Studio <span class="route-pill">/portfolio-settings/test-data-studio</span></h3>
+  <p>Interactive synthetic data generator allowing Administrators to seed realistic portfolios, employees across all access levels, active projects (with stories, sprints, test cases, worklogs, and RAID items), and initial estimations, or cleanly wipe studio-generated test data batches.</p>
+  <div class="doc-figure" data-lightbox-src="assets/ui/image96_77_admin_test_data_studio.png" data-lightbox-title="Figure 7.7 — Portfolio Settings: Test Data Studio">
+    <img src="assets/ui/image96_77_admin_test_data_studio.png" alt="Figure 7.7 — Portfolio Settings: Test Data Studio" loading="lazy">
+    <div class="doc-caption"><span>Figure 7.7 — Portfolio Settings: Test Data Studio</span><span>🔍 Click to expand</span></div>
+  </div>
+  <h3 id="sec-7-8">7.8 Portfolio Trash <span class="route-pill">/portfolio-trash</span></h3>
+  <p>Holds soft-deleted portfolios, projects, and users for a 30-day retention window before permanent deletion, allowing Administrators to restore accidentally deleted items or permanently erase them.</p>
+  <div class="doc-figure" data-lightbox-src="assets/ui/image97_78_admin_portfolio_trash.png" data-lightbox-title="Figure 7.8 — Portfolio Trash &amp; 30-Day Recovery Terminal">
+    <img src="assets/ui/image97_78_admin_portfolio_trash.png" alt="Figure 7.8 — Portfolio Trash &amp; 30-Day Recovery Terminal" loading="lazy">
+    <div class="doc-caption"><span>Figure 7.8 — Portfolio Trash &amp; 30-Day Recovery Terminal</span><span>🔍 Click to expand</span></div>
+  </div>
+</section>
 
       </main>
     </div>
@@ -531,10 +987,12 @@
   <footer class="footer">
     <div class="container">
       <div class="footer-bottom">
-        <div>&copy; 2026 Workwayz.in. Project &amp; Portfolio Management Operating System.</div>
+        <div>&copy; 2026 Workwayz.in &bull; Version 8.0.2 User Manual by Raman C Nair &bull; Apache 2.0 License.</div>
         <div style="display:flex; gap: 1.5rem;">
           <a href="index.html" class="footer-link">Home</a>
+          <a href="assets/docs/Workwayz_User_Manual.pdf" download="Workwayz_User_Manual.pdf" class="footer-link">Download PDF Manual</a>
           <a href="https://github.com/ramancnair/Workwayz" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub</a>
+          <a href="https://www.npmjs.com/package/workwayz" target="_blank" rel="noopener noreferrer" class="footer-link">NPM</a>
           <a href="#setup-wizard" class="footer-link">Back to Top &uarr;</a>
         </div>
       </div>

@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initFaqAccordion();
   initLightbox();
   initMobileMenu();
+  initDocsScrollSpy();
 });
 
 /* ----------------------------------------------------
@@ -17,27 +18,33 @@ document.addEventListener('DOMContentLoaded', () => {
 const terminalData = {
   npx: {
     command: 'npx workwayz@latest',
-    output: `<span class="success">✓ Checking Node.js environment...</span><br>
-<span class="success">✓ Launching Workwayz Web Setup Wizard...</span><br>
-<span class="prompt-symbol">→</span> Open <a href="http://localhost:3000" target="_blank" style="color:#6ee7b7">http://localhost:3000</a> to complete the 3-minute setup.`
+    output: `<span class="success">✓ Checking Node.js v20+ environment...</span><br>
+<span class="success">✓ Starting Workwayz with Zero-Config Local Embedded Database (~/.workwayz)...</span><br>
+<span class="prompt-symbol">→</span> Open <a href="http://localhost:3000" target="_blank" style="color:#6ee7b7">http://localhost:3000</a> to launch the In-App Setup Wizard.`
+  },
+  npm: {
+    command: 'npm install -g workwayz && workwayz',
+    output: `<span class="success">✓ Installed workwayz CLI globally...</span><br>
+<span class="success">✓ Persisting configuration & local database in ~/.workwayz...</span><br>
+<span class="prompt-symbol">→</span> Workwayz is live at <a href="http://localhost:3000" target="_blank" style="color:#6ee7b7">http://localhost:3000</a>`
   },
   docker: {
-    command: 'docker run -d -p 3000:3000 --name workwayz workwayz/app:latest',
-    output: `<span class="success">✓ Pulling workwayz/app:latest container image...</span><br>
-<span class="success">✓ Container started (ID: 8fa42b91c0e3)</span><br>
-<span class="prompt-symbol">→</span> Workwayz instance running on <span style="color:#6ee7b7">port 3000</span>.`
+    command: 'docker run -d -p 3000:3000 -v workwayz-data:/app/data --name workwayz-web --restart always ghcr.io/ramancnair/workwayz:latest',
+    output: `<span class="success">✓ Pulling ghcr.io/ramancnair/workwayz:latest production container...</span><br>
+<span class="success">✓ Mounted persistent volume workwayz-data:/app/data...</span><br>
+<span class="prompt-symbol">→</span> Container <span style="color:#6ee7b7">workwayz-web</span> running on <a href="http://localhost:3000" target="_blank" style="color:#6ee7b7">http://localhost:3000</a>`
   },
-  compose: {
-    command: 'curl -sSL https://workwayz.in/docker-compose.yml | docker compose up -d',
-    output: `<span class="success">✓ Starting Supabase Database & Auth stack...</span><br>
-<span class="success">✓ Connecting optional Ollama local AI server...</span><br>
-<span class="success">✓ Workwayz core server is ready on http://localhost:3000.</span>`
+  custom: {
+    command: 'npm install --prefix "D:\\Apps\\Workwayz" workwayz && npx --prefix "D:\\Apps\\Workwayz" workwayz',
+    output: `<span class="success">✓ Installed Workwayz into custom directory D:\\Apps\\Workwayz...</span><br>
+<span class="success">✓ Tip: Pass --data-dir "D:\\Apps\\Workwayz\\data" for custom DB storage...</span><br>
+<span class="prompt-symbol">→</span> Ready at <a href="http://localhost:3000" target="_blank" style="color:#6ee7b7">http://localhost:3000</a>`
   },
   git: {
-    command: 'git clone https://github.com/ramancnair/Workwayz.git && cd workwayz && npm install && npm run dev',
-    output: `<span class="success">✓ Cloned repository into ./workwayz</span><br>
-<span class="success">✓ Installed dependencies in 4.2s</span><br>
-<span class="prompt-symbol">→</span> Ready in dev mode: <span style="color:#6ee7b7">http://localhost:3000</span>`
+    command: 'git clone https://github.com/ramancnair/Workwayz.git && cd Workwayz && npm install && npm run dev',
+    output: `<span class="success">✓ Cloned repository into ./Workwayz...</span><br>
+<span class="success">✓ Installed dependencies & Next.js 16 App Router...</span><br>
+<span class="prompt-symbol">→</span> Ready in developer mode: <a href="http://localhost:3000" target="_blank" style="color:#6ee7b7">http://localhost:3000</a>`
   }
 };
 
@@ -216,4 +223,60 @@ function initMobileMenu() {
       drawer.classList.remove('active');
     });
   });
+}
+
+/* ----------------------------------------------------
+   7. Docs Sidebar Scroll-Spy & Search Filter
+   ---------------------------------------------------- */
+function initDocsScrollSpy() {
+  const navLinks = document.querySelectorAll('.docs-nav-link');
+  const searchInput = document.getElementById('docs-search-input');
+
+  if (searchInput) {
+    searchInput.addEventListener('input', () => {
+      const q = searchInput.value.toLowerCase().trim();
+      document.querySelectorAll('.docs-nav-group').forEach(group => {
+        let groupVisible = false;
+        group.querySelectorAll('li').forEach(li => {
+          const text = li.textContent.toLowerCase();
+          if (!q || text.includes(q)) {
+            li.style.display = '';
+            groupVisible = true;
+          } else {
+            li.style.display = 'none';
+          }
+        });
+        group.style.display = groupVisible ? '' : 'none';
+      });
+    });
+  }
+
+  if (!navLinks.length) return;
+
+  const headings = Array.from(navLinks).map(link => {
+    const id = link.getAttribute('href')?.replace('#', '');
+    return id ? document.getElementById(id) : null;
+  }).filter(Boolean);
+
+  if (!headings.length) return;
+
+  const onScroll = () => {
+    const scrollPos = window.scrollY + 140;
+    let currentId = headings[0].id;
+    for (const h of headings) {
+      if (h.offsetTop <= scrollPos) {
+        currentId = h.id;
+      }
+    }
+    navLinks.forEach(link => {
+      if (link.getAttribute('href') === `#${currentId}`) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+  };
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
 }
